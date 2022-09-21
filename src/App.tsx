@@ -1,18 +1,18 @@
-import { FC, useState, Suspense } from 'react';
-import { Link } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom';
+import { FC, Suspense } from 'react';
+import { Route, Link, Routes } from 'react-router-dom';
 
 import { AboutPage } from './pages/aboutPage/AboutPage.async';
 import { MainPage } from './pages/mainPage/MainPage.async';
 
-import './styles/index.scss';
 import { useThemes } from './themes/useThemes';
+import './styles/index.scss';
+import { classNames } from './helpers/classnames/classnames';
 
 const App: FC = () => {
   const { theme, toggleTheme } = useThemes();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', [theme], {})}>
       <button onClick={toggleTheme}>Toggle theme </button>
       <Link to={'/'}>MAIN</Link>
       <Link to={'/about'}>ABOUT</Link>
