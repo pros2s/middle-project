@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useThemes } from 'app/providers/ThemesProvider';
 import { RoutesProvieder } from 'app/providers/RoutesProvider';
+
+import { Navbar } from 'widgets/Navbar';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -12,12 +13,10 @@ const App: FC = () => {
   const { theme, toggleTheme } = useThemes();
 
   return (
-    <div className={classNames('app', [theme], {})}>
-      <button onClick={toggleTheme}>Toggle theme </button>
-      <Link to={'/'}>MAIN</Link>
-      <Link to={'/about'}>ABOUT</Link>
-
+    <div className={classNames('app', [theme])}>
+      <Navbar />
       <RoutesProvieder />
+      <button onClick={toggleTheme}>Toggle theme </button>
     </div>
   );
 };

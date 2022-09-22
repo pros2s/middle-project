@@ -1,2 +1,2 @@
-export { routesConfig } from './config/RoutesConfig';
-export { default as RoutesProvieder } from './ui/RoutesProvieder';
+export { routesConfig } from './config/routesConfig';
+export { default as RoutesProvieder } from './ui/RoutesProvider';

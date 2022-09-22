@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { routesConfig } from '../config/routesConfig';
 
-const RoutesProvieder: FC = () => {
+const RoutesProvider: FC = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
@@ -15,4 +15,4 @@ const RoutesProvieder: FC = () => {
   );
 };
 
-export default RoutesProvieder;
+export default RoutesProvider;
