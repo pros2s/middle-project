@@ -1,12 +1,13 @@
 import { FC, Suspense } from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
 
-import { AboutPage } from './pages/aboutPage/AboutPage.async';
-import { MainPage } from './pages/mainPage/MainPage.async';
+import { MainPage } from 'pages/mainPage';
+import { AboutPage } from 'pages/aboutPage';
 
-import { useThemes } from './themes/useThemes';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useThemes } from 'app/providers/ThemesProvider';
+
 import './styles/index.scss';
-import { classNames } from './helpers/classnames/classnames';
 
 const App: FC = () => {
   const { theme, toggleTheme } = useThemes();
