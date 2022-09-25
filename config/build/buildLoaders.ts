@@ -34,11 +34,30 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
     ],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   const tsLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
 
-  return [svgLoader, fileLoader, tsLoader, cssLoader];
+  return [svgLoader, fileLoader, babelLoader, tsLoader, cssLoader];
 };
