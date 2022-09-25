@@ -13,10 +13,22 @@
   width: var(--sidebar-width-collapsed);
 }
 
-.themeSwitcher {
+.footer {
   position: absolute;
   bottom: 20px;
 
   width: 100%;
-  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.lang {
+  margin-left: 20px;
+}
+
+.collapsedLang {
+  margin-left: 0;
 }
