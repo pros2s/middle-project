@@ -1,4 +1,3 @@
-import { useThemes } from 'app/providers/ThemesProvider';
 import { ButtonHTMLAttributes, FC } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
