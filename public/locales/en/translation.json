@@ -1,5 +1,7 @@
 {
   "Language": "Language",
   "mainPageBTN": "MAIN",
-  "aboutPageBTN": "ABOUT"
+  "aboutPageBTN": "ABOUT",
+  "LOADING": "loading...",
+  "COLLAPSE": "Collapse"
 }

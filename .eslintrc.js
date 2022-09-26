@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:i18next/recommended',
+  ],
   overrides: [
     {
       files: ['webpack.dev.js', 'webpack.prod.js'],
@@ -19,7 +24,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -37,6 +42,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'object-curly-newline': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
   },
   globals: { __IS_DEV__: true },
 };

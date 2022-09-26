@@ -1,5 +1,7 @@
 {
   "Language": "Язык",
   "mainPageBTN": "ГЛАВНАЯ",
-  "aboutPageBTN": "О НАС"
+  "aboutPageBTN": "О НАС",
+  "LOADING": "загрузка",
+  "COLLAPSE": "Свернуть"
 }
