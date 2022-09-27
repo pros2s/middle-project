@@ -11,19 +11,19 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import './styles/index.scss';
 
 const App: FC = () => {
-	const { theme } = useThemes();
+  const { theme } = useThemes();
 
-	return (
-		<div className={classNames('app', [theme])}>
-			<Suspense fallback=''>
-				<Navbar />
-				<div className='content-page'>
-					<Sidebar />
-					<RoutesProvieder />
-				</div>
-			</Suspense>
-		</div>
-	);
+  return (
+    <div className={classNames('app', [theme])}>
+      <Suspense fallback=''>
+        <Navbar />
+        <div className='content-page'>
+          <Sidebar />
+          <RoutesProvieder />
+        </div>
+      </Suspense>
+    </div>
+  );
 };
 
 export default App;

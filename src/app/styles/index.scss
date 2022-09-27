@@ -1,7 +1,7 @@
-@import "./reset";
-@import "./variables/global";
-@import "./themes/dark";
-@import "./themes/normal";
+@import './reset';
+@import './variables/global';
+@import './themes/dark';
+@import './themes/normal';
 
 a {
   color: inherit;
@@ -10,9 +10,13 @@ a {
 
 .app {
   min-height: 100vh;
-  background: var(--bg-color);
+
+  padding: auto;
+
   color: var(--primary-color);
   font: var(--font-m);
+
+  background: var(--bg-color);
 }
 
 .content-page {
@@ -20,6 +24,6 @@ a {
 }
 
 .page-wrapper {
-  padding: 20px;
   flex-grow: 1;
+  padding: 20px;
 }

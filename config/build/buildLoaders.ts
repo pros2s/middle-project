@@ -2,7 +2,9 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
-export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
+export const buildLoaders = ({
+  isDev,
+}: BuildOptions): webpack.RuleSetRule[] => {
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
@@ -26,7 +28,9 @@ export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => 
         options: {
           modules: {
             auto: (path: string) => Boolean(path.includes('.module.')),
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:5]',
           },
         },
       },

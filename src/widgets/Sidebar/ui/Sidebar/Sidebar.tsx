@@ -21,13 +21,21 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   };
 
   return (
-    <div className={classNames(cls.Sidebar, [className], { [cls.collapsed]: collapsed })}>
+    <div
+      className={classNames(cls.Sidebar, [className], {
+        [cls.collapsed]: collapsed,
+      })}
+    >
       <Button type='button' onClick={onToggle}>
         {t('COLLAPSE')}
       </Button>
       <div className={cls.footer}>
         <ThemeSwitcher />
-        <LangSwitcher className={classNames(cls.lang, [], { [cls.collapsedLang]: collapsed })} />
+        <LangSwitcher
+          className={classNames(cls.lang, [], {
+            [cls.collapsedLang]: collapsed,
+          })}
+        />
       </div>
     </div>
   );
