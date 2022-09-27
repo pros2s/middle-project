@@ -6,23 +6,23 @@ import { Button } from 'widgets/Button';
 import { ButtonThemes } from 'widgets/Button/ui/Button';
 
 interface LangSwitcherProps {
-  className?: string;
+	className?: string;
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
-  const { t, i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 
-  const onToggle = async () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
+	const onToggle = async () => {
+		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+	};
 
-  return (
-    <Button
-      className={classNames('', [className])}
-      onClick={onToggle}
-      theme={ButtonThemes.CLEAR}
-    >
-      {t('Language')}
-    </Button>
-  );
+	return (
+		<Button
+			className={classNames('', [className])}
+			onClick={onToggle}
+			theme={ButtonThemes.CLEAR}
+		>
+			{t('Language')}
+		</Button>
+	);
 };
