@@ -1,25 +1,23 @@
 import { FC, Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Route, Routes } from 'react-router-dom';
+import { PageLoader } from 'widgets/PageLoader';
 
 import { routesConfig } from '../config/routesConfig';
 
-const RoutesProvider: FC = () => {
-  const { t } = useTranslation();
-
-  return (
-    <Suspense fallback={<div>{t('LOADING')}</div>}>
-      <Routes>
-        {Object.values(routesConfig).map(({ element, path }) => (
-          <Route
-            key={path}
-            path={path}
-            element={<div className='page-wrapper'>{element}</div>}
-          />
-        ))}
-      </Routes>
-    </Suspense>
-  );
-};
+const RoutesProvider: FC = () => (
+  <Routes>
+    {Object.values(routesConfig).map(({ element, path }) => (
+      <Route
+        key={path}
+        path={path}
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <div className='page-wrapper'>{element}</div>
+          </Suspense>
+        }
+      />
+    ))}
+  </Routes>
+);
 
 export default RoutesProvider;

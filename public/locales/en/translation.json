@@ -3,5 +3,6 @@
   "mainPageBTN": "MAIN",
   "aboutPageBTN": "ABOUT",
   "LOADING": "loading...",
-  "COLLAPSE": "Collapse"
+  "COLLAPSE": "Collapse",
+  "notFoundPage": "Not Found Page"
 }

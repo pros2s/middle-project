@@ -1,7 +1,10 @@
 {
+  "COLLAPSE": "",
+  "LOADING": "",
   "Language": "",
   "aboutPageBTN": "",
   "aboutPageText": "",
   "mainPageBTN": "",
-  "mainPageText": ""
+  "mainPageText": "",
+  "notFoundPage": ""
 }

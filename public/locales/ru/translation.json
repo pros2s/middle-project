@@ -3,5 +3,6 @@
   "mainPageBTN": "ГЛАВНАЯ",
   "aboutPageBTN": "О НАС",
   "LOADING": "загрузка",
-  "COLLAPSE": "Свернуть"
+  "COLLAPSE": "Свернуть",
+  "notFoundPage": "Страница не найдена"
 }
