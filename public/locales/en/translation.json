@@ -4,5 +4,6 @@
   "aboutPageBTN": "ABOUT",
   "LOADING": "loading...",
   "COLLAPSE": "Collapse",
-  "notFoundPage": "Not Found Page"
+  "notFoundPage": "Not Found Page",
+  "pageError": "Something wrong with this page"
 }

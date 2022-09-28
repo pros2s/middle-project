@@ -4,5 +4,6 @@
   "aboutPageBTN": "О НАС",
   "LOADING": "загрузка",
   "COLLAPSE": "Свернуть",
-  "notFoundPage": "Страница не найдена"
+  "notFoundPage": "Страница не найдена",
+  "pageError": "Что-то пошло не так на этой странице"
 }

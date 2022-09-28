@@ -6,5 +6,6 @@
   "aboutPageText": "",
   "mainPageBTN": "",
   "mainPageText": "",
-  "notFoundPage": ""
+  "notFoundPage": "",
+  "pageError": ""
 }
