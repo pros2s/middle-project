@@ -15,6 +15,7 @@ module.exports = {
     'plugin:i18next/recommended',
     'airbnb',
     'prettier',
+    'plugin:storybook/recommended',
   ],
   overrides: [
     {
@@ -22,7 +23,9 @@ module.exports = {
       rules: {
         'import/no-extraneous-dependencies': [
           'error',
-          { devDependencies: ['webpack.dev.js', 'webpack.prod.js'] },
+          {
+            devDependencies: ['webpack.dev.js', 'webpack.prod.js'],
+          },
         ],
       },
     },
@@ -35,28 +38,40 @@ module.exports = {
   ],
   plugins: ['react', 'react-hooks', 'i18next', 'prettier'],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to'],
+      },
     ],
-    'no-underscore-dangle': ['error', { allow: ['__IS_DEV__'] }],
+    'no-underscore-dangle': [
+      'error',
+      {
+        allow: ['__IS_DEV__'],
+      },
+    ],
     'no-else-return': 2,
     'no-lonely-if': 2,
-
     // typescript
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': 'error',
-
     // react
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     ],
     'jsx-quotes': [2, 'prefer-single'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-
     // off
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
@@ -69,5 +84,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'object-curly-newline': 'off',
   },
-  globals: { __IS_DEV__: true },
+  globals: {
+    __IS_DEV__: true,
+  },
 };
