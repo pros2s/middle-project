@@ -4,11 +4,16 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   extends: [
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
-    'airbnb',
     'plugin:i18next/recommended',
+    'airbnb',
     'prettier',
   ],
   overrides: [
@@ -21,28 +26,36 @@ module.exports = {
         ],
       },
     },
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['react', 'i18next', 'prettier'],
+  plugins: ['react', 'react-hooks', 'i18next', 'prettier'],
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+    ],
+    'no-underscore-dangle': ['error', { allow: ['__IS_DEV__'] }],
+    'no-else-return': 2,
+    'no-lonely-if': 2,
+
+    // typescript
+    '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/no-unused-vars': 'error',
+
+    // react
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
-    'i18next/no-literal-string': [
-      'error',
-      { markupOnly: true, onlyAttribute: [''] },
-    ],
-    'no-underscore-dangle': ['error', { allow: ['__IS_DEV__'] }],
     'jsx-quotes': [2, 'prefer-single'],
-    '@typescript-eslint/no-shadow': ['error'],
-    '@typescript-eslint/no-unused-vars': 'error',
-    'no-else-return': 2,
-    'no-lonely-if': 2,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     // off
     'import/no-unresolved': 'off',

@@ -22,11 +22,12 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
 
   return (
     <div
+      data-testid='sidebar'
       className={classNames(cls.Sidebar, [className], {
         [cls.collapsed]: collapsed,
       })}
     >
-      <Button type='button' onClick={onToggle}>
+      <Button data-testid='collapsedBTN' type='button' onClick={onToggle}>
         {t('COLLAPSE')}
       </Button>
       <div className={cls.footer}>
