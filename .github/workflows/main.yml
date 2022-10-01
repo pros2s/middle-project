@@ -6,10 +6,10 @@ on:
     branches: [master]
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -20,11 +20,19 @@ jobs:
 
       - name: Install modules
         run: npm install
+
       - name: Build production
         run: npm run build:prod
+
       - name: Lint typescipt
         run: npm run lint:ts
       - name: Lint scss
         run: npm run lint:scss
+
       - name: Unit tests
         run: npm run test:unit
+
+      - name: Storybook build
+        run: npm run storybook:build
+      - name: Screenshot tests
+        run: npm run test:loki:ci
