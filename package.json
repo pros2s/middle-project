@@ -13,9 +13,11 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "prettier:fix": "prettier --write \"**/*.{js,ts,tsx}\"",
     "project:beauty": "npm run \"lint:ts:fix\" & npm run \"lint:scss:fix\" &  npm run \"prettier:fix\"",
-    "test": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:loki": "npx loki test",
+    "test:loki:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -64,6 +66,7 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
+    "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
     "postcss-scss": "^4.0.5",
     "prettier": "^2.7.1",
