@@ -1,9 +1,10 @@
 {
-  "Language": "Язык",
+  "Language": "Русский",
   "mainPageBTN": "ГЛАВНАЯ",
   "aboutPageBTN": "О НАС",
   "LOADING": "загрузка",
   "COLLAPSE": "Свернуть",
   "notFoundPage": "Страница не найдена",
-  "pageError": "Что-то пошло не так на этой странице"
+  "pageError": "Что-то пошло не так на этой странице",
+  "ShortLanguage": "Ru"
 }

@@ -1,9 +1,10 @@
 {
-  "Language": "Language",
+  "Language": "English",
   "mainPageBTN": "MAIN",
   "aboutPageBTN": "ABOUT",
   "LOADING": "loading...",
   "COLLAPSE": "Collapse",
   "notFoundPage": "Not Found Page",
-  "pageError": "Something wrong with this page"
+  "pageError": "Something wrong with this page",
+  "ShortLanguage": "En"
 }

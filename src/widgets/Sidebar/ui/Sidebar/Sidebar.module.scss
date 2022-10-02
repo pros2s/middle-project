@@ -39,4 +39,8 @@
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
+
+  .footer {
+    flex-direction: column;
+  }
 }

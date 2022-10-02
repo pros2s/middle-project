@@ -7,9 +7,10 @@ import { ButtonThemes } from 'widgets/Button/ui/Button';
 
 interface LangSwitcherProps {
   className?: string;
+  short?: boolean;
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
+export const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
   const { t, i18n } = useTranslation();
 
   const onToggle = async () => {
@@ -20,9 +21,9 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
     <Button
       className={classNames('', [className])}
       onClick={onToggle}
-      theme={ButtonThemes.CLEAR}
+      theme={ButtonThemes.INVERTED_BACKGROUND}
     >
-      {t('Language')}
+      {short ? t('ShortLanguage') : t('Language')}
     </Button>
   );
 };

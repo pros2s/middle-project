@@ -40,6 +40,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       <div className={cls.footer}>
         <ThemeSwitcher />
         <LangSwitcher
+          short={collapsed}
           className={classNames(cls.lang, [], {
             [cls.collapsedLang]: collapsed,
           })}
