@@ -17,6 +17,9 @@
     "test:loki": "npx loki test",
     "test:loki:ok": "npx loki approve",
     "test:loki:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:loki:json": "node scripts/generate-visual-json-report.js ",
+    "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:loki:report": "npm run test:loki:json & npm run test:loki:html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
   },
@@ -73,6 +76,7 @@
     "postcss-scss": "^4.0.5",
     "prettier": "^2.7.1",
     "react-refresh": "^0.12.0",
+    "reg-cli": "^0.17.6",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
