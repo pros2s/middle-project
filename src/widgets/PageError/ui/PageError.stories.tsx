@@ -17,7 +17,6 @@ const Template: ComponentStory<typeof PageError> = (args) => (
 );
 
 export const Light = Template.bind({});
-Light.decorators = [ThemeDecorator(Themes.LIGHT)];
 Light.args = {};
 
 export const Dark = Template.bind({});

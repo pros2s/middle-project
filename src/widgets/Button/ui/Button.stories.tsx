@@ -15,7 +15,6 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
-Default.decorators = [ThemeDecorator(Themes.LIGHT)];
 Default.args = {
   children: 'text',
 };
@@ -27,7 +26,6 @@ DefaultDark.args = {
 };
 
 export const Clear = Template.bind({});
-Clear.decorators = [ThemeDecorator(Themes.LIGHT)];
 Clear.args = {
   children: 'text',
   theme: ButtonThemes.CLEAR,
@@ -41,7 +39,6 @@ ClearDark.args = {
 };
 
 export const Outline = Template.bind({});
-Outline.decorators = [ThemeDecorator(Themes.LIGHT)];
 Outline.args = {
   children: 'text',
   theme: ButtonThemes.OUTLINE,
