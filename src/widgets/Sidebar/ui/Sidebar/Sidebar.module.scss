@@ -9,10 +9,6 @@
   transition: width 0.1s linear;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-}
-
 .footer {
   position: absolute;
   bottom: 20px;
@@ -30,4 +26,17 @@
 
 .collapsedLang {
   margin-left: 0;
+}
+
+.collapsedBTN {
+  position: absolute;
+  right: -40px;
+  bottom: 25px;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
 }
