@@ -34,7 +34,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       <header>
         <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to='/'>
           <MainPageSVG className={cls.icon} />
-          <span  className={cls.text}>{t('mainPageBTN')}</span>
+          <span className={cls.text}>{t('mainPageBTN')}</span>
         </AppLink>
         <AppLink
           className={cls.link}
@@ -42,7 +42,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
           to='/about'
         >
           <AboutPageSVG className={cls.icon} />
-          <span  className={cls.text}>{t('aboutPageBTN')}</span>
+          <span className={cls.text}>{t('aboutPageBTN')}</span>
         </AppLink>
       </header>
       <Button
