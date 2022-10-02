@@ -6,15 +6,35 @@
 
   background: var(--inverted-bg-color);
 
-  transition: width 0.1s linear;
+  transition: all 0.1s linear;
 }
 
-.footer {
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px 10px;
+}
+
+.link {
+  display: flex;
+
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin: auto;
+  margin-right: 10px;
+
+  fill: var(--inverted-primary-color);
+}
+
+footer {
   position: absolute;
   bottom: 20px;
 
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -40,7 +60,19 @@
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
-  .footer {
+  footer {
     flex-direction: column;
+  }
+
+  .link {
+    margin-bottom: 20px;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .icon {
+    margin-right: 0;
   }
 }

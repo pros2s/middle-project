@@ -17,6 +17,8 @@ a {
   font: var(--font-m);
 
   background: var(--bg-color);
+
+  transition: all 0.2s linear;
 }
 
 .content-page {
