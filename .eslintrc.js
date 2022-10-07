@@ -71,7 +71,7 @@ module.exports = {
     ],
     'jsx-quotes': [2, 'prefer-single'],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
     // off
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
