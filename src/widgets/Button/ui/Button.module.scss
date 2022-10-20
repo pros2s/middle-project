@@ -8,13 +8,18 @@
   transition: all 0.1s linear;
 }
 
-.clear {
+.clear,
+.clearInverted {
   margin: 0;
   padding: 0;
 
   background: none;
   border: none;
   outline: none;
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
 }
 
 .outline {
