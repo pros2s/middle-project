@@ -8,8 +8,15 @@ import {
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) || Themes.LIGHT;
 
-const ThemesProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<Themes>(defaultTheme);
+interface ThemesProviderProps {
+  initialTheme?: Themes;
+}
+
+const ThemesProvider: FC<ThemesProviderProps> = ({
+  children,
+  initialTheme,
+}) => {
+  const [theme, setTheme] = useState<Themes>(initialTheme || defaultTheme);
 
   const defaultValue = useMemo(
     () => ({

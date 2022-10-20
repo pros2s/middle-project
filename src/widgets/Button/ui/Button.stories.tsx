@@ -40,6 +40,12 @@ ClearDark.args = {
   theme: ButtonThemes.CLEAR,
 };
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'text',
+  theme: ButtonThemes.INVERTED_CLEAR,
+};
+
 // With border
 export const Outline = Template.bind({});
 Outline.args = {
