@@ -7,14 +7,17 @@ import { ThemesProvider } from 'app/providers/ThemesProvider';
 import './app/styles/index.scss';
 
 import 'shared/config/i18n/i18n';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 render(
-  <BrowserRouter>
-    <ErrorBoundary>
-      <ThemesProvider>
-        <App />
-      </ThemesProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <ThemesProvider>
+          <App />
+        </ThemesProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
   document.getElementById('root'),
 );

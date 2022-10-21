@@ -83,6 +83,8 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'object-curly-newline': 'off',
+    'no-plusplus': 'off',
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,
