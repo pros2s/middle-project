@@ -13,4 +13,7 @@ export default {
     '\\.svg': path.resolve(__dirname, 'JestEmptyComponent'),
   },
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  globals: {
+    __IS_DEV__: true,
+  },
 };
