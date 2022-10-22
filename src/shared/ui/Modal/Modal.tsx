@@ -16,6 +16,7 @@ import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
+  isLazy?: boolean;
   children: ReactNode;
   isOpen: boolean;
   onClose: () => void;
@@ -27,12 +28,22 @@ export const Modal: FC<ModalProps> = ({
   className,
   children,
   isOpen,
+  isLazy,
   onClose,
 }) => {
   const { theme } = useThemes();
   const closeTimeout = useRef<ReturnType<typeof setTimeout>>();
 
   const [isClosing, setIsClosing] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    } else {
+      setIsMounted(false);
+    }
+  }, [isOpen]);
 
   const closeHandler = useCallback(() => {
     if (isOpen) {
@@ -72,6 +83,8 @@ export const Modal: FC<ModalProps> = ({
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };
+
+  if (isLazy && !isMounted) return null;
 
   return (
     <Portal>

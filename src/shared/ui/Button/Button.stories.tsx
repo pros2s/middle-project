@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { Button, ButtonSizes, ButtonThemes } from './Button';
 
 export default {
-  title: 'Widgets/Button',
+  title: 'Shared/Button',
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },

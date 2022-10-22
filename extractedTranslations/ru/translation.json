@@ -1,6 +1,10 @@
 {
   "": "",
   "COLLAPSE": "",
+  "Insert": "Ввод",
+  "Insert>": "",
+  "InsertPassword": "",
+  "InsertUsername": "",
   "LOADING": "",
   "Language": "",
   "LogIn": "",
@@ -13,10 +17,16 @@
     }
   },
   "ShortLanguage": "",
+  "Your text": "",
   "aboutPageBTN": "",
   "aboutPageText": "",
+  "log": "",
+  "log in": "",
+  "login": "",
   "mainPageBTN": "",
   "mainPageText": "",
   "notFoundPage": "",
-  "pageError": ""
+  "pageError": "",
+  "Ввод": "",
+  "Ввод>": ""
 }

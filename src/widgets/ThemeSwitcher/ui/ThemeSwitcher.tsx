@@ -2,8 +2,7 @@ import { FC } from 'react';
 
 import { Themes, useThemes } from 'app/providers/ThemesProvider';
 
-import { Button } from 'widgets/Button';
-import { ButtonThemes } from 'widgets/Button/ui/Button';
+import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';

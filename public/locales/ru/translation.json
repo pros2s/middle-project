@@ -7,5 +7,8 @@
   "notFoundPage": "Страница не найдена",
   "pageError": "Что-то пошло не так на этой странице",
   "ShortLanguage": "Ru",
-  "LogIn": "Войти"
+  "LogIn": "Войти",
+  "Insert": "Ввод>",
+  "InsertUsername": "Введите имя",
+  "InsertPassword": "Введите пароль"
 }

@@ -1,20 +1,19 @@
-import { getCounterValue } from 'entities/counter/model/selectors/getCounterValue/getCounterValue';
-import { CounterActions } from 'entities/counter/model/slice/CounterSlice';
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'widgets/Button';
-import { ButtonThemes } from 'widgets/Button/ui/Button';
+import { Button, ButtonThemes } from 'shared/ui/Button/Button';
+import { counterActions } from '../model/slice/CounterSlice';
+import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 export const Counter: FC = () => {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);
 
   const onIncrement = () => {
-    dispatch(CounterActions.increment());
+    dispatch(counterActions.increment());
   };
 
   const onDecrement = () => {
-    dispatch(CounterActions.decrement());
+    dispatch(counterActions.decrement());
   };
 
   return (

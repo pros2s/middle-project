@@ -7,5 +7,8 @@
   "notFoundPage": "Not Found Page",
   "pageError": "Something wrong with this page",
   "ShortLanguage": "En",
-  "LogIn": "Log In"
+  "LogIn": "Log In",
+  "Insert": "Insert>",
+  "InsertUsername": "Insert username",
+  "InsertPassword": "Insert password"
 }

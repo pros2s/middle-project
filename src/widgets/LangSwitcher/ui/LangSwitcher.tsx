@@ -2,8 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'widgets/Button';
-import { ButtonThemes } from 'widgets/Button/ui/Button';
+import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
   className?: string;
