@@ -109,23 +109,39 @@ SquareXL.args = {
 export const S = Template.bind({});
 S.args = {
   children: 'text',
-  theme: ButtonSizes.S,
+  size: ButtonSizes.S,
 };
 
 export const M = Template.bind({});
 M.args = {
   children: 'text',
-  theme: ButtonSizes.M,
+  size: ButtonSizes.M,
 };
 
 export const L = Template.bind({});
 L.args = {
   children: 'text',
-  theme: ButtonSizes.L,
+  size: ButtonSizes.L,
 };
 
 export const XL = Template.bind({});
 XL.args = {
   children: 'text',
-  theme: ButtonSizes.XL,
+  size: ButtonSizes.XL,
+};
+
+// Disabled
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'text',
+  theme: ButtonThemes.OUTLINE,
+  isDisabled: true,
+};
+
+export const DarkDisabled = Template.bind({});
+DarkDisabled.decorators = [ThemeDecorator(Themes.DARK)];
+DarkDisabled.args = {
+  children: 'text',
+  theme: ButtonThemes.OUTLINE,
+  isDisabled: true,
 };

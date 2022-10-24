@@ -1,12 +1,13 @@
-import { FC, MouseEvent, useCallback } from 'react';
+import { memo, MouseEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { loginByUsername } from 'features/authByUsername/model/services/loginByUsername/loginByUsername';
-import { getLoginError } from 'features/authByUsername/model/selectors/getLoginError/getLoginError';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
 import { loginActions } from '../../model/slice/LoginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -17,13 +18,14 @@ interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const password = useSelector(getLoginPassword);
   const username = useSelector(getLoginUsername);
   const errorMessage = useSelector(getLoginError);
+  const isLoading = useSelector(getLoginLoading);
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -66,6 +68,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
           onClick={onLoginClick}
           type='submit'
           theme={ButtonThemes.OUTLINE}
+          isDisabled={isLoading}
           className={cls.button}
         >
           {t('LogIn')}
@@ -73,4 +76,4 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
       </footer>
     </form>
   );
-};
+});
