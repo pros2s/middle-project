@@ -36,7 +36,6 @@ jobs:
         run: npm run test:unit
 
       - name: Storybook build
-        if: always()
         run: npm run storybook:build
       - name: Screenshot tests
         run: npm run test:loki:ci

@@ -30,7 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         [cls.collapsed]: collapsed,
       })}
     >
-      <header>
+      <header className={cls.header}>
         <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to='/'>
           <MainPageSVG className={cls.icon} />
           <span className={cls.text}>{t('mainPageBTN')}</span>
@@ -55,7 +55,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <footer>
+      <footer className={cls.footer}>
         <ThemeSwitcher />
         <LangSwitcher
           short={collapsed}

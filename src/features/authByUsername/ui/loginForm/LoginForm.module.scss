@@ -17,3 +17,13 @@
     background-color: var(--primary-color);
   }
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error {
+  color: red;
+}
