@@ -21,8 +21,8 @@ interface LoginFormProps {
 
 export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
-
   const dispatch = useDispatch();
+
   const password = useSelector(getLoginPassword);
   const username = useSelector(getLoginUsername);
   const errorMessage = useSelector(getLoginError);
@@ -46,6 +46,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       dispatch(loginByUsername({ password, username }));
+      dispatch(loginActions.setPassword(''));
+      dispatch(loginActions.setUsername(''));
     },
     [dispatch, password, username],
   );
@@ -65,7 +67,11 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         placeholder={t('InsertPassword')}
       />
       <footer className={cls.footer}>
-        {errorMessage && <Text text={errorMessage} theme={TextThemes.ERROR} />}
+        <div className={cls.error}>
+          {errorMessage && (
+            <Text text={errorMessage} theme={TextThemes.ERROR} />
+          )}
+        </div>
         <Button
           onClick={onLoginClick}
           type='submit'

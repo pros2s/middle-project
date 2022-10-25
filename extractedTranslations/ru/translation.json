@@ -1,5 +1,7 @@
 {
   "": "",
+  "Auth": "",
+  "AuthError": "",
   "COLLAPSE": "",
   "Form title": "",
   "Insert": "Ввод",
@@ -9,6 +11,7 @@
   "LOADING": "",
   "Language": "",
   "LogIn": "",
+  "Logout": "",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     " Eligendi": "",
     " EligendiLorem ipsum dolor sit amet consectetur adipisicing elit": {

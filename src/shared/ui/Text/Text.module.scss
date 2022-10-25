@@ -2,22 +2,22 @@
   margin-bottom: 10px;
 
   color: var(--primary-color);
-  font-size: var(--font-line-l);
+  font: var(--font-xl);
 }
 
 .text {
   color: var(--secondary-color);
-  font-size: var(--font-line-m);
+  font: var(--font-l);
 }
 
 .error {
   .title {
     color: var(--error-light);
-    font-size: var(--font-line-m);
+    font: var(--font-m);
   }
 
   .text {
     color: var(--error-dark);
-    font-size: var(--font-line-s);
+    font: var(--font-s);
   }
 }

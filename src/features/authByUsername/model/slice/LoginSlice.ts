@@ -26,15 +26,11 @@ const loginSlice = createSlice({
         state.errorMessage = undefined;
         state.isLoading = true;
       })
-      .addCase(
-        loginByUsername.fulfilled,
-        (state, { payload }) => {
-          state.errorMessage = undefined;
-          state.isLoading = false;
-          state.username = payload.username;
-        },
-      )
-      .addCase(loginByUsername.rejected, (state, {payload}) => {
+      .addCase(loginByUsername.fulfilled, (state) => {
+        state.errorMessage = undefined;
+        state.isLoading = false;
+      })
+      .addCase(loginByUsername.rejected, (state, { payload }) => {
         state.errorMessage = payload;
         state.isLoading = false;
       });

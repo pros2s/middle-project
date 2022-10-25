@@ -11,5 +11,7 @@
   "Insert": "Insert>",
   "InsertUsername": "Insert username",
   "InsertPassword": "Insert password",
-  "Form title": "Autharization"
+  "Form title": "Autharization",
+  "AuthError": "Incorrect username or password",
+  "Logout": "Log out"
 }

@@ -11,5 +11,7 @@
   "Insert": "Ввод>",
   "InsertUsername": "Введите имя",
   "InsertPassword": "Введите пароль",
-  "Form title": "Авторизация"
+  "Form title": "Авторизация",
+  "AuthError": "Неверное имя пользователя или пароль",
+  "Logout": "Выйти"
 }

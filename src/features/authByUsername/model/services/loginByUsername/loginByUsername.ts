@@ -1,6 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { User } from 'entities/user';
+import { User, userActions } from 'entities/user';
 import axios from 'axios';
+import i18n from 'shared/config/i18n/i18n';
+import { LOCALE_STORAGE_USER_KEY } from 'shared/consts/localeStorage';
 
 interface LoginByUsernameProps {
   password: string;
@@ -11,18 +13,25 @@ export const loginByUsername = createAsyncThunk<
   User,
   LoginByUsernameProps,
   { rejectValue: string }
->('login/loginByUsername', async (userData, { rejectWithValue }) => {
+>('login/loginByUsername', async (userData, { rejectWithValue, dispatch }) => {
   try {
     const response = await axios.post<User>(
       'http://localhost:8000/login',
       userData,
     );
+
     if (!response.data) {
       throw new Error();
     }
 
+    localStorage.setItem(
+      LOCALE_STORAGE_USER_KEY,
+      JSON.stringify(response.data),
+    );
+    dispatch(userActions.setUserData(response.data));
+
     return response.data;
   } catch (e) {
-    return rejectWithValue('error');
+    return rejectWithValue(i18n.t('AuthError'));
   }
 });
