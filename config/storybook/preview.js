@@ -25,7 +25,7 @@ export const globalTypes = {
         { value: 'en', title: 'English' },
         { value: 'ru', title: 'Russian' },
       ],
-      showName: true,
+      title: 'Translate',
     },
   },
 };

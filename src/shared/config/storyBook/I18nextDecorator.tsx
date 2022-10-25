@@ -13,10 +13,10 @@ export const I18nextDecorator = (
   }, [locale]);
 
   return (
-    <Suspense fallback=''>
-      <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18n}>
+      <Suspense fallback=''>
         <StoryComponent />
-      </I18nextProvider>
-    </Suspense>
+      </Suspense>
+    </I18nextProvider>
   );
 };
