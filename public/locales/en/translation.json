@@ -10,5 +10,6 @@
   "LogIn": "Log In",
   "Insert": "Insert>",
   "InsertUsername": "Insert username",
-  "InsertPassword": "Insert password"
+  "InsertPassword": "Insert password",
+  "Form title": "Autharization"
 }

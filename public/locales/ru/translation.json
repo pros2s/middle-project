@@ -10,5 +10,6 @@
   "LogIn": "Войти",
   "Insert": "Ввод>",
   "InsertUsername": "Введите имя",
-  "InsertPassword": "Введите пароль"
+  "InsertPassword": "Введите пароль",
+  "Form title": "Авторизация"
 }

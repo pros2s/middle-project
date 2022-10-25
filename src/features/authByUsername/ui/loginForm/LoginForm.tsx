@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Text, TextThemes } from 'shared/ui/Text/Text';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
@@ -51,6 +52,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
     <form className={classNames(cls.LoginForm, [className])}>
+      <Text title={t('Form title')} />
       <Input
         value={username}
         onChange={onChangeUsername}
@@ -63,7 +65,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         placeholder={t('InsertPassword')}
       />
       <footer className={cls.footer}>
-        {errorMessage && <p className={cls.error}>{errorMessage}</p>}
+        {errorMessage && <Text text={errorMessage} theme={TextThemes.ERROR} />}
         <Button
           onClick={onLoginClick}
           type='submit'
