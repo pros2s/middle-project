@@ -15,11 +15,11 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 
 import cls from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
@@ -85,3 +85,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     </form>
   );
 });
+
+export default LoginForm;
