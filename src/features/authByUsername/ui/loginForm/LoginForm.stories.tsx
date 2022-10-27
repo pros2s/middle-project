@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
+import { loginReducer } from 'features/authByUsername/model/slice/LoginSlice';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import LoginForm from './LoginForm';
@@ -19,51 +20,69 @@ const Template: ComponentStory<typeof LoginForm> = (args) => (
 export const Default = Template.bind({});
 Default.args = {};
 Default.decorators = [
-  StoreDecorator({
-    login: { username: 'username', password: 'password' },
-  }),
+  StoreDecorator(
+    {
+      login: { username: 'username', password: 'password' },
+    },
+    { login: loginReducer },
+  ),
 ];
 
 export const Error = Template.bind({});
 Error.args = {};
 Error.decorators = [
-  StoreDecorator({
-    login: { errorMessage: 'error message' },
-  }),
+  StoreDecorator(
+    {
+      login: { errorMessage: 'error message' },
+    },
+    { login: loginReducer },
+  ),
 ];
 
 export const Loading = Template.bind({});
 Loading.args = {};
 Loading.decorators = [
-  StoreDecorator({
-    login: { isLoading: true },
-  }),
+  StoreDecorator(
+    {
+      login: { isLoading: true },
+    },
+    { login: loginReducer },
+  ),
 ];
 
 // Dark theme
 export const DarkDefault = Template.bind({});
 DarkDefault.args = {};
 DarkDefault.decorators = [
-  StoreDecorator({
-    login: { username: 'username', password: 'password' },
-  }),
+  StoreDecorator(
+    {
+      login: { username: 'username', password: 'password' },
+    },
+    { login: loginReducer },
+  ),
   ThemeDecorator(Themes.DARK),
 ];
 
 export const DarkError = Template.bind({});
 DarkError.args = {};
 DarkError.decorators = [
-  StoreDecorator({
-    login: { errorMessage: 'error message' },
-  }),
+  StoreDecorator(
+    {
+      login: { errorMessage: 'error message' },
+    },
+    { login: loginReducer },
+  ),
   ThemeDecorator(Themes.DARK),
 ];
 
 export const DarkLoading = Template.bind({});
 DarkLoading.args = {};
 DarkLoading.decorators = [
-  StoreDecorator({
-    login: { isLoading: true },
-  }),
+  StoreDecorator(
+    {
+      login: { isLoading: true },
+    },
+    { login: loginReducer },
+  ),
   ThemeDecorator(Themes.DARK),
 ];
