@@ -7,12 +7,12 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/user';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 const App: FC = () => {
   const { theme } = useThemes();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(userActions.initUserData());

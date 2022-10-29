@@ -2,9 +2,10 @@ import { getUserAuthData, userActions } from 'entities/user';
 import { LoginModal } from 'features/authByUsername';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 
 import cls from './Navbar.module.scss';
@@ -16,7 +17,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation();
   const { authData } = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [isLogInModal, setIsLogInModal] = useState<boolean>(false);
 
