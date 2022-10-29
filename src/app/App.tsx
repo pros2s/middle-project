@@ -7,7 +7,7 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { userActions } from 'entities/user';
+import { userActions } from 'eNtities/user';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 const App: FC = () => {

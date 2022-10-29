@@ -5,8 +5,8 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CounterSchema } from 'entities/counter';
-import { UserSchema } from 'entities/user';
+import { CounterSchema } from 'eNtities/counter';
+import { UserSchema } from 'eNtities/user';
 import { LoginSchema } from 'features/authByUsername';
 
 export interface StateSchema {

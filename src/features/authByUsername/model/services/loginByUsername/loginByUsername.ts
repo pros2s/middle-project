@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { User, userActions } from 'entities/user';
+import { User, userActions } from 'eNtities/user';
 import i18n from 'shared/config/i18n/i18n';
 import { LOCALE_STORAGE_USER_KEY } from 'shared/consts/localeStorage';
 import axios from 'axios';

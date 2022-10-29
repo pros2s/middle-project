@@ -1,4 +1,4 @@
-import { Counter } from 'entities/counter';
+import { Counter } from 'eNtities/counter';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
