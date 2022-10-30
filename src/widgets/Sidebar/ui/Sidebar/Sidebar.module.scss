@@ -17,19 +17,6 @@
   margin: 20px 10px;
 }
 
-.link {
-  display: flex;
-
-  margin-bottom: 10px;
-}
-
-.icon {
-  margin: auto;
-  margin-right: 10px;
-
-  fill: var(--inverted-primary-color);
-}
-
 .footer {
   position: absolute;
   bottom: 20px;
@@ -62,17 +49,5 @@
 
   footer {
     flex-direction: column;
-  }
-
-  .link {
-    margin-bottom: 20px;
-  }
-
-  .text {
-    display: none;
-  }
-
-  .icon {
-    margin-right: 0;
   }
 }

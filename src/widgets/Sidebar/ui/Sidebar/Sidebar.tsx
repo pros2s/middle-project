@@ -1,14 +1,12 @@
 import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonSizes, ButtonThemes } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { SidebarPagesLinks } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
-import MainPageSVG from 'shared/assets/icons/main-page.svg';
-import AboutPageSVG from 'shared/assets/icons/about-page.svg';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -17,7 +15,6 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { t } = useTranslation();
 
   const onToggle = () => {
     setCollapsed((state) => !state);
@@ -31,18 +28,9 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       })}
     >
       <header className={cls.header}>
-        <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to='/'>
-          <MainPageSVG className={cls.icon} />
-          <span className={cls.text}>{t('mainPageBTN')}</span>
-        </AppLink>
-        <AppLink
-          className={cls.link}
-          theme={AppLinkTheme.SECONDARY}
-          to='/about'
-        >
-          <AboutPageSVG className={cls.icon} />
-          <span className={cls.text}>{t('aboutPageBTN')}</span>
-        </AppLink>
+        {SidebarPagesLinks.map((item) => (
+          <SidebarItem collapsed={collapsed} item={item} key={item.path} />
+        ))}
       </header>
       <Button
         data-testid='collapsedBTN'
