@@ -1,4 +1,3 @@
-import { getUserAuthData, userActions } from 'eNtities/user';
 import { LoginModal } from 'features/authByUsername';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
+import { getUserAuthData, userActions } from 'entitties/user';
 
 import cls from './Navbar.module.scss';
 

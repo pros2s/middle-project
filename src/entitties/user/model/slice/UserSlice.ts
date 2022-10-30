@@ -6,7 +6,7 @@ const initialState: UserSchema = {
   authData: undefined,
 };
 
-const userSlice = createSlice({
+const UserSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -26,5 +26,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { actions: userActions } = userSlice;
-export const { reducer: userReducer } = userSlice;
+export const { actions: userActions } = UserSlice;
+export const { reducer: userReducer } = UserSlice;

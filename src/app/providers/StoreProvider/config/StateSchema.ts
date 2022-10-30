@@ -5,12 +5,10 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CounterSchema } from 'eNtities/counter';
-import { UserSchema } from 'eNtities/user';
 import { LoginSchema } from 'features/authByUsername';
+import { UserSchema } from 'entitties/user';
 
 export interface StateSchema {
-  counter: CounterSchema;
   user: UserSchema;
 
   // Async reducers
