@@ -31,6 +31,10 @@
   "mainPageText": "",
   "notFoundPage": "",
   "pageError": "",
+  "profilePageBTN": "",
+  "profilePageText": "",
+  "{$}": "",
+  "{}": "",
   "Ввод": "",
   "Ввод>": ""
 }
