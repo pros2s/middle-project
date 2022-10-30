@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const ProfilePage: FC = () => {
+const ProfilePage = memo(() => {
   const { t } = useTranslation('profilePage');
 
   return <div>{t('profilePageText')}</div>;
-};
+});
 
 export default ProfilePage;

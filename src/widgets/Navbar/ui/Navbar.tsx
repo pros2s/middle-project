@@ -1,5 +1,5 @@
 import { LoginModal } from 'features/authByUsername';
-import { FC, useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const { authData } = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
@@ -56,4 +56,4 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       </div>
     </nav>
   );
-};
+});

@@ -17,7 +17,7 @@ import cls from './Modal.module.scss';
 interface ModalProps {
   className?: string;
   isLazy?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   isOpen: boolean;
   onClose: () => void;
 }

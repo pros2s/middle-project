@@ -1,10 +1,10 @@
-import { FC, Suspense } from 'react';
+import { memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { PageLoader } from 'widgets/PageLoader';
 
 import { routesConfig } from '../config/routesConfig';
 
-const RoutesProvider: FC = () => (
+const RoutesProvider = memo(() => (
   <Routes>
     {Object.values(routesConfig).map(({ element, path }) => (
       <Route
@@ -18,6 +18,6 @@ const RoutesProvider: FC = () => (
       />
     ))}
   </Routes>
-);
+));
 
 export default RoutesProvider;

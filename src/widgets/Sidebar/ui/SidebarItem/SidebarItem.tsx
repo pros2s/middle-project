@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { SidebarItemType } from 'widgets/Sidebar/model/items';
+import { SidebarItemType } from '../../model/items';
 
 import cls from './SidebarItem.module.scss';
 
@@ -12,7 +12,7 @@ interface SidebarItemProps {
   collapsed: boolean;
 }
 
-export const SidebarItem: FC<SidebarItemProps> = ({ item, collapsed }) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation();
 
   return (
@@ -25,4 +25,4 @@ export const SidebarItem: FC<SidebarItemProps> = ({ item, collapsed }) => {
       <span className={cls.text}>{t(`${item.text}`)}</span>
     </AppLink>
   );
-};
+});

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSizes, ButtonThemes } from 'shared/ui/Button/Button';
@@ -13,12 +13,20 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   const onToggle = () => {
     setCollapsed((state) => !state);
   };
+
+  const pages = useMemo(
+    () =>
+      SidebarPagesLinks.map((item) => (
+        <SidebarItem collapsed={collapsed} item={item} key={item.path} />
+      )),
+    [collapsed],
+  );
 
   return (
     <div
@@ -27,11 +35,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         [cls.collapsed]: collapsed,
       })}
     >
-      <header className={cls.header}>
-        {SidebarPagesLinks.map((item) => (
-          <SidebarItem collapsed={collapsed} item={item} key={item.path} />
-        ))}
-      </header>
+      <header className={cls.header}>{pages}</header>
       <Button
         data-testid='collapsedBTN'
         type='button'
@@ -54,4 +58,4 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       </footer>
     </div>
   );
-};
+});
