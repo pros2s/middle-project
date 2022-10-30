@@ -7,12 +7,14 @@ import {
 } from '@reduxjs/toolkit';
 import { LoginSchema } from 'features/authByUsername';
 import { UserSchema } from 'entitties/user';
+import { ProfileSchema } from 'entitties/profile';
 
 export interface StateSchema {
   user: UserSchema;
 
   // Async reducers
   login?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaFields = keyof StateSchema;
