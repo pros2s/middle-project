@@ -3,6 +3,7 @@
   "Auth": "",
   "AuthError": "",
   "COLLAPSE": "",
+  "EditProfile": "",
   "Form title": "",
   "Insert": "Ввод",
   "Insert>": "",
@@ -20,6 +21,9 @@
       }
     }
   },
+  "ProfileError": "",
+  "ProfileName": "",
+  "ProfileUsername": "",
   "ShortLanguage": "",
   "Your text": "",
   "aboutPageBTN": "",

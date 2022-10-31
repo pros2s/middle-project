@@ -1,4 +1,8 @@
 {
   "profilePageText": "Профиль",
-  "profilePageBTN": "ПРОФИЛЬ"
+  "profilePageBTN": "ПРОФИЛЬ",
+  "ProfileError": "Ошибка при закгрузке данных профиля\n",
+  "EditProfile": "Редактировать",
+  "ProfileName": "Имя",
+  "ProfileUsername": "Имя пользователя"
 }

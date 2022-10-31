@@ -27,6 +27,12 @@
 
   background: none;
   border: 1px solid var(--primary-color);
+
+  &:hover {
+    color: white;
+
+    background-color: var(--primary-color);
+  }
 }
 
 .background {

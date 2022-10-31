@@ -1,12 +1,16 @@
-import { FC } from 'react';
+import { memo } from 'react';
 
 import './Loader.scss';
 
-export const Loader: FC = () => (
-  <div className='lds-ring'>
-    <div />
-    <div />
-    <div />
-    <div />
+interface LoaderProps {
+  size?: string;
+}
+
+export const Loader = memo(({ size }: LoaderProps) => (
+  <div style={{ height: size, width: size }} className='lds-ring'>
+    <div style={{ height: size, width: size }} />
+    <div style={{ height: size, width: size }} />
+    <div style={{ height: size, width: size }} />
+    <div style={{ height: size, width: size }} />
   </div>
-);
+));

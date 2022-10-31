@@ -1,4 +1,8 @@
 {
   "profilePageText": "Profile",
-  "profilePageBTN": "PROFILE"
+  "profilePageBTN": "PROFILE",
+  "ProfileError": "Error with fetch profile data",
+  "EditProfile": "Edit",
+  "ProfileName": "Name",
+  "ProfileUsername": "Username"
 }
