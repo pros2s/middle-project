@@ -12,7 +12,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
 
-  config.plugins.push(new webpack.DefinePlugin({ __IS_DEV__: true }));
+  config.plugins.push(
+    new webpack.DefinePlugin({ __IS_DEV__: true, __API__: true }),
+  );
   config.resolve.modules = [paths.src, 'node_modules'];
   config.resolve.extensions.push('.ts', '.tsx');
 

@@ -16,9 +16,9 @@ export const renderComponent = (
   { route = '/', preloadedState }: RenderComponentOptions = {},
 ) =>
   render(
-    <StoreProvider preloadedState={preloadedState}>
-      <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter initialEntries={[route]}>
+      <StoreProvider preloadedState={preloadedState}>
         <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
-      </MemoryRouter>
-    </StoreProvider>,
+      </StoreProvider>
+    </MemoryRouter>,
   );
