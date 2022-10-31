@@ -1,4 +1,15 @@
-.header {
+.nav {
   display: flex;
   justify-content: space-between;
+}
+
+.header {
+  display: flex;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+
+  margin-left: 20px;
 }

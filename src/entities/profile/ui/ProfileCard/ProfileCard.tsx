@@ -1,4 +1,5 @@
 import { getProfileData } from 'entities/profile/model/selectors/getProfileData/getProfileData';
+import { getProfileError } from 'entities/profile/model/selectors/getProfileError/getProfileError';
 import { getProfileLoading } from 'entities/profile/model/selectors/getProfileLoading/getProfileLoading';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +9,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextThemes } from 'shared/ui/Text/Text';
 
 import cls from './ProfileCard.module.scss';
 
@@ -20,14 +21,22 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
   const { t } = useTranslation('profilePage');
   const { data } = useSelector(getProfileData);
   const isLoading = useSelector(getProfileLoading);
+  const errorMessage = useSelector(getProfileError);
 
   return (
     <div className={classNames(cls.ProfileCard, [className])}>
-      <header className={cls.header}>
-        <Text title={t('profilePageText')} />
-        {isLoading && <Loader size='30px' />}
+      <nav className={cls.nav}>
+        <header className={cls.header}>
+          <Text title={t('profilePageText')} />
+          <div className={cls.error}>
+            {errorMessage && (
+              <Text text={errorMessage} theme={TextThemes.ERROR} />
+            )}
+          </div>
+          {isLoading && <Loader size='30px' />}
+        </header>
         <Button theme={ButtonThemes.OUTLINE}>{t('EditProfile')}</Button>
-      </header>
+      </nav>
 
       <Input value={data?.name} placeholder={t('ProfileName')} />
 

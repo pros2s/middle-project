@@ -12,12 +12,12 @@
 
 .error {
   .title {
-    color: var(--error-light);
+    color: var(--error-title);
     font: var(--font-m);
   }
 
   .text {
-    color: var(--error-dark);
+    color: var(--error-text);
     font: var(--font-s);
   }
 }
