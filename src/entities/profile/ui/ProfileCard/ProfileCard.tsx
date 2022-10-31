@@ -19,7 +19,7 @@ interface ProfileCardProps {
 
 export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
   const { t } = useTranslation('profilePage');
-  const { data } = useSelector(getProfileData);
+  const data = useSelector(getProfileData);
   const isLoading = useSelector(getProfileLoading);
   const errorMessage = useSelector(getProfileError);
 

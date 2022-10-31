@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 
 import cls from './Modal.module.scss';
@@ -79,7 +79,7 @@ export const Modal: FC<ModalProps> = ({
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mode = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };

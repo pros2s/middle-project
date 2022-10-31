@@ -35,7 +35,7 @@ export interface ReduxStoreWithManger extends EnhancedStore<StateSchema> {
 
 export interface ThunkAPI {
   api: AxiosInstance;
-  navigate: (to: To, options?: NavigateOptions) => void;
+  navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {

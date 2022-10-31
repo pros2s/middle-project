@@ -62,6 +62,7 @@ module.exports = {
     // typescript
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     // react
     'react/jsx-filename-extension': [
       2,
@@ -85,6 +86,7 @@ module.exports = {
     'object-curly-newline': 'off',
     'no-plusplus': 'off',
     'no-param-reassign': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
