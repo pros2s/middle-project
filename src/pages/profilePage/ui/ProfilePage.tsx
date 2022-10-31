@@ -1,4 +1,4 @@
-import { profileReducer } from 'entitties/profile';
+import { profileReducer } from 'entities/profile';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {

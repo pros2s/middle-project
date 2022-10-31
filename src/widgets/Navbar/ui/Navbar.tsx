@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
-import { getUserAuthData, userActions } from 'entitties/user';
+import { getUserAuthData, userActions } from 'entities/user';
 
 import cls from './Navbar.module.scss';
 

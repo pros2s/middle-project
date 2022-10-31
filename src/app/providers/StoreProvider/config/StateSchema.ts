@@ -6,8 +6,8 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { LoginSchema } from 'features/authByUsername';
-import { UserSchema } from 'entitties/user';
-import { ProfileSchema } from 'entitties/profile';
+import { UserSchema } from 'entities/user';
+import { ProfileSchema } from 'entities/profile';
 
 export interface StateSchema {
   user: UserSchema;
