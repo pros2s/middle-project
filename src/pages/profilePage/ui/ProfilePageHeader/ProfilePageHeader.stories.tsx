@@ -2,26 +2,30 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { profileReducer } from '../model/slice/ProfileSlice';
-import ProfilePage from './ProfilePage';
+import { profileReducer } from '../../model/slice/ProfileSlice';
+import { ProfilePageHeader } from './ProfilePageHeader';
 
 export default {
-  title: 'Pages/ProfilePage',
-  component: ProfilePage,
+  title: 'Pages/ProfilePageHeader',
+  component: ProfilePageHeader,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ProfilePage>;
+} as ComponentMeta<typeof ProfilePageHeader>;
 
-const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
+const Template: ComponentStory<typeof ProfilePageHeader> = () => (
+  <ProfilePageHeader />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [StoreDecorator({}, { profile: profileReducer })];
+Default.decorators = [
+  StoreDecorator({ profile: { readonly: true } }, { profile: profileReducer }),
+];
 
 export const DefaultDark = Template.bind({});
 DefaultDark.args = {};
 DefaultDark.decorators = [
-  StoreDecorator({}, { profile: profileReducer }),
+  StoreDecorator({ profile: { readonly: true } }, { profile: profileReducer }),
   ThemeDecorator(Themes.DARK),
 ];

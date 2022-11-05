@@ -4,5 +4,6 @@
   "ProfileError": "Ошибка при закгрузке данных профиля\n",
   "EditProfile": "Редактировать",
   "ProfileName": "Имя",
-  "ProfileUsername": "Имя пользователя"
+  "ProfileUsername": "Имя пользователя",
+  "CancelEditProfile": "Отменить"
 }

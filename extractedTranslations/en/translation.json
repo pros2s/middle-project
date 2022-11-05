@@ -3,6 +3,9 @@
   "Auth": "",
   "AuthError": "",
   "COLLAPSE": "",
+  "Can": "",
+  "Cancel": "",
+  "CancelEditProfile": "",
   "EditProfile": "",
   "Form title": "",
   "Insert": "Insert",
@@ -28,6 +31,9 @@
   "Your text": "",
   "aboutPageBTN": "",
   "aboutPageText": "",
+  "i18n": {
+    "t(": ""
+  },
   "log": "",
   "log in": "",
   "login": "",

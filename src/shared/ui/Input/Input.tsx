@@ -22,6 +22,7 @@ interface InputProps extends DefaultInputProps {
   value?: string;
   placeholder?: string;
   isAutoFocus?: boolean;
+  readOnly?: boolean;
   onChange?: (value: string) => void;
 }
 
@@ -33,6 +34,7 @@ export const Input = memo(
     type,
     placeholder,
     isAutoFocus,
+    readOnly,
     ...otherProps
   }: InputProps) => {
     const { t } = useTranslation();
@@ -40,6 +42,8 @@ export const Input = memo(
 
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const [caretPosition, setCaretPosition] = useState<number>(0);
+
+    const isCarretVisible = isFocused && !readOnly;
 
     useEffect(() => {
       if (isAutoFocus) {
@@ -67,7 +71,11 @@ export const Input = memo(
     };
 
     return (
-      <div className={classNames(cls.InputWrapper, [className])}>
+      <div
+        className={classNames(cls.InputWrapper, [className], {
+          [cls.readOnly]: readOnly,
+        })}
+      >
         {placeholder ? (
           <p className={cls.placeholder}>{`${placeholder}>`}</p>
         ) : (
@@ -83,9 +91,10 @@ export const Input = memo(
             onBlur={onBlur}
             onFocus={onFocus}
             onSelect={onSelect}
+            readOnly={readOnly}
             {...otherProps}
           />
-          {isFocused && (
+          {isCarretVisible && (
             <span style={{ left: caretPosition * 8.9 }} className={cls.caret} />
           )}
         </section>

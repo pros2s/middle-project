@@ -4,5 +4,6 @@
   "ProfileError": "Error with fetch profile data",
   "EditProfile": "Edit",
   "ProfileName": "Name",
-  "ProfileUsername": "Username"
+  "ProfileUsername": "Username",
+  "CancelEditProfile": "Cancel"
 }

@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import i18n from 'shared/config/i18n/i18n';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile } from 'entities/profile';
 
@@ -17,6 +16,6 @@ export const fetchProfileData = createAsyncThunk<
 
     return response.data;
   } catch (e) {
-    return rejectWithValue(i18n.t('ProfileError'));
+    return rejectWithValue('error');
   }
 });

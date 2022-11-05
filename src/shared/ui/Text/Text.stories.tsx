@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import { Text, TextThemes } from './Text';
+import { Text, TextAlign, TextThemes } from './Text';
 
 export default {
   title: 'Shared/Text',
@@ -28,6 +28,60 @@ PrimaryDark.args = {
   theme: TextThemes.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Themes.DARK)];
+
+// PRIMARY LEFT
+export const PrimaryLeft = Template.bind({});
+PrimaryLeft.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.LEFT,
+};
+
+export const PrimaryLeftDark = Template.bind({});
+PrimaryLeftDark.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.LEFT,
+};
+PrimaryLeftDark.decorators = [ThemeDecorator(Themes.DARK)];
+
+// PRIMARY LEFT
+export const PrimaryRight = Template.bind({});
+PrimaryRight.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.RIGHT,
+};
+
+export const PrimaryRightDark = Template.bind({});
+PrimaryRightDark.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.RIGHT,
+};
+PrimaryRightDark.decorators = [ThemeDecorator(Themes.DARK)];
+
+// PRIMARY LEFT
+export const PrimaryCenter = Template.bind({});
+PrimaryCenter.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.CENTER,
+};
+
+export const PrimaryCenterDark = Template.bind({});
+PrimaryCenterDark.args = {
+  title: 'Title',
+  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. EligendiLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi',
+  theme: TextThemes.PRIMARY,
+  align: TextAlign.CENTER,
+};
+PrimaryCenterDark.decorators = [ThemeDecorator(Themes.DARK)];
 
 // Only title
 export const Title = Template.bind({});
