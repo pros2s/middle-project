@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { updateProfileData } from '../../model/services/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
 import { getReadOnly } from '../../model/selectors/getReadOnly/getReadOnly';
 
@@ -31,6 +32,11 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
     dispatch(profileActions.cancelChangeProfileData());
   }, [dispatch]);
 
+  const onSaveChanges = useCallback(() => {
+    dispatch(profileActions.setReadOnly(true));
+    dispatch(updateProfileData());
+  }, [dispatch]);
+
   return (
     <header className={classNames(cls.ProfilePageHeader, [className])}>
       <Text title={t('profilePageText')} />
@@ -39,9 +45,14 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
           {t('EditProfile')}
         </Button>
       ) : (
-        <Button onClick={onCancelEdit} theme={ButtonThemes.OUTLINE}>
-          {t('CancelEditProfile')}
-        </Button>
+        <div className={cls.buttons}>
+          <Button onClick={onSaveChanges} theme={ButtonThemes.CANCEL}>
+            {t('SaveProfileChanges')}
+          </Button>
+          <Button onClick={onCancelEdit} theme={ButtonThemes.OUTLINE}>
+            {t('CancelEditProfile')}
+          </Button>
+        </div>
       )}
     </header>
   );

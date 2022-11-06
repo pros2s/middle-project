@@ -45,6 +45,34 @@ const ProfilePage = memo(() => {
     [dispatch],
   );
 
+  const onChangeAge = useCallback(
+    (value: string) => {
+      dispatch(profileActions.changeProfileData({ age: Number(value) }));
+    },
+    [dispatch],
+  );
+
+  const onChangeCity = useCallback(
+    (value: string) => {
+      dispatch(profileActions.changeProfileData({ city: value }));
+    },
+    [dispatch],
+  );
+
+  // const onChangeCountry = useCallback(
+  //   (value: Country) => {
+  //     dispatch(profileActions.changeProfileData({ country: value }));
+  //   },
+  //   [dispatch],
+  // );
+
+  // const onChangeCurrency = useCallback(
+  //   (value: Currency) => {
+  //     dispatch(profileActions.changeProfileData({ currency: value }));
+  //   },
+  //   [dispatch],
+  // );
+
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
       <div className={cls.profile}>
@@ -56,6 +84,8 @@ const ProfilePage = memo(() => {
           isLoading={isLoading}
           onChangeName={onChangeName}
           onChangeUsername={onChangeUsername}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
         />
       </div>
     </DynamicReducerLoader>

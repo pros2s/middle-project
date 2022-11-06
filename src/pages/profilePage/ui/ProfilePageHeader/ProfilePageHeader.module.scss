@@ -1,4 +1,16 @@
 .ProfilePageHeader {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid;
+}
+
+.buttons {
+  display: flex;
+
+  & > :first-child {
+    margin-right: 10px;
+  }
 }

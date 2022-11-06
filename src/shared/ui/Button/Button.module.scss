@@ -40,6 +40,19 @@
   border: none;
 }
 
+.cancel {
+  color: var(--error-text);
+
+  background: none;
+  border: 1px solid var(--error-text);
+
+  &:hover {
+    color: white;
+
+    background-color: var(--error-text);
+  }
+}
+
 .backgroundInverted {
   color: var(--inverted-primary-color);
 

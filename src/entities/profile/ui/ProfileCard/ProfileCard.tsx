@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, KeyboardEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -17,6 +17,10 @@ interface ProfileCardProps {
   data?: Profile;
   onChangeName?: (value: string) => void;
   onChangeUsername?: (value: string) => void;
+  onChangeAge?: (value: string) => void;
+  onChangeCity?: (value: string) => void;
+  // onChangeCountry?: (value: Country) => void;
+  // onChangeCurrency?: (value: Currency) => void;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = ({
@@ -27,8 +31,21 @@ export const ProfileCard: FC<ProfileCardProps> = ({
   isLoading,
   onChangeName,
   onChangeUsername,
+  onChangeAge,
+  onChangeCity,
+  // onChangeCountry,
+  // onChangeCurrency,
 }) => {
   const { t } = useTranslation('profilePage');
+
+  const ageInputChange = useCallback(
+    (event: KeyboardEvent<HTMLInputElement>) => {
+      if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();
+      }
+    },
+    [],
+  );
 
   if (errorMessage) {
     return (
@@ -61,6 +78,34 @@ export const ProfileCard: FC<ProfileCardProps> = ({
         readOnly={readOnly}
         onChange={onChangeUsername}
       />
+
+      <Input
+        value={data?.age}
+        placeholder={t('ProfileAge')}
+        readOnly={readOnly}
+        onChange={onChangeAge}
+        onKeyPress={(e) => ageInputChange(e)}
+      />
+
+      <Input
+        value={data?.city}
+        placeholder={t('ProfileCity')}
+        readOnly={readOnly}
+        onChange={onChangeCity}
+      />
+      {/* <Input
+        value={data?.country}
+        placeholder={t('ProfileCountry')}
+        readOnly={readOnly}
+        onChange={onChangeCountry}
+      />
+
+      <Input
+        value={data?.currency}
+        placeholder={t('ProfileCurrency')}
+        readOnly={readOnly}
+        onChange={onChangeCurrency}
+      /> */}
     </div>
   );
 };

@@ -5,5 +5,10 @@
   "EditProfile": "Редактировать",
   "ProfileName": "Имя",
   "ProfileUsername": "Имя пользователя",
-  "CancelEditProfile": "Отменить"
+  "CancelEditProfile": "Отменить",
+  "ProfileAge": "Возраст",
+  "ProfileCity": "Город",
+  "ProfileCountry": "Страна",
+  "ProfileCurrency": "Валюта",
+  "SaveProfileChanges": "Сохранить"
 }

@@ -5,5 +5,10 @@
   "EditProfile": "Edit",
   "ProfileName": "Name",
   "ProfileUsername": "Username",
-  "CancelEditProfile": "Cancel"
+  "CancelEditProfile": "Cancel",
+  "ProfileAge": "Age",
+  "ProfileCity": "City",
+  "ProfileCountry": "Country",
+  "ProfileCurrency": "Currency",
+  "SaveProfileChanges": "Save"
 }

@@ -24,9 +24,16 @@
       }
     }
   },
+  "ProfileAge": "",
+  "ProfileCity": "",
+  "ProfileCountry": "",
+  "ProfileCurrency": "",
   "ProfileError": "",
   "ProfileName": "",
   "ProfileUsername": "",
+  "Profilecountry": "",
+  "Profilecurrency": "",
+  "SaveProfileChanges": "",
   "ShortLanguage": "",
   "Your text": "",
   "aboutPageBTN": "",

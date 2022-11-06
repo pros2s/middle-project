@@ -19,7 +19,7 @@ type DefaultInputProps = Omit<
 
 interface InputProps extends DefaultInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   placeholder?: string;
   isAutoFocus?: boolean;
   readOnly?: boolean;
