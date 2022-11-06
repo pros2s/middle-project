@@ -6,6 +6,8 @@ import {
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ProfileCard } from 'entities/profile';
+import { Country } from 'entities/countrySelect';
+import { Currency } from 'entities/currencySelect';
 import { getReadOnly } from '../model/selectors/getReadOnly/getReadOnly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
@@ -66,6 +68,20 @@ const ProfilePage = memo(() => {
     [dispatch],
   );
 
+  const onChangeCountry = useCallback(
+    (country: Country) => {
+      dispatch(profileActions.changeProfileData({ country }));
+    },
+    [dispatch],
+  );
+
+  const onChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.changeProfileData({ currency }));
+    },
+    [dispatch],
+  );
+
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
       <div className={cls.profile}>
@@ -80,8 +96,8 @@ const ProfilePage = memo(() => {
           onChangeAge={onChangeAge}
           onChangeCity={onChangeCity}
           onChangeAvatar={onChangeAvatar}
-          // onChangeCurrency={onChangeCurrency}
-          // onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicReducerLoader>
