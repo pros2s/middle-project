@@ -1,0 +1,27 @@
+.Select {
+  display: flex;
+}
+
+.select {
+  color: var(--primary-color);
+
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  outline: none;
+}
+
+.label {
+  color: var(--primary-color);
+  text-shadow: 0 0 2px rgb(0 0 0 / 40%);
+}
+
+.option {
+  color: var(--inverted-primary-color);
+
+  background: var(--primary-color);
+}
+
+.readOnly {
+  opacity: 0.9;
+}

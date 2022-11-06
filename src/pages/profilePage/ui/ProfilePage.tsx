@@ -66,20 +66,6 @@ const ProfilePage = memo(() => {
     [dispatch],
   );
 
-  // const onChangeCountry = useCallback(
-  //   (value: Country) => {
-  //     dispatch(profileActions.changeProfileData({ country: value }));
-  //   },
-  //   [dispatch],
-  // );
-
-  // const onChangeCurrency = useCallback(
-  //   (value: Currency) => {
-  //     dispatch(profileActions.changeProfileData({ currency: value }));
-  //   },
-  //   [dispatch],
-  // );
-
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
       <div className={cls.profile}>
@@ -94,6 +80,8 @@ const ProfilePage = memo(() => {
           onChangeAge={onChangeAge}
           onChangeCity={onChangeCity}
           onChangeAvatar={onChangeAvatar}
+          // onChangeCurrency={onChangeCurrency}
+          // onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicReducerLoader>

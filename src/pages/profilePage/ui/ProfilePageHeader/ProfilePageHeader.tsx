@@ -46,10 +46,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
         </Button>
       ) : (
         <div className={cls.buttons}>
-          <Button onClick={onSaveChanges} theme={ButtonThemes.CANCEL}>
+          <Button onClick={onSaveChanges} theme={ButtonThemes.OUTLINE}>
             {t('SaveProfileChanges')}
           </Button>
-          <Button onClick={onCancelEdit} theme={ButtonThemes.OUTLINE}>
+          <Button onClick={onCancelEdit} theme={ButtonThemes.CANCEL}>
             {t('CancelEditProfile')}
           </Button>
         </div>

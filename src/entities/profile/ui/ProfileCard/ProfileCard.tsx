@@ -21,8 +21,8 @@ interface ProfileCardProps {
   onChangeAge?: (value: string) => void;
   onChangeCity?: (value: string) => void;
   onChangeAvatar?: (value: string) => void;
-  // onChangeCountry?: (value: Country) => void;
-  // onChangeCurrency?: (value: Currency) => void;
+  // onChangeCountry?: (value: string) => void;
+  // onChangeCurrency?: (value: string) => void;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = ({
@@ -40,6 +40,24 @@ export const ProfileCard: FC<ProfileCardProps> = ({
   // onChangeCurrency,
 }) => {
   const { t } = useTranslation('profilePage');
+
+  // const countryOptions = useMemo(
+  //   () =>
+  //     Object.entries(Country).map((val) => ({
+  //       value: val[0],
+  //       content: val[1],
+  //     })),
+  //   [],
+  // );
+
+  // const currencyOptions = useMemo(
+  //   () =>
+  //     Object.entries(Currency).map((val) => ({
+  //       value: val[0],
+  //       content: val[1],
+  //     })),
+  //   [],
+  // );
 
   const ageInputChange = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
@@ -88,7 +106,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
         placeholder={t('ProfileAge')}
         readOnly={readOnly}
         onChange={onChangeAge}
-        onKeyPress={(e) => ageInputChange(e)}
+        onKeyPress={ageInputChange}
       />
 
       <Input
@@ -104,17 +122,17 @@ export const ProfileCard: FC<ProfileCardProps> = ({
         readOnly={readOnly}
         onChange={onChangeAvatar}
       />
-      {/* <Input
-        value={data?.country}
-        placeholder={t('ProfileCountry')}
+
+      {/* <CounrySelect
+        label={t('ProfileCountry')}
         readOnly={readOnly}
+        options={countryOptions}
         onChange={onChangeCountry}
       />
-
-      <Input
-        value={data?.currency}
-        placeholder={t('ProfileCurrency')}
+      <CurrencySelect
+        label={t('ProfileCurrency')}
         readOnly={readOnly}
+        options={currencyOptions}
         onChange={onChangeCurrency}
       /> */}
     </div>
