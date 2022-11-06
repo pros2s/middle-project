@@ -10,5 +10,6 @@
   "ProfileCity": "Город",
   "ProfileCountry": "Страна",
   "ProfileCurrency": "Валюта",
-  "SaveProfileChanges": "Сохранить"
+  "SaveProfileChanges": "Сохранить",
+  "ProfileAvatar": "Фотография"
 }

@@ -10,5 +10,6 @@
   "ProfileCity": "City",
   "ProfileCountry": "Country",
   "ProfileCurrency": "Currency",
-  "SaveProfileChanges": "Save"
+  "SaveProfileChanges": "Save",
+  "ProfileAvatar": "Avatar"
 }

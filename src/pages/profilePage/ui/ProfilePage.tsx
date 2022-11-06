@@ -59,6 +59,13 @@ const ProfilePage = memo(() => {
     [dispatch],
   );
 
+  const onChangeAvatar = useCallback(
+    (value: string) => {
+      dispatch(profileActions.changeProfileData({ avatar: value }));
+    },
+    [dispatch],
+  );
+
   // const onChangeCountry = useCallback(
   //   (value: Country) => {
   //     dispatch(profileActions.changeProfileData({ country: value }));
@@ -86,6 +93,7 @@ const ProfilePage = memo(() => {
           onChangeUsername={onChangeUsername}
           onChangeAge={onChangeAge}
           onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
         />
       </div>
     </DynamicReducerLoader>
