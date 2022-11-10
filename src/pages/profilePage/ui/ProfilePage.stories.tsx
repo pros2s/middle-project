@@ -5,6 +5,8 @@ import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { profileReducer } from '../model/slice/ProfileSlice';
 import ProfilePage from './ProfilePage';
 
+import avatar from './smartMonkey.jpg';
+
 export default {
   title: 'Pages/ProfilePage',
   component: ProfilePage,
@@ -16,12 +18,40 @@ export default {
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
 export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [StoreDecorator({}, { profile: profileReducer })];
+Default.decorators = [
+  StoreDecorator(
+    {
+      profile: {
+        readonly: true,
+        profileData: {
+          username: 'Username',
+          name: 'Name',
+          age: 22,
+          avatar,
+          city: 'City',
+        },
+      },
+    },
+    { profile: profileReducer },
+  ),
+];
 
 export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
 DefaultDark.decorators = [
-  StoreDecorator({}, { profile: profileReducer }),
+  StoreDecorator(
+    {
+      profile: {
+        readonly: true,
+        profileData: {
+          username: 'Username',
+          name: 'Name',
+          age: 22,
+          avatar,
+          city: 'City',
+        },
+      },
+    },
+    { profile: profileReducer },
+  ),
   ThemeDecorator(Themes.DARK),
 ];

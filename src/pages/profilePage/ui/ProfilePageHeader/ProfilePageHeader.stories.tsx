@@ -19,13 +19,11 @@ const Template: ComponentStory<typeof ProfilePageHeader> = () => (
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [
-  StoreDecorator({ profile: { readonly: true } }, { profile: profileReducer }),
-];
+Default.decorators = [StoreDecorator({}, { profile: profileReducer })];
 
 export const DefaultDark = Template.bind({});
 DefaultDark.args = {};
 DefaultDark.decorators = [
-  StoreDecorator({ profile: { readonly: true } }, { profile: profileReducer }),
+  StoreDecorator({}, { profile: profileReducer }),
   ThemeDecorator(Themes.DARK),
 ];
