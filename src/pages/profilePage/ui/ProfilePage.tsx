@@ -8,12 +8,16 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ProfileCard } from 'entities/profile';
 import { Country } from 'entities/countrySelect';
 import { Currency } from 'entities/currencySelect';
+import { getProfileValidateErrros } from 'pages/profilePage/model/selectors/getProfileValidateErrros/getProfileValidateErrros';
+import { Text, TextThemes } from 'shared/ui/Text/Text';
+import { ValidateProfileError } from 'entities/profile/model/types/ProfileSchema';
+import { useTranslation } from 'react-i18next';
 import { getReadOnly } from '../model/selectors/getReadOnly/getReadOnly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileError } from '../model/selectors/getProfileError/getProfileError';
 import { profileActions, profileReducer } from '../model/slice/ProfileSlice';
-import { fetchProfileData } from '../model/services/fetchProfileData';
+import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfileData';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 import cls from './ProfilePage.module.scss';
@@ -28,6 +32,17 @@ const ProfilePage = memo(() => {
   const isLoading = useSelector(getProfileLoading);
   const errorMessage = useSelector(getProfileError);
   const readOnly = useSelector(getReadOnly);
+  const validateErrors = useSelector(getProfileValidateErrros);
+
+  const { t } = useTranslation('profilePage');
+
+  const errorsTranslates = {
+    [ValidateProfileError.INCORRECT_AGE]: t('INCORRECT_AGE'),
+    [ValidateProfileError.INCORRECT_CITY]: t('INCORRECT_CITY'),
+    [ValidateProfileError.INCORRECT_DATA]: t('INCORRECT_DATA'),
+    [ValidateProfileError.NO_DATA]: t('NO_DATA'),
+    [ValidateProfileError.SERVER_ERROR]: t('SERVER_ERROR'),
+  };
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -86,6 +101,14 @@ const ProfilePage = memo(() => {
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
       <div className={cls.profile}>
         <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map((error) => (
+            <Text
+              key={error}
+              text={errorsTranslates[error]}
+              theme={TextThemes.ERROR}
+            />
+          ))}
         <ProfileCard
           data={profileData}
           errorMessage={errorMessage}

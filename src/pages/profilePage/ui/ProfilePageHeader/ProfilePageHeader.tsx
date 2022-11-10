@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
-import { updateProfileData } from '../../model/services/updateProfileData';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
 import { getReadOnly } from '../../model/selectors/getReadOnly/getReadOnly';
 
@@ -33,7 +33,6 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   }, [dispatch]);
 
   const onSaveChanges = useCallback(() => {
-    dispatch(profileActions.setReadOnly(true));
     dispatch(updateProfileData());
   }, [dispatch]);
 

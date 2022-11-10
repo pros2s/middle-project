@@ -11,5 +11,10 @@
   "ProfileCountry": "Country",
   "ProfileCurrency": "Currency",
   "SaveProfileChanges": "Save",
-  "ProfileAvatar": "Avatar"
+  "ProfileAvatar": "Avatar",
+  "INCORRECT_AGE": "Incorrect age",
+  "INCORRECT_CITY": "Incorrect city",
+  "INCORRECT_DATA": "Incorrect name or username",
+  "NO_DATA": "Incorrect Data",
+  "SERVER_ERROR": "Server error"
 }

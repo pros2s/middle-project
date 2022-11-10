@@ -11,5 +11,10 @@
   "ProfileCountry": "Страна",
   "ProfileCurrency": "Валюта",
   "SaveProfileChanges": "Сохранить",
-  "ProfileAvatar": "Фотография"
+  "ProfileAvatar": "Фотография",
+  "INCORRECT_AGE": "Некорректный возраст",
+  "INCORRECT_CITY": "Некорректный город",
+  "INCORRECT_DATA": "Некорректное имя или имя пользователя",
+  "NO_DATA": "Некорректные данные",
+  "SERVER_ERROR": "Ошибка сервера"
 }

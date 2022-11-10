@@ -8,6 +8,9 @@
   "CancelEditProfile": "",
   "EditProfile": "",
   "Form title": "",
+  "INCORRECT_AGE": "",
+  "INCORRECT_CITY": "",
+  "INCORRECT_DATA": "",
   "Insert": "Ввод",
   "Insert>": "",
   "InsertPassword": "",
@@ -24,6 +27,7 @@
       }
     }
   },
+  "NO_DATA": "",
   "ProfileAge": "",
   "ProfileAvatar": "",
   "ProfileCity": "",
@@ -34,6 +38,7 @@
   "ProfileUsername": "",
   "Profilecountry": "",
   "Profilecurrency": "",
+  "SERVER_ERROR": "",
   "SaveProfileChanges": "",
   "ShortLanguage": "",
   "Your text": "",
