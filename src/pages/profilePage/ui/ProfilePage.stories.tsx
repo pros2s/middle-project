@@ -2,10 +2,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import avatar from 'shared/lib/testHelpers/smartMonkey.jpg';
 import { profileReducer } from '../model/slice/ProfileSlice';
 import ProfilePage from './ProfilePage';
-
-import avatar from './smartMonkey.jpg';
 
 export default {
   title: 'Pages/ProfilePage',

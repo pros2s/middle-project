@@ -1,9 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import avatar from 'shared/lib/testHelpers/smartMonkey.jpg';
 import { ProfileCard } from './ProfileCard';
-
-import avatar from './smartMonkey.jpg';
 
 export default {
   title: 'Entities/ProfileCard',

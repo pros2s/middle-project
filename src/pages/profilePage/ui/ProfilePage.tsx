@@ -12,7 +12,7 @@ import { getProfileValidateErrros } from 'pages/profilePage/model/selectors/getP
 import { Text, TextThemes } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/profile/model/types/ProfileSchema';
 import { useTranslation } from 'react-i18next';
-import { getReadOnly } from '../model/selectors/getReadOnly/getReadOnly';
+import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileError } from '../model/selectors/getProfileError/getProfileError';
@@ -31,7 +31,7 @@ const ProfilePage = memo(() => {
   const profileData = useSelector(getProfileData);
   const isLoading = useSelector(getProfileLoading);
   const errorMessage = useSelector(getProfileError);
-  const readOnly = useSelector(getReadOnly);
+  const readOnly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrros);
 
   const { t } = useTranslation('profilePage');

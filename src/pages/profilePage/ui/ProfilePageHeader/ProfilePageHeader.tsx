@@ -8,7 +8,7 @@ import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
-import { getReadOnly } from '../../model/selectors/getReadOnly/getReadOnly';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 
 import cls from './ProfilePageHeader.module.scss';
 
@@ -22,7 +22,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   const { t } = useTranslation('profilePage');
   const dispatch = useAppDispatch();
 
-  const readOnly = useSelector(getReadOnly);
+  const readOnly = useSelector(getProfileReadonly);
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadOnly(false));
