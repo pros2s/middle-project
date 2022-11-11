@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildScssLoader } from './loaders/buildScssLoader';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export const buildLoaders = ({
   isDev,
@@ -19,24 +20,7 @@ export const buildLoaders = ({
 
   const cssLoader = buildScssLoader(isDev);
 
-  const babelLoader = {
-    test: /\.(js|jsx|ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['ru', 'en'],
-            },
-          ],
-        ],
-      },
-    },
-  };
+  const babelLoader = buildBabelLoader(isDev);
 
   const tsLoader = {
     test: /\.tsx?$/,
