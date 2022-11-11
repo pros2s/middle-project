@@ -17,7 +17,7 @@ export const CountrySelect = memo(
     const countryOptions = useMemo(
       () =>
         Object.entries(Country).map((val) => ({
-          value: val[0],
+          val: val[0],
           content: val[1],
         })),
       [],

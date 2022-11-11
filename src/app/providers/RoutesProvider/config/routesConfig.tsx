@@ -8,6 +8,8 @@ import {
   RoutesPaths,
 } from 'shared/lib/routes/routes';
 import { NotFoundPage } from 'pages/notFoundPage';
+import { ArticlesPage } from 'pages/articlesPage';
+import ArticleDetailsPage from 'pages/articleDetailsPage/ui/ArticleDetailsPage';
 
 export const routesConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.MAIN]: {
@@ -21,6 +23,16 @@ export const routesConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutesPaths.profile,
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLES]: {
+    path: RoutesPaths.articles,
+    element: <ArticlesPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_DETAILS]: {
+    path: `${RoutesPaths.articleDetails}:id`,
+    element: <ArticleDetailsPage />,
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {

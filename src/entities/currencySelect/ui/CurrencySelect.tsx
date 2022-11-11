@@ -17,7 +17,7 @@ export const CurrencySelect = memo(
     const currencyOptions = useMemo(
       () =>
         Object.entries(Currency).map((val) => ({
-          value: val[0],
+          val: val[0],
           content: val[1],
         })),
       [],

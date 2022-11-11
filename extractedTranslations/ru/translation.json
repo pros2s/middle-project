@@ -1,5 +1,6 @@
 {
   "": "",
+  "ArticleDetailsPageText": "",
   "Auth": "",
   "AuthError": "",
   "COLLAPSE": "",
@@ -44,6 +45,8 @@
   "Your text": "",
   "aboutPageBTN": "",
   "aboutPageText": "",
+  "articlesPageBTN": "",
+  "articlesPageText": "",
   "i18n": {
     "t(": ""
   },

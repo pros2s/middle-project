@@ -3,6 +3,7 @@ import i18n from 'shared/config/i18n/i18n';
 import MainPageSVG from 'shared/assets/icons/main-page.svg';
 import AboutPageSVG from 'shared/assets/icons/about-page.svg';
 import ProfilePageSVG from 'shared/assets/icons/profile-page.svg';
+import ArticlesPageSVG from 'shared/assets/icons/articles-page.svg';
 import { RoutesPaths } from 'shared/lib/routes/routes';
 
 export interface SidebarItemType {
@@ -27,6 +28,12 @@ export const SidebarPagesLinks: SidebarItemType[] = [
     Icon: ProfilePageSVG,
     path: RoutesPaths.profile,
     text: i18n.t('profilePageBTN'),
+    isAuthOnly: true,
+  },
+  {
+    Icon: ArticlesPageSVG,
+    path: RoutesPaths.articles,
+    text: i18n.t('articlesPageBTN'),
     isAuthOnly: true,
   },
 ];

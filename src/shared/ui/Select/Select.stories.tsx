@@ -17,8 +17,8 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Label:',
   options: [
-    { value: 'first value', content: 'first content' },
-    { value: 'second value', content: 'second content' },
+    { val: 'first value', content: 'first content' },
+    { val: 'second value', content: 'second content' },
   ],
 };
 
@@ -26,8 +26,8 @@ export const DefaultDark = Template.bind({});
 DefaultDark.args = {
   label: 'Label:',
   options: [
-    { value: 'first value', content: 'first content' },
-    { value: 'second value', content: 'second content' },
+    { val: 'first value', content: 'first content' },
+    { val: 'second value', content: 'second content' },
   ],
 };
 DefaultDark.decorators = [ThemeDecorator(Themes.DARK)];
@@ -36,13 +36,13 @@ export const ReadOnly = Template.bind({});
 ReadOnly.args = {
   label: 'Label:',
   readOnly: true,
-  options: [{ value: 'first value', content: 'first content' }],
+  options: [{ val: 'first value', content: 'first content' }],
 };
 
 export const ReadOnlyDark = Template.bind({});
 ReadOnlyDark.args = {
   label: 'Label:',
   readOnly: true,
-  options: [{ value: 'first value', content: 'first content' }],
+  options: [{ val: 'first value', content: 'first content' }],
 };
 ReadOnlyDark.decorators = [ThemeDecorator(Themes.DARK)];

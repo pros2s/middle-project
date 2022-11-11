@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 
 interface SelectOptions {
-  value: string;
+  val: string;
   content: string;
 }
 
@@ -29,8 +29,8 @@ export const Select = memo(
         options?.map((option) => (
           <option
             className={cls.option}
-            value={option.value}
-            key={option.value}
+            value={option.val}
+            key={option.val}
           >
             {option.content}
           </option>
