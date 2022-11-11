@@ -1,23 +1,31 @@
-import { memo, Suspense } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { AppRouteProps } from 'shared/lib/routes/routes';
 import { PageLoader } from 'widgets/PageLoader';
+import { RequireAuth } from './RequireAuth';
 
 import { routesConfig } from '../config/routesConfig';
 
-const RoutesProvider = memo(() => (
-  <Routes>
-    {Object.values(routesConfig).map(({ element, path }) => (
+const RoutesProvider = memo(() => {
+  const renderRoutes = useCallback((route: AppRouteProps) => {
+    const element = (
+      <Suspense fallback={<PageLoader />}>
+        <div className='page-wrapper'>{route.element}</div>
+      </Suspense>
+    );
+
+    return (
       <Route
-        key={path}
-        path={path}
+        key={route.path}
+        path={route.path}
         element={
-          <Suspense fallback={<PageLoader />}>
-            <div className='page-wrapper'>{element}</div>
-          </Suspense>
+          route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
         }
       />
-    ))}
-  </Routes>
-));
+    );
+  }, []);
+
+  return <Routes>{Object.values(routesConfig).map(renderRoutes)}</Routes>;
+});
 
 export default RoutesProvider;

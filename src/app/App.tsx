@@ -8,11 +8,14 @@ import { Sidebar } from 'widgets/Sidebar';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { userActions } from 'entities/user';
+import { getInited, userActions } from 'entities/user';
+import { useSelector } from 'react-redux';
 
 const App = memo(() => {
   const { theme } = useThemes();
   const dispatch = useAppDispatch();
+
+  const inited = useSelector(getInited);
 
   useEffect(() => {
     dispatch(userActions.initUserData());
@@ -25,7 +28,7 @@ const App = memo(() => {
 
         <div className='content-page'>
           <Sidebar />
-          <RoutesProvieder />
+          {inited && <RoutesProvieder />}
         </div>
       </Suspense>
     </div>

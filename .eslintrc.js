@@ -54,7 +54,7 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: ['__IS_DEV__', '__API__', '__PROJECT__'],
+        allow: ['__IS_DEV__', '__API__', '__PROJECT__', '_inited'],
       },
     ],
     'no-else-return': 2,
