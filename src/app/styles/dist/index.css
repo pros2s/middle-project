@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  font: inherit;
+}
+
+:root {
+  --font-family-main: consolas, "Times New Roman", serif;
+  --font-size-s: 14px;
+  --font-line-s: 16px;
+  --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-line-l: 32px;
+  --font-size-l: 24px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+  --navbar-height: 50px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
+  --overlay-color: rgb(0 0 0 / 80%);
+  --modal-z-index: 10;
+}
+
+.app_dark_theme {
+  --bg-color: rgb(16 74 188);
+  --inverted-bg-color: rgb(225 225 225);
+  --primary-color: rgb(22 195 22);
+  --secondary-color: rgb(5 186 5);
+  --inverted-primary-color: rgb(0 65 156);
+  --inverted-secondary-color: rgb(0 116 225);
+  --error-title: rgb(255 52 52);
+  --error-text: rgb(216 37 37);
+}
+
+.app_orange_theme {
+  --bg-color: rgb(255 187 68);
+  --inverted-bg-color: rgb(16 74 188);
+  --primary-color: rgb(0 65 156);
+  --secondary-color: rgb(0 116 225);
+  --inverted-primary-color: rgb(205 150 55);
+  --inverted-secondary-color: rgb(248 194 101);
+  --error-title: rgb(255 0 0);
+  --error-text: rgb(217 0 0);
+}
+
+.app_light_theme {
+  --bg-color: rgb(225 225 225);
+  --inverted-bg-color: rgb(16 74 188);
+  --primary-color: rgb(0 65 156);
+  --secondary-color: rgb(0 116 225);
+  --inverted-primary-color: rgb(22 195 22);
+  --inverted-secondary-color: rgb(5 186 5);
+  --error-title: rgb(255 0 0);
+  --error-text: rgb(217 0 0);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  color: var(--primary-color);
+  font: var(--font-m);
+}
+
+.app {
+  min-height: 100vh;
+  padding: auto;
+  background: var(--bg-color);
+  transition: all 0.2s linear;
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  color: var(--primary-color);
+}
