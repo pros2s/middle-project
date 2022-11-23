@@ -1,4 +1,6 @@
 .ArticleDetails {
+  width: 100%;
+
   color: var(--primary-color);
 }
 
@@ -9,4 +11,19 @@
 .title,
 .skeleton {
   margin-top: 20px;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px;
 }

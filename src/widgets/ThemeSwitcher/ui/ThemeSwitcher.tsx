@@ -7,6 +7,7 @@ import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import OrangeIcon from 'shared/assets/icons/theme-orange.svg';
 import { memo, useMemo } from 'react';
+import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -20,17 +21,17 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
     switch (theme) {
       case Themes.DARK:
-        Comp = <DarkIcon />;
+        Comp = <SVGIcon Svg={DarkIcon} />;
         break;
       case Themes.LIGHT:
-        Comp = <LightIcon />;
+        Comp = <SVGIcon Svg={LightIcon} />;
         break;
       case Themes.ORANGE:
-        Comp = <OrangeIcon />;
+        Comp = <SVGIcon Svg={OrangeIcon} />;
         break;
 
       default:
-        Comp = <LightIcon />;
+        Comp = <SVGIcon Svg={LightIcon} />;
     }
     return Comp;
   }, [theme]);

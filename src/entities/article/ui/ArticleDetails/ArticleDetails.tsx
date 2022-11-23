@@ -1,5 +1,4 @@
 import { memo, ReactNode, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -8,11 +7,15 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextThemes } from 'shared/ui/Text/Text';
+import { Text, TextSize, TextThemes } from 'shared/ui/Text/Text';
+import DateIcon from 'shared/assets/icons/date.svg';
+import EyeIcon from 'shared/assets/icons/eye.svg';
+import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 import {
   getArticleLoading,
-  // getArticleData,
+  getArticleData,
   getArticleErrorMessage,
 } from '../../model/selectors/getArticleState';
 import { fetchArticleData } from '../../model/services/fetchArticleData';
@@ -30,11 +33,11 @@ const initialReducers: ReducersList = {
 };
 
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
-  const { t } = useTranslation('articlesPage');
+  // const { t } = useTranslation('articlesPage');
 
   const isLoading = useSelector(getArticleLoading);
   const errorMessage = useSelector(getArticleErrorMessage);
-  // const data = useSelector(getArticleData);
+  const data = useSelector(getArticleData);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -60,7 +63,22 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   } else if (errorMessage) {
     content = <Text text={errorMessage} theme={TextThemes.ERROR} />;
   } else {
-    content = t('ArticleDetailsPageText');
+    content = (
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar size='200px' src={data?.img} className={cls.avatar} />
+        </div>
+        <Text size={TextSize.L} title={data?.title} text={data?.subtitle} />
+        <div className={cls.description}>
+          <SVGIcon className={cls.icon} Svg={EyeIcon} />
+          <Text text={String(data?.views)} />
+        </div>
+        <div className={cls.description}>
+          <SVGIcon className={cls.icon} Svg={DateIcon} />
+          <Text text={data?.createdAt} />
+        </div>
+      </>
+    );
   }
 
   return (
