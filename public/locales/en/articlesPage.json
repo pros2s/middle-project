@@ -1,5 +1,6 @@
 {
   "articlesPageText": "ARTICLES",
   "ArticleDetailsPageText": "ARTICLE DETAILS",
-  "IdNotFound": "Article not found"
+  "IdNotFound": "Article not found",
+  "comments": "Comments"
 }

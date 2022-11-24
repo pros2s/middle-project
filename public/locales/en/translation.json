@@ -16,5 +16,6 @@
   "AuthError": "Incorrect username or password",
   "Logout": "Log out",
   "Russia": "Russia",
-  "articlesPageBTN": "ARTICLES"
+  "articlesPageBTN": "ARTICLES",
+  "commentsNotFound": "Comments not found"
 }

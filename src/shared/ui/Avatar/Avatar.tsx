@@ -20,7 +20,11 @@ export const Avatar = memo(({ alt, size, src, className }: AvatarProps) => {
   );
   return (
     <div className={classNames(cls.Avatar, [className])} style={styles}>
-      <img className={cls.image} src={src} alt={alt} />
+      <img
+        className={cls.image}
+        src={src || `https://via.placeholder.com/${size?.slice(0, -2)}`}
+        alt={alt}
+      />
     </div>
   );
 });

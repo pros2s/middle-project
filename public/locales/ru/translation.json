@@ -16,5 +16,6 @@
   "AuthError": "Неверное имя пользователя или пароль",
   "Logout": "Выйти",
   "Russia": "Россия",
-  "articlesPageBTN": "СТАТЬИ"
+  "articlesPageBTN": "СТАТЬИ",
+  "commentsNotFound": "Комментарии не найдены"
 }
