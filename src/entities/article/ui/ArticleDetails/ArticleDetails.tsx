@@ -1,4 +1,4 @@
-import { memo, ReactNode, useEffect } from 'react';
+import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -13,6 +13,8 @@ import { Text, TextSize, TextThemes } from 'shared/ui/Text/Text';
 import DateIcon from 'shared/assets/icons/date.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
+import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
+import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import {
   getArticleLoading,
   getArticleData,
@@ -22,6 +24,8 @@ import { fetchArticleData } from '../../model/services/fetchArticleData';
 import { articleDetailsReducer } from '../../model/slice/ArticleSlice';
 
 import cls from './ArticleDetails.module.scss';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/Article';
+import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -33,16 +37,48 @@ const initialReducers: ReducersList = {
 };
 
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
-  // const { t } = useTranslation('articlesPage');
-
   const isLoading = useSelector(getArticleLoading);
   const errorMessage = useSelector(getArticleErrorMessage);
   const data = useSelector(getArticleData);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchArticleData(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleData(id));
+    }
   }, [dispatch, id]);
+
+  const blockComponent = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlock
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlock
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlock
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+
+      default:
+        return null;
+    }
+  }, []);
 
   let content: ReactNode;
   if (isLoading) {
@@ -77,6 +113,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
           <SVGIcon className={cls.icon} Svg={DateIcon} />
           <Text text={data?.createdAt} />
         </div>
+        {data?.blocks.map(blockComponent)}
       </>
     );
   }

@@ -1,10 +1,16 @@
 .app_orange_theme {
+  // backgrounds
   --bg-color: rgb(248 185 76);
   --inverted-bg-color: rgb(16 74 188);
+  --copy-bg: rgb(255 173 33);
+
+  // colors
   --primary-color: rgb(0 65 156);
   --secondary-color: rgb(0 116 225);
   --inverted-primary-color: rgb(205 150 55);
   --inverted-secondary-color: rgb(248 194 101);
+
+  // errors
   --error-title: rgb(255 0 0);
   --error-text: rgb(217 0 0);
 
