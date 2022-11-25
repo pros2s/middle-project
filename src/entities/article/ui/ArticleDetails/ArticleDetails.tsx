@@ -51,20 +51,20 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     switch (block.type) {
       case ArticleBlockType.TEXT:
         return (
-          <article className={cls.block}>
-            <ArticleTextBlock key={block.id} block={block} />
+          <article key={block.id} className={cls.block}>
+            <ArticleTextBlock block={block} />
           </article>
         );
       case ArticleBlockType.CODE:
         return (
-          <article className={cls.block}>
-            <ArticleCodeBlock key={block.id} block={block} />
+          <article key={block.id} className={cls.block}>
+            <ArticleCodeBlock block={block} />
           </article>
         );
       case ArticleBlockType.IMAGE:
         return (
-          <article className={cls.block}>
-            <ArticleImageBlock key={block.id} block={block} />
+          <article key={block.id} className={cls.block}>
+            <ArticleImageBlock block={block} />
           </article>
         );
 

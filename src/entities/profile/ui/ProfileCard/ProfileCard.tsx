@@ -71,7 +71,12 @@ export const ProfileCard = memo(
 
     return (
       <div className={classNames(cls.ProfileCard, [className])}>
-        <Avatar size='150px' src={data?.avatar} alt={data?.username} />
+        <Avatar
+          align='center'
+          size='150px'
+          src={data?.avatar}
+          alt={data?.username}
+        />
         <Input
           value={data?.name}
           placeholder={t('ProfileName')}

@@ -88,15 +88,15 @@ describe('ProfileSlice.test', () => {
       errorMessage: 'some message',
     };
 
-    expect(profileReducer(state, fetchProfileData.fulfilled(data, ''))).toEqual(
-      {
-        data,
-        readonly: true,
-        profileData: data,
-        errorMessage: undefined,
-        isLoading: false,
-      },
-    );
+    expect(
+      profileReducer(state, fetchProfileData.fulfilled(data, '', '1')),
+    ).toEqual({
+      data,
+      readonly: true,
+      profileData: data,
+      errorMessage: undefined,
+      isLoading: false,
+    });
   });
 
   test('updateProfileData.pending', () => {

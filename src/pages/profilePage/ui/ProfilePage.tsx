@@ -13,6 +13,7 @@ import { Text, TextThemes } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/profile/model/types/ProfileSchema';
 import { useTranslation } from 'react-i18next';
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
+import { useParams } from 'react-router-dom';
 import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
@@ -29,6 +30,8 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
+
   const profileData = useSelector(getProfileData);
   const isLoading = useSelector(getProfileLoading);
   const errorMessage = useSelector(getProfileError);
@@ -46,7 +49,9 @@ const ProfilePage = memo(() => {
   };
 
   useFetchEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
   });
 
   const onChangeName = useCallback(

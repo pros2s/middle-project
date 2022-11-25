@@ -4,6 +4,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutesPaths } from 'shared/lib/routes/routes';
 import { Comment } from '../../model/types/Comment';
 
 import cls from './CommentCard.module.scss';
@@ -37,15 +39,22 @@ export const CommentCard = memo(
 
     return (
       <section className={classNames(cls.CommentCard, [className])}>
-        <div className={cls.header}>
-          <Avatar
-            className={cls.avatar}
-            size='30px'
-            src={comment.user.avatar}
-          />
-          <Text title={comment.user.username} />
+        <div>
+          <AppLink
+            theme={AppLinkTheme.PRIMARY}
+            to={`${RoutesPaths.profile}${comment.user.id}`}
+            className={cls.header}
+          >
+            <Avatar
+              className={cls.avatar}
+              size='30px'
+              src={comment.user.avatar}
+            />
+            <Text title={comment.user.username} />
+          </AppLink>
+          <Text text={comment.text} />
         </div>
-        <Text text={comment.text} />
+        <div />
       </section>
     );
   },

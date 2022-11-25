@@ -22,7 +22,11 @@ export const CommentList = memo(
       <div className={classNames(cls.CommentList, [className])}>
         {comments.length ? (
           comments.map((comment) => (
-            <CommentCard isLoading={isLoading} comment={comment} />
+            <CommentCard
+              key={comment.id}
+              isLoading={isLoading}
+              comment={comment}
+            />
           ))
         ) : (
           <Text title={t('commentsNotFound')} />

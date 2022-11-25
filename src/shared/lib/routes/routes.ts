@@ -7,16 +7,16 @@ export type AppRouteProps = RouteProps & {
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
-  PROFILE = 'profile',
+  PROFILE = 'profile', // + id
   ARTICLES = 'articles',
-  ARTICLE_DETAILS = 'articleDetails',
+  ARTICLE_DETAILS = 'articleDetails', // + id
   NOT_FOUND = 'notFound',
 }
 
 export const RoutesPaths: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.PROFILE]: '/profile/',
   [AppRoutes.ARTICLES]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/',
   [AppRoutes.NOT_FOUND]: '*',

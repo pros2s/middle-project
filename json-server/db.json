@@ -5,7 +5,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://i.pinimg.com/originals/8b/6e/c6/8b6ec60427f9b17c1d9aaf4c415babe3.png"
+      "avatar": "https://wallpaperstock.net/smart-monkey-wallpapers_2084_1280x1024.jpg"
     },
     {
       "id": "2",
@@ -96,7 +96,7 @@
     {
       "id": "2",
       "text": "some comment 2",
-      "articleId": "2",
+      "articleId": "1",
       "userId": "2"
     },
     {
@@ -106,13 +106,26 @@
       "userId": "1"
     }
   ],
-  "profile": {
-    "name": "Alex",
-    "username": "pross",
-    "city": "Kazan",
-    "currency": "EUR",
-    "country": "RUSSIA",
-    "age": 22,
-    "avatar": "https://wallpaperstock.net/smart-monkey-wallpapers_2084_1280x1024.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "name": "Alex",
+      "username": "pross",
+      "city": "Kazan",
+      "currency": "EUR",
+      "country": "RUSSIA",
+      "age": 22,
+      "avatar": "https://wallpaperstock.net/smart-monkey-wallpapers_2084_1280x1024.jpg"
+    },
+    {
+      "id": "2",
+      "name": "King",
+      "username": "king",
+      "city": "New York",
+      "currency": "USD",
+      "country": "RUSSIA",
+      "age": 52,
+      "avatar": "https://cdn.dribbble.com/users/759083/screenshots/16022876/media/8e462db1bac370883bf90c94a77d598c.jpg?compress=1&resize=400x300"
+    }
+  ]
 }
