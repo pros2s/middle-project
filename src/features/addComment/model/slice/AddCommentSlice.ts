@@ -14,21 +14,6 @@ const AddCommentSlice = createSlice({
       state.text = payload;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(loginByUsername.pending, (state) => {
-  //       state.errorMessage = undefined;
-  //       state.isLoading = true;
-  //     })
-  //     .addCase(loginByUsername.fulfilled, (state) => {
-  //       state.errorMessage = undefined;
-  //       state.isLoading = false;
-  //     })
-  //     .addCase(loginByUsername.rejected, (state, { payload }) => {
-  //       state.errorMessage = payload;
-  //       state.isLoading = false;
-  //     });
-  // },
 });
 
 export const { actions: addCommentActions } = AddCommentSlice;
