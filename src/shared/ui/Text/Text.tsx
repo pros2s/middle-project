@@ -44,7 +44,7 @@ export const Text = memo(
       cls[theme],
       cls[align],
     ];
-    
+
     return (
       <div className={classNames(cls.Text, additionalClasses)}>
         {title && <h1 className={cls.title}>{title}</h1>}

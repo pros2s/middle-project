@@ -29,7 +29,7 @@ export const useThemes = (): UseThemesResults => {
       default:
         currentTheme = Themes.LIGHT;
     }
-    
+
     setTheme?.(currentTheme);
     document.body.className = currentTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, currentTheme);

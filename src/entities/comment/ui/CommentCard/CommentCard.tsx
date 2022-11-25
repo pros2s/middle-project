@@ -12,7 +12,7 @@ import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
@@ -37,22 +37,26 @@ export const CommentCard = memo(
       );
     }
 
+    if (!comment) {
+      return null;
+    }
+
     return (
       <section className={classNames(cls.CommentCard, [className])}>
         <div>
           <AppLink
             theme={AppLinkTheme.PRIMARY}
-            to={`${RoutesPaths.profile}${comment.user.id}`}
+            to={`${RoutesPaths.profile}${comment?.user.id}`}
             className={cls.header}
           >
             <Avatar
               className={cls.avatar}
               size='30px'
-              src={comment.user.avatar}
+              src={comment?.user.avatar}
             />
-            <Text title={comment.user.username} />
+            <Text title={comment?.user.username} />
           </AppLink>
-          <Text text={comment.text} />
+          <Text text={comment?.text} />
         </div>
         <div />
       </section>

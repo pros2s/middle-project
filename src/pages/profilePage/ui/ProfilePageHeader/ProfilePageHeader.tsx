@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { getProfileCanEdit } from '../../model/selectors/getProfileCanEdit/getProfileCanEdit';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
@@ -23,6 +24,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   const dispatch = useAppDispatch();
 
   const readOnly = useSelector(getProfileReadonly);
+  const canEdit = useSelector(getProfileCanEdit);
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadOnly(false));
@@ -39,18 +41,22 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   return (
     <header className={classNames(cls.ProfilePageHeader, [className])}>
       <Text title={t('profilePageText')} />
-      {readOnly ? (
-        <Button onClick={onEdit} theme={ButtonThemes.OUTLINE}>
-          {t('EditProfile')}
-        </Button>
-      ) : (
-        <div className={cls.buttons}>
-          <Button onClick={onSaveChanges} theme={ButtonThemes.OUTLINE}>
-            {t('SaveProfileChanges')}
-          </Button>
-          <Button onClick={onCancelEdit} theme={ButtonThemes.CANCEL}>
-            {t('CancelEditProfile')}
-          </Button>
+      {canEdit && (
+        <div>
+          {readOnly ? (
+            <Button onClick={onEdit} theme={ButtonThemes.OUTLINE}>
+              {t('EditProfile')}
+            </Button>
+          ) : (
+            <div className={cls.buttons}>
+              <Button onClick={onSaveChanges} theme={ButtonThemes.OUTLINE}>
+                {t('SaveProfileChanges')}
+              </Button>
+              <Button onClick={onCancelEdit} theme={ButtonThemes.CANCEL}>
+                {t('CancelEditProfile')}
+              </Button>
+            </div>
+          )}
         </div>
       )}
     </header>
