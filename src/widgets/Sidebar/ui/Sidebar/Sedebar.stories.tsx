@@ -1,5 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
+import { userReducer } from 'entities/user';
+import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 
 import { Sidebar } from './Sidebar';
@@ -16,9 +18,24 @@ const Template: ComponentStory<typeof Sidebar> = (args) => (
   <Sidebar {...args} />
 );
 
-export const Light = Template.bind({});
-Light.args = {};
+// Logged in
+export const LightLoggedIn = Template.bind({});
+LightLoggedIn.decorators = [
+  StoreDecorator({ user: { authData: {} } }, { user: userReducer }),
+];
 
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(Themes.DARK)];
-Dark.args = {};
+export const DarkLoggedIn = Template.bind({});
+DarkLoggedIn.decorators = [
+  StoreDecorator({ user: { authData: {} } }, { user: userReducer }),
+  ThemeDecorator(Themes.DARK),
+];
+
+// Logged out
+export const LightLoggedOut = Template.bind({});
+LightLoggedOut.decorators = [StoreDecorator({}, { user: userReducer })];
+
+export const DarkLoggedOut = Template.bind({});
+DarkLoggedOut.decorators = [
+  StoreDecorator({}, { user: userReducer }),
+  ThemeDecorator(Themes.DARK),
+];
