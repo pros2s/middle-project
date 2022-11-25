@@ -3,7 +3,16 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/originals/8b/6e/c6/8b6ec60427f9b17c1d9aaf4c415babe3.png"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://cdn.dribbble.com/users/759083/screenshots/16022876/media/8e462db1bac370883bf90c94a77d598c.jpg?compress=1&resize=400x300"
     }
   ],
   "articles": [
@@ -14,9 +23,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -89,8 +96,8 @@
     {
       "id": "2",
       "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
+      "articleId": "2",
+      "userId": "2"
     },
     {
       "id": "3",

@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
   DynamicReducerLoader,
@@ -12,6 +12,7 @@ import { getProfileValidateErrros } from 'pages/profilePage/model/selectors/getP
 import { Text, TextThemes } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/profile/model/types/ProfileSchema';
 import { useTranslation } from 'react-i18next';
+import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
@@ -44,11 +45,9 @@ const ProfilePage = memo(() => {
     [ValidateProfileError.SERVER_ERROR]: t('SERVER_ERROR'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useFetchEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   const onChangeName = useCallback(
     (value: string) => {

@@ -1,4 +1,4 @@
-import { memo, ReactNode, useCallback, useEffect } from 'react';
+import { memo, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -13,6 +13,7 @@ import { Text, TextSize, TextThemes } from 'shared/ui/Text/Text';
 import DateIcon from 'shared/assets/icons/date.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
+import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import {
@@ -42,11 +43,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const data = useSelector(getArticleData);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleData(id));
-    }
-  }, [dispatch, id]);
+  useFetchEffect(() => {
+    dispatch(fetchArticleData(id));
+  });
 
   const blockComponent = useCallback((block: ArticleBlock) => {
     switch (block.type) {

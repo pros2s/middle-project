@@ -7,11 +7,36 @@ import { Text, TextAlign, TextThemes } from 'shared/ui/Text/Text';
 
 import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/comment';
+import { useSelector } from 'react-redux';
+import {
+  DynamicReducerLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { getIsLoadingFromComments } from '../model/selectors/getFromComments';
 import cls from './ArticleDetailsPage.module.scss';
+import {
+  articleDetailsPageReducer,
+  getAllComments,
+} from '../model/slice/ArticleDetailsPageSlice';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+
+const reducers: ReducersList = {
+  articleComments: articleDetailsPageReducer,
+};
 
 const ArticleDetailsPage: FC = () => {
   const { t } = useTranslation('articlesPage');
+
+  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
+  const comments = useSelector(getAllComments.selectAll);
+  const isLoading = useSelector(getIsLoadingFromComments);
+
+  useFetchEffect(() => {
+    dispatch(fetchCommentsByArticleId(id));
+  });
 
   if (!id && __PROJECT__ !== 'storybook') {
     return (
@@ -26,20 +51,13 @@ const ArticleDetailsPage: FC = () => {
   }
 
   return (
-    <div className={classNames(cls.ArticleDetailsPage)}>
-      <ArticleDetails id={id} />
-      <Text title={t('comments')} />
-      <CommentList
-        comments={[
-          { id: '1', text: 'text', user: { id: '1', username: 'username' } },
-          {
-            id: '2',
-            text: 'text 2',
-            user: { id: '2', username: 'username 2' },
-          },
-        ]}
-      />
-    </div>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
+      <div className={classNames(cls.ArticleDetailsPage)}>
+        <ArticleDetails id={id} />
+        <Text title={t('comments')} />
+        <CommentList isLoading={isLoading} comments={comments} />
+      </div>
+    </DynamicReducerLoader>
   );
 };
 

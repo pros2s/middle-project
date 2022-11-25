@@ -11,18 +11,23 @@ import cls from './CommentList.module.scss';
 interface CommentListProps {
   className?: string;
   comments: Comment[];
+  isLoading?: boolean;
 }
 
-export const CommentList = memo(({ className, comments }: CommentListProps) => {
-  const { t } = useTranslation();
+export const CommentList = memo(
+  ({ className, comments, isLoading }: CommentListProps) => {
+    const { t } = useTranslation();
 
-  return (
-    <div className={classNames(cls.CommentList, [className])}>
-      {comments.length ? (
-        comments.map((comment) => <CommentCard comment={comment} />)
-      ) : (
-        <Text title={t('commentsNotFound')} />
-      )}
-    </div>
-  );
-});
+    return (
+      <div className={classNames(cls.CommentList, [className])}>
+        {comments.length ? (
+          comments.map((comment) => (
+            <CommentCard isLoading={isLoading} comment={comment} />
+          ))
+        ) : (
+          <Text title={t('commentsNotFound')} />
+        )}
+      </div>
+    );
+  },
+);
