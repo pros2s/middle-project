@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/article';
 
@@ -14,6 +14,7 @@ import {
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { AddComment } from 'features/addComment';
 import { getIsLoadingFromComments } from '../model/selectors/getFromComments';
 import cls from './ArticleDetailsPage.module.scss';
 import {
@@ -21,6 +22,7 @@ import {
   getAllComments,
 } from '../model/slice/ArticleDetailsPageSlice';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 
 const reducers: ReducersList = {
   articleComments: articleDetailsPageReducer,
@@ -38,6 +40,13 @@ const ArticleDetailsPage: FC = () => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch],
+  );
+
   if (!id && __PROJECT__ !== 'storybook') {
     return (
       <div className={classNames(cls.ArticleDetailsPage)}>
@@ -51,10 +60,11 @@ const ArticleDetailsPage: FC = () => {
   }
 
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
+    <DynamicReducerLoader reducers={reducers}>
       <div className={classNames(cls.ArticleDetailsPage)}>
         <ArticleDetails id={id} />
         <Text title={t('comments')} />
+        <AddComment onSendComment={onSendComment} />
         <CommentList isLoading={isLoading} comments={comments} />
       </div>
     </DynamicReducerLoader>

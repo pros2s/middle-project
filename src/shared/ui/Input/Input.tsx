@@ -85,7 +85,7 @@ export const Input = memo(
           <input
             ref={inputRef}
             className={cls.input}
-            value={value}
+            value={value || ''}
             onChange={changeHandler}
             type={type}
             onBlur={onBlur}

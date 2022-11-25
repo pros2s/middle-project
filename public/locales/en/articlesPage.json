@@ -2,5 +2,7 @@
   "articlesPageText": "ARTICLES",
   "ArticleDetailsPageText": "ARTICLE DETAILS",
   "IdNotFound": "Article not found",
-  "comments": "Comments"
+  "comments": "Comments",
+  "addNewComment": "Write comment",
+  "sendComment": "send"
 }

@@ -21,13 +21,15 @@ export const CommentList = memo(
     return (
       <div className={classNames(cls.CommentList, [className])}>
         {comments.length ? (
-          comments.map((comment) => (
-            <CommentCard
-              key={comment.id}
-              isLoading={isLoading}
-              comment={comment}
-            />
-          ))
+          comments
+            .reverse()
+            .map((comment) => (
+              <CommentCard
+                key={comment.id}
+                isLoading={isLoading}
+                comment={comment}
+              />
+            ))
         ) : (
           <Text title={t('commentsNotFound')} />
         )}

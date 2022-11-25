@@ -13,6 +13,7 @@ import { ProfileSchema } from 'entities/profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsPageSchema } from 'pages/articleDetailsPage';
+import { AddCommentSchema } from 'features/addComment';
 
 export interface StateSchema {
   user: UserSchema;
@@ -22,6 +23,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   articleComments?: ArticleDetailsPageSchema;
+  addComment?: AddCommentSchema;
 }
 
 export type StateSchemaFields = keyof StateSchema;

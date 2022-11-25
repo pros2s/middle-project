@@ -2,5 +2,7 @@
   "articlesPageText": "СТАТЬИ",
   "ArticleDetailsPageText": "ДЕТАЛИ СТАТИ",
   "IdNotFound": "Статья не найдена",
-  "comments": "Комментарии"
+  "comments": "Комментарии",
+  "addNewComment": "Написать комментарий",
+  "sendComment": "отправить"
 }
