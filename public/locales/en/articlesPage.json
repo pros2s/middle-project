@@ -4,5 +4,7 @@
   "IdNotFound": "Article not found",
   "comments": "Comments",
   "addNewComment": "Write comment",
-  "sendComment": "send"
+  "sendComment": "send",
+  "readMore": "Read more",
+  "backToArticleList": "Back to articles"
 }

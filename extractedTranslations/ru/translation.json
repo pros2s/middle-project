@@ -49,6 +49,8 @@
   "addNewComment": "",
   "articlesPageBTN": "",
   "articlesPageText": "",
+  "backT": "",
+  "backToArticleList": "",
   "comments": "",
   "commentsNotFound": "",
   "i18n": {
@@ -63,6 +65,7 @@
   "pageError": "",
   "profilePageBTN": "",
   "profilePageText": "",
+  "readMore": "",
   "sendComment": "",
   "{$}": "",
   "{}": "",

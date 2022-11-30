@@ -9,6 +9,12 @@ const data: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    avatar:
+      'https://wallpaperstock.net/smart-monkey-wallpapers_2084_1280x1024.jpg',
+    username: 'Username',
+  },
   type: [ArticleType.IT],
   blocks: [
     {

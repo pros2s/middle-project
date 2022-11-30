@@ -4,5 +4,7 @@
   "IdNotFound": "Статья не найдена",
   "comments": "Комментарии",
   "addNewComment": "Написать комментарий",
-  "sendComment": "отправить"
+  "sendComment": "отправить",
+  "readMore": "Читать далее",
+  "backToArticleList": "Назад ко всем статьям"
 }

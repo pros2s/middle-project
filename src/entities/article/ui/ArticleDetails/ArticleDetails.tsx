@@ -14,6 +14,10 @@ import DateIcon from 'shared/assets/icons/date.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
+import { useTranslation } from 'react-i18next';
+import { Button } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import { RoutesPaths } from 'shared/lib/routes/routes';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import {
@@ -38,6 +42,9 @@ const initialReducers: ReducersList = {
 };
 
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
+  const { t } = useTranslation('articlesPage');
+  const navigate = useNavigate();
+
   const isLoading = useSelector(getArticleLoading);
   const errorMessage = useSelector(getArticleErrorMessage);
   const data = useSelector(getArticleData);
@@ -46,6 +53,10 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   useFetchEffect(() => {
     dispatch(fetchArticleData(id));
   });
+
+  const onComeBack = useCallback(() => {
+    navigate(RoutesPaths.articles);
+  }, [navigate]);
 
   const blockComponent = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -94,6 +105,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   } else {
     content = (
       <>
+        <Button onClick={onComeBack}>{t('backToArticleList')}</Button>
         <div className={cls.avatarWrapper}>
           <Avatar size='200px' src={data?.img} className={cls.avatar} />
         </div>
