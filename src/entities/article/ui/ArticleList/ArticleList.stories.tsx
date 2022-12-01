@@ -1,13 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import monkey from 'shared/lib/testHelpers/smartMonkey.jpg';
-import {
-  Article,
-  ArticleBlockType,
-  ArticleType,
-  ArticleView,
-} from '../../model/types/Article';
+import { initializeArticles } from 'shared/lib/testHelpers/initializeArticles';
+import { ArticleView } from '../../model/types/Article';
 import { ArticleList } from './ArticleList';
 
 export default {
@@ -18,78 +13,6 @@ export default {
   },
 } as ComponentMeta<typeof ArticleList>;
 
-const bigArticles = (view: ArticleView): Article[] =>
-  new Array(view === ArticleView.BIG ? 3 : 9).fill(0).map(() => ({
-    id: '1',
-    title: 'Javascript news',
-    subtitle: 'Что нового в JS за 2022 год?',
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
-    views: 1022,
-    createdAt: '26.02.2022',
-    user: { id: '1', username: 'Username', avatar: monkey },
-    type: [ArticleType.IT],
-    blocks: [
-      {
-        id: '1',
-        type: ArticleBlockType.TEXT,
-        title: 'Заголовок этого блока',
-        paragraphs: [
-          'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
-          'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-          'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
-        ],
-      },
-      {
-        id: '4',
-        type: ArticleBlockType.CODE,
-        code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
-      },
-      {
-        id: '5',
-        type: ArticleBlockType.TEXT,
-        title: 'Заголовок этого блока',
-        paragraphs: [
-          'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
-          'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
-        ],
-      },
-      {
-        id: '2',
-        type: ArticleBlockType.IMAGE,
-        src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта',
-      },
-      {
-        id: '3',
-        type: ArticleBlockType.CODE,
-        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
-      },
-      {
-        id: '7',
-        type: ArticleBlockType.TEXT,
-        title: 'Заголовок этого блока',
-        paragraphs: [
-          'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-          'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
-        ],
-      },
-      {
-        id: '8',
-        type: ArticleBlockType.IMAGE,
-        src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта',
-      },
-      {
-        id: '9',
-        type: ArticleBlockType.TEXT,
-        title: 'Заголовок этого блока',
-        paragraphs: [
-          'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
-        ],
-      },
-    ],
-  }));
-
 const Template: ComponentStory<typeof ArticleList> = (args) => (
   <ArticleList {...args} />
 );
@@ -98,13 +21,13 @@ const Template: ComponentStory<typeof ArticleList> = (args) => (
 export const BIG = Template.bind({});
 BIG.args = {
   view: ArticleView.BIG,
-  articles: bigArticles(ArticleView.BIG),
+  articles: initializeArticles(ArticleView.BIG),
 };
 
 export const BIGDark = Template.bind({});
 BIGDark.args = {
   view: ArticleView.BIG,
-  articles: bigArticles(ArticleView.BIG),
+  articles: initializeArticles(ArticleView.BIG),
 };
 BIGDark.decorators = [ThemeDecorator(Themes.DARK)];
 
@@ -112,13 +35,13 @@ BIGDark.decorators = [ThemeDecorator(Themes.DARK)];
 export const SMALL = Template.bind({});
 SMALL.args = {
   view: ArticleView.SMALL,
-  articles: bigArticles(ArticleView.SMALL),
+  articles: initializeArticles(ArticleView.SMALL),
 };
 
 export const SMALLDark = Template.bind({});
 SMALLDark.args = {
   view: ArticleView.SMALL,
-  articles: bigArticles(ArticleView.SMALL),
+  articles: initializeArticles(ArticleView.SMALL),
 };
 SMALLDark.decorators = [ThemeDecorator(Themes.DARK)];
 
@@ -127,14 +50,14 @@ export const BIGLoading = Template.bind({});
 BIGLoading.args = {
   view: ArticleView.BIG,
   isLoading: true,
-  articles: bigArticles(ArticleView.BIG),
+  articles: initializeArticles(ArticleView.BIG),
 };
 
 export const BIGDarkLoading = Template.bind({});
 BIGDarkLoading.args = {
   view: ArticleView.BIG,
   isLoading: true,
-  articles: bigArticles(ArticleView.BIG),
+  articles: initializeArticles(ArticleView.BIG),
 };
 BIGDarkLoading.decorators = [ThemeDecorator(Themes.DARK)];
 
@@ -143,13 +66,13 @@ export const SMALLLoading = Template.bind({});
 SMALLLoading.args = {
   view: ArticleView.SMALL,
   isLoading: true,
-  articles: bigArticles(ArticleView.SMALL),
+  articles: initializeArticles(ArticleView.SMALL),
 };
 
 export const SMALLDarkLoading = Template.bind({});
 SMALLDarkLoading.args = {
   view: ArticleView.SMALL,
   isLoading: true,
-  articles: bigArticles(ArticleView.SMALL),
+  articles: initializeArticles(ArticleView.SMALL),
 };
 SMALLDarkLoading.decorators = [ThemeDecorator(Themes.DARK)];
