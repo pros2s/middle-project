@@ -15,6 +15,7 @@ import {
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AddComment } from 'features/addComment';
+import { Page } from 'widgets/Page';
 import { getIsLoadingFromComments } from '../model/selectors/getFromComments';
 import cls from './ArticleDetailsPage.module.scss';
 import {
@@ -61,12 +62,12 @@ const ArticleDetailsPage: FC = () => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage)}>
+      <Page className={classNames(cls.ArticleDetailsPage)}>
         <ArticleDetails id={id} />
         <Text title={t('comments')} />
         <AddComment onSendComment={onSendComment} />
         <CommentList isLoading={isLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicReducerLoader>
   );
 };

@@ -77,6 +77,12 @@
   .imageInner {
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    height: 215px;
+
     img {
       width: 100%;
       margin: 10px 0;

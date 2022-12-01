@@ -26,7 +26,7 @@ const App = memo(() => {
       <Suspense fallback=''>
         <Navbar />
 
-        <div className='content-page'>
+        <div className='app__content'>
           <Sidebar />
           {inited && <RoutesProvieder />}
         </div>

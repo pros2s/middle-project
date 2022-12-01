@@ -13,6 +13,7 @@ import {
   DynamicReducerLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { Page } from 'widgets/Page';
 import {
   getArticleIsLoading,
   getArticleView,
@@ -39,7 +40,7 @@ const ArticlesPage = memo(() => {
 
   useFetchEffect(() => {
     dispatch(articleActions.initView());
-    dispatch(fetchArticles());
+    dispatch(fetchArticles({ page: 1 }));
   });
 
   const onChangeView = useCallback(
@@ -51,10 +52,10 @@ const ArticlesPage = memo(() => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <div className={classNames(cls.ArticlesPage)}>
+      <Page className={classNames(cls.ArticlesPage)}>
         <ArticleViewSelector view={view} onChangeView={onChangeView} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
-      </div>
+      </Page>
     </DynamicReducerLoader>
   );
 });

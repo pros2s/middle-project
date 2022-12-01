@@ -14,6 +14,7 @@ import { ValidateProfileError } from 'entities/profile/model/types/ProfileSchema
 import { useTranslation } from 'react-i18next';
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'widgets/Page';
 import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../model/selectors/getProfileData/getProfileData';
 import { getProfileLoading } from '../model/selectors/getProfileLoading/getProfileLoading';
@@ -105,7 +106,7 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <div className={cls.profile}>
+      <Page className={cls.profile}>
         <ProfilePageHeader />
         {validateErrors?.length &&
           validateErrors.map((error) => (
@@ -128,7 +129,7 @@ const ProfilePage = memo(() => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicReducerLoader>
   );
 });

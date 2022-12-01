@@ -9,9 +9,7 @@ import { routesConfig } from '../config/routesConfig';
 const RoutesProvider = memo(() => {
   const renderRoutes = useCallback((route: AppRouteProps) => {
     const element = (
-      <Suspense fallback={<PageLoader />}>
-        <div className='page-wrapper'>{route.element}</div>
-      </Suspense>
+      <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
     );
 
     return (

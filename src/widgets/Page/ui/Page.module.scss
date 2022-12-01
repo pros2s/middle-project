@@ -1,0 +1,12 @@
+.Page {
+  flex-grow: 1;
+  width: 100%;
+
+  height: calc(100vh - var(--navbar-height));
+  padding: 20px;
+  padding-left: 45px;
+
+  overflow-y: auto;
+
+  color: var(--primary-color);
+}
