@@ -1,0 +1,13 @@
+.ArticleViewSelector {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.notSelected {
+  opacity: 0.6;
+}
+
+.button {
+  margin: 10px 0 10px 10px;
+}

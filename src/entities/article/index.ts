@@ -13,3 +13,5 @@ export {
   ArticleBlockType,
   ArticleType,
 } from './model/types/Article';
+
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';

@@ -1,5 +1,9 @@
-import { ArticleList } from 'entities/article';
-import { memo } from 'react';
+import {
+  ArticleList,
+  ArticleView,
+  ArticleViewSelector,
+} from 'entities/article';
+import { memo, useCallback } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -13,7 +17,11 @@ import {
   getArticleIsLoading,
   getArticleView,
 } from '../model/selectors/getArticleState';
-import { articleReducer, getArticles } from '../model/slice/ArticleSlice';
+import {
+  articleActions,
+  articleReducer,
+  getArticles,
+} from '../model/slice/ArticleSlice';
 import { fetchArticles } from '../model/services/fetchArticles';
 
 import cls from './ArticlesPage.module.scss';
@@ -30,12 +38,21 @@ const ArticlesPage = memo(() => {
   const view = useSelector(getArticleView);
 
   useFetchEffect(() => {
+    dispatch(articleActions.initView());
     dispatch(fetchArticles());
   });
+
+  const onChangeView = useCallback(
+    (viewMode: ArticleView) => {
+      dispatch(articleActions.setView(viewMode));
+    },
+    [dispatch],
+  );
 
   return (
     <DynamicReducerLoader reducers={reducers}>
       <div className={classNames(cls.ArticlesPage)}>
+        <ArticleViewSelector view={view} onChangeView={onChangeView} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
       </div>
     </DynamicReducerLoader>

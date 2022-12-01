@@ -9,6 +9,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
-export const Card = memo(({ className, children }: CardProps) => (
-  <div className={classNames(cls.Card, [className])}>{children}</div>
-));
+export const Card = memo(
+  ({ className, children, ...otherAttrubutes }: CardProps) => (
+    <div className={classNames(cls.Card, [className])} {...otherAttrubutes}>
+      {children}
+    </div>
+  ),
+);

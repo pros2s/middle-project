@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/article';
+import { LOCALE_STORAGE_VIEW_MODE } from 'shared/consts/localeStorage';
 import { fetchArticles } from '../services/fetchArticles';
 import { ArticleSchema } from '../types/ArticleSchema';
 
@@ -28,6 +29,12 @@ const ArticleSlice = createSlice({
   reducers: {
     setView(state, { payload }: PayloadAction<ArticleView>) {
       state.view = payload;
+      localStorage.setItem(LOCALE_STORAGE_VIEW_MODE, payload);
+    },
+    initView(state) {
+      state.view = localStorage.getItem(
+        LOCALE_STORAGE_VIEW_MODE,
+      ) as ArticleView;
     },
   },
   extraReducers: (builder) => {
