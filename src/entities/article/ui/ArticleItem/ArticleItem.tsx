@@ -49,7 +49,7 @@ export const ArticleItem = memo(
       ) as ArticleTextBlockType;
 
       return (
-        <div className={classNames(cls.ArticleItem, [className, cls[view]])}>
+        <section className={classNames(cls.ArticleItem, [className, cls[view]])}>
           <Card>
             <header className={cls.header}>
               <Avatar
@@ -75,7 +75,7 @@ export const ArticleItem = memo(
               {views}
             </footer>
           </Card>
-        </div>
+        </section>
       );
     }
 

@@ -14,6 +14,12 @@ interface ArticleListProps {
   view?: ArticleView;
 }
 
+const skeletons = (view: ArticleView) =>
+  new Array(view === ArticleView.BIG ? 2 : 6).fill(0).map((_, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <ArticleItemSceleton key={index} view={view} />
+  ));
+
 export const ArticleList = memo(
   ({
     className,
@@ -25,22 +31,10 @@ export const ArticleList = memo(
       <ArticleItem key={article.id} view={view} article={article} />
     );
 
-    if (isLoading) {
-      return (
-        <div className={classNames(cls.ArticleList, [className, cls[view]])}>
-          {new Array(view === ArticleView.BIG ? 3 : 9)
-            .fill(0)
-            .map((_, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <ArticleItemSceleton key={index} view={view} />
-            ))}
-        </div>
-      );
-    }
-
     return (
       <div className={classNames(cls.ArticleList, [className, cls[view]])}>
         {articles.length ? articles.map(renderArticles) : null}
+        {isLoading && skeletons(view)}
       </div>
     );
   },

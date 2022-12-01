@@ -6,7 +6,7 @@ import {
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/article';
 import { LOCALE_STORAGE_VIEW_MODE } from 'shared/consts/localeStorage';
-import { fetchArticles } from '../services/fetchArticles';
+import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 import { ArticleSchema } from '../types/ArticleSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -25,7 +25,7 @@ const ArticleSlice = createSlice({
     errorMessage: undefined,
     isLoading: false,
     view: ArticleView.SMALL,
-    hasMore: false,
+    hasMore: true,
     page: 1,
   }),
   reducers: {
@@ -42,7 +42,7 @@ const ArticleSlice = createSlice({
       ) as ArticleView;
 
       state.view = view;
-      state.limit = view === ArticleView.BIG ? 3 : 6;
+      state.limit = view === ArticleView.BIG ? 2 : 6;
     },
   },
   extraReducers: (builder) => {
@@ -56,7 +56,8 @@ const ArticleSlice = createSlice({
         (state, { payload }: PayloadAction<Article[]>) => {
           state.errorMessage = undefined;
           state.isLoading = false;
-          articlesAdapter.setAll(state, payload);
+          articlesAdapter.addMany(state, payload);
+          state.hasMore = payload.length > 0;
         },
       )
       .addCase(
