@@ -23,9 +23,15 @@ export const DynamicReducerLoader: FC<DynamicReducerLoaderProps> = ({
   const dispatch = useAppDispatch();
   const store = useStore() as ReduxStoreWithManger;
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
+
     Object.entries(reducers).forEach(([name, reducer]) => {
-      store.reducerManager.add(name as StateSchemaFields, reducer);
-      dispatch({ type: `@Init ${name} reducer` });
+      const mounted = mountedReducers[name as StateSchemaFields];
+
+      if (!mounted) {
+        store.reducerManager.add(name as StateSchemaFields, reducer);
+        dispatch({ type: `@Init ${name} reducer` });
+      }
     });
 
     return () => {

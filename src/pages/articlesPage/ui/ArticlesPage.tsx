@@ -14,6 +14,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { Page } from 'widgets/Page';
+import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import {
   getArticleIsLoading,
@@ -24,7 +25,6 @@ import {
   articleReducer,
   getArticles,
 } from '../model/slice/ArticleSlice';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 
 import cls from './ArticlesPage.module.scss';
 
@@ -44,8 +44,7 @@ const ArticlesPage = memo(() => {
   }, [dispatch]);
 
   useFetchEffect(() => {
-    dispatch(articleActions.initView());
-    dispatch(fetchArticles({ page: 1 }));
+    dispatch(initArticleState());
   });
 
   const onChangeView = useCallback(
@@ -56,7 +55,7 @@ const ArticlesPage = memo(() => {
   );
 
   return (
-    <DynamicReducerLoader reducers={reducers}>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         className={classNames(cls.ArticlesPage)}
         onScrollEnd={onLoadNextPage}

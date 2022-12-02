@@ -16,6 +16,8 @@ describe('fetchArticlesNextPage.test', () => {
         isLoading: false,
         page: 1,
         view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
       },
     });
 
@@ -35,6 +37,8 @@ describe('fetchArticlesNextPage.test', () => {
         isLoading: true,
         page: 1,
         view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
       },
     });
 
@@ -54,6 +58,8 @@ describe('fetchArticlesNextPage.test', () => {
         isLoading: false,
         page: 1,
         view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
       },
     });
 
@@ -73,6 +79,8 @@ describe('fetchArticlesNextPage.test', () => {
         isLoading: false,
         page: 1,
         view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
       },
     });
 

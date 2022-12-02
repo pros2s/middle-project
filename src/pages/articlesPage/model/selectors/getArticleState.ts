@@ -10,3 +10,4 @@ export const getArticlePage = (state: StateSchema) => state.article?.page || 1;
 export const getArticleLimit = (state: StateSchema) =>
   state.article?.limit || 3;
 export const getArticleHasMore = (state: StateSchema) => state.article?.hasMore;
+export const getArticleInited = (state: StateSchema) => state.article?._inited;
