@@ -49,7 +49,9 @@ export const ArticleItem = memo(
       ) as ArticleTextBlockType;
 
       return (
-        <section className={classNames(cls.ArticleItem, [className, cls[view]])}>
+        <section
+          className={classNames(cls.ArticleItem, [className, cls[view]])}
+        >
           <Card>
             <header className={cls.header}>
               <Avatar
@@ -64,7 +66,7 @@ export const ArticleItem = memo(
             <Text className={cls.title} title={article.title} />
 
             {types}
-            <img className={cls.img} src={article.img} alt={article.title} />
+            <img className={cls.img} src={article.imgBig} alt={article.title} />
 
             {textBlock && (
               <ArticleTextBlock className={cls.text} block={textBlock} />
@@ -83,7 +85,7 @@ export const ArticleItem = memo(
       <section className={classNames(cls.ArticleItem, [className, cls[view]])}>
         <Card onClick={onOpenArticle}>
           <div className={cls.imageInner}>
-            <img src={article.img} alt={article.title} />
+            <img src={article.imgSmall} alt={article.title} />
             <Text className={cls.date} text={article.createdAt} />
           </div>
           <div className={cls.infoInner}>

@@ -44,7 +44,8 @@ export interface Article {
   title: string;
   user: User;
   subtitle: string;
-  img: string;
+  imgBig: string;
+  imgSmall: string;
   views: number;
   createdAt: string;
   type: ArticleType[];

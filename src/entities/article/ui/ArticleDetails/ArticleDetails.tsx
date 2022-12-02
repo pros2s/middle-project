@@ -107,7 +107,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       <>
         <Button onClick={onComeBack}>{t('backToArticleList')}</Button>
         <div className={cls.avatarWrapper}>
-          <Avatar size='200px' src={data?.img} className={cls.avatar} />
+          <Avatar size='200px' src={data?.imgSmall} className={cls.avatar} />
         </div>
         <Text size={TextSize.L} title={data?.title} text={data?.subtitle} />
         <div className={cls.description}>
