@@ -14,9 +14,11 @@ import { AxiosInstance } from 'axios';
 import { ArticleDetailsPageSchema } from 'pages/articleDetailsPage';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleSchema } from 'pages/articlesPage';
+import { SrollSaveSchema } from 'widgets/Page';
 
 export interface StateSchema {
   user: UserSchema;
+  scroll: SrollSaveSchema;
 
   // Async reducers
   login?: LoginSchema;
