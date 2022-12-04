@@ -6,5 +6,13 @@
   "addNewComment": "Write comment",
   "sendComment": "send",
   "readMore": "Read more",
-  "backToArticleList": "Back to articles"
+  "backToArticleList": "Back to articles",
+  "orderBy": "order by",
+  "searchArticle": "Search ",
+  "sortBy": "Sort by",
+  "highest": "highest",
+  "lowest": "lowest",
+  "createdAt": "creation date",
+  "title": "title",
+  "views": "views"
 }

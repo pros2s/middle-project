@@ -6,7 +6,7 @@ import ListIcon from 'shared/assets/icons/list-mode.svg';
 import TiledIcon from 'shared/assets/icons/tiled-mode.svg';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
-import { ArticleView } from '../../model/types/Article';
+import { ArticleView } from '../../entities/article/model/types/Article';
 
 import cls from './ArticleViewSelector.module.scss';
 

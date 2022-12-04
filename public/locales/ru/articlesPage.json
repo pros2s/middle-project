@@ -6,5 +6,13 @@
   "addNewComment": "Написать комментарий",
   "sendComment": "отправить",
   "readMore": "Читать далее",
-  "backToArticleList": "Назад ко всем статьям"
+  "backToArticleList": "Назад ко всем статьям",
+  "orderBy": "в порядке по",
+  "searchArticle": "Поиск",
+  "sortBy": "Сортировать по",
+  "highest": "возрастанию",
+  "lowest": "убыванию",
+  "createdAt": "дате создания",
+  "title": "заголову",
+  "views": "просмотрам"
 }

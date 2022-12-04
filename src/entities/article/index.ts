@@ -12,6 +12,5 @@ export {
   Article,
   ArticleBlockType,
   ArticleType,
+  ArticleSortFields,
 } from './model/types/Article';
-
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';

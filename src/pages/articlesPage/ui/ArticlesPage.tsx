@@ -1,8 +1,4 @@
-import {
-  ArticleList,
-  ArticleView,
-  ArticleViewSelector,
-} from 'entities/article';
+import { ArticleList, ArticleView } from 'entities/article';
 import { memo, useCallback } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -14,6 +10,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { Page } from 'widgets/Page';
+import { FilterArticles } from 'features/filterArticles';
 import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import {
@@ -60,7 +57,7 @@ const ArticlesPage = memo(() => {
         className={classNames(cls.ArticlesPage)}
         onScrollEnd={onLoadNextPage}
       >
-        <ArticleViewSelector view={view} onChangeView={onChangeView} />
+        <FilterArticles onChangeView={onChangeView} view={view} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
       </Page>
     </DynamicReducerLoader>
