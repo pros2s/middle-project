@@ -7,6 +7,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
@@ -26,13 +27,17 @@ export const SearchArticles = memo(() => {
 
   const value = useSelector(getSearchArticles);
 
+  const debouncedSearch = useDebounce(() => {
+    dispatch(fetchArticles({ replace: true }));
+  }, 500);
+
   const onChange = useCallback(
     (val: string) => {
       dispatch(searchArticlesActions.setSearchArticles(val));
       dispatch(articleActions.setPage(1));
-      dispatch(fetchArticles({ replace: true }));
+      debouncedSearch();
     },
-    [dispatch],
+    [debouncedSearch, dispatch],
   );
 
   return (
