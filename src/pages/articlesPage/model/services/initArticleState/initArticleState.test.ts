@@ -25,7 +25,7 @@ describe('initArticleState.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(thunk.dispatch).toBeCalledWith(articleActions.initState());
-    expect(thunk.dispatch).toBeCalledWith(fetchArticles({ page: 1 }));
+    expect(thunk.dispatch).toBeCalledWith(fetchArticles({}));
   });
 
   test('error fetch with inited', async () => {
@@ -46,6 +46,6 @@ describe('initArticleState.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(thunk.dispatch).not.toBeCalledWith(articleActions.initState());
-    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({ page: 1 }));
+    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({}));
   });
 });

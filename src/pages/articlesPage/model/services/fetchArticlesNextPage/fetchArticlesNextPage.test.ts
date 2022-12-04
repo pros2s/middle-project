@@ -25,7 +25,7 @@ describe('fetchArticlesNextPage.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(thunk.dispatch).toBeCalledWith(articleActions.setPage(2));
-    expect(thunk.dispatch).toBeCalledWith(fetchArticles({ page: 2 }));
+    expect(thunk.dispatch).toBeCalledWith(fetchArticles({}));
   });
 
   test('error fetch with !hasMore and isLoading', async () => {
@@ -46,7 +46,7 @@ describe('fetchArticlesNextPage.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(thunk.dispatch).not.toBeCalledWith(articleActions.setPage(2));
-    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({ page: 2 }));
+    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({}));
   });
 
   test('error fetch with only !hasMore', async () => {
@@ -67,7 +67,7 @@ describe('fetchArticlesNextPage.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(thunk.dispatch).not.toBeCalledWith(articleActions.setPage(2));
-    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({ page: 2 }));
+    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({}));
   });
 
   test('error fetch with only isLoading', async () => {
@@ -88,6 +88,6 @@ describe('fetchArticlesNextPage.test', () => {
 
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(thunk.dispatch).not.toBeCalledWith(articleActions.setPage(2));
-    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({ page: 2 }));
+    expect(thunk.dispatch).not.toBeCalledWith(fetchArticles({}));
   });
 });

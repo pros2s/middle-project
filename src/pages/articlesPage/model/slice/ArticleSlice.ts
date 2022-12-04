@@ -50,19 +50,25 @@ const ArticleSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticles.pending, (state) => {
+      .addCase(fetchArticles.pending, (state, { meta }) => {
         state.errorMessage = undefined;
         state.isLoading = true;
+
+        if (meta.arg.replace) {
+          articlesAdapter.removeAll(state);
+        }
       })
-      .addCase(
-        fetchArticles.fulfilled,
-        (state, { payload }: PayloadAction<Article[]>) => {
-          state.errorMessage = undefined;
-          state.isLoading = false;
+      .addCase(fetchArticles.fulfilled, (state, { payload, meta }) => {
+        state.errorMessage = undefined;
+        state.isLoading = false;
+        state.hasMore = payload.length > 0;
+
+        if (meta.arg.replace) {
+          articlesAdapter.setAll(state, payload);
+        } else {
           articlesAdapter.addMany(state, payload);
-          state.hasMore = payload.length > 0;
-        },
-      )
+        }
+      })
       .addCase(
         fetchArticles.rejected,
         (state, { payload }: PayloadAction<string | undefined>) => {

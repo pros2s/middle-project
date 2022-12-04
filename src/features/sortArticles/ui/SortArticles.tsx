@@ -1,4 +1,5 @@
 import { ArticleSortFields } from 'entities/article';
+import { articleActions, fetchArticles } from 'pages/articlesPage';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -27,6 +28,8 @@ export const SortArticles = memo(() => {
   const onChange = useCallback(
     (val: ArticleSortFields) => {
       dispatch(sortArticlesActions.setSortArticles(val));
+      dispatch(articleActions.setPage(1));
+      dispatch(fetchArticles({ replace: true }));
     },
     [dispatch],
   );
