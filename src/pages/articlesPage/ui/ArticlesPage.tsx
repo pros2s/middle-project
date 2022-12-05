@@ -11,6 +11,7 @@ import {
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { Page } from 'widgets/Page';
 import { FilterArticles } from 'features/filterArticles';
+import { useSearchParams } from 'react-router-dom';
 import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import {
@@ -31,6 +32,7 @@ const reducers: ReducersList = {
 
 const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
 
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticleIsLoading);
@@ -41,7 +43,7 @@ const ArticlesPage = memo(() => {
   }, [dispatch]);
 
   useFetchEffect(() => {
-    dispatch(initArticleState());
+    dispatch(initArticleState(searchParams));
   });
 
   const onChangeView = useCallback(

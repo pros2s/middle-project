@@ -15,9 +15,6 @@ import { ArticleDetailsPageSchema } from 'pages/articleDetailsPage';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleSchema } from 'pages/articlesPage';
 import { SrollSaveSchema } from 'widgets/Page';
-import { OrderArticlesSchema } from 'features/orderArticles';
-import { SearchArticlesSchema } from 'features/searchArticles';
-import { SortArticlesSchema } from 'features/sortArticles';
 
 export interface StateSchema {
   user: UserSchema;
@@ -30,11 +27,6 @@ export interface StateSchema {
   articleComments?: ArticleDetailsPageSchema;
   addComment?: AddCommentSchema;
   article?: ArticleSchema;
-
-  // Sort, order or search articles
-  orderArticles?: OrderArticlesSchema;
-  searchArticles?: SearchArticlesSchema;
-  sortArticles?: SortArticlesSchema;
 }
 
 export type StateSchemaFields = keyof StateSchema;
