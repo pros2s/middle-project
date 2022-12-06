@@ -1,5 +1,5 @@
 import { ArticleList, ArticleType, ArticleView } from 'entities/article';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -37,13 +37,16 @@ const ArticlesPage = memo(() => {
 
   const activeType = useSelector(getArticleActiveType);
   const articles = useSelector(getArticles.selectAll);
-  const tabArticles =
-    activeType === ArticleType.ALL
-      ? articles
-      : articles.filter((article) =>
-          article.type.find((typ) => typ === activeType),
-        );
-        
+  const tabArticles = useMemo(
+    () =>
+      activeType === ArticleType.ALL
+        ? articles
+        : articles.filter((article) =>
+            article.type.find((typ) => typ === activeType),
+          ),
+    [activeType, articles],
+  );
+
   const isLoading = useSelector(getArticleIsLoading);
   const view = useSelector(getArticleView);
 

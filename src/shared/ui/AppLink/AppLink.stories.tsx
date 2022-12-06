@@ -21,15 +21,11 @@ const Template: ComponentStory<typeof AppLink> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {
-  theme: AppLinkTheme.PRIMARY,
-};
+Primary.args = {};
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.decorators = [ThemeDecorator(Themes.DARK)];
-PrimaryDark.args = {
-  theme: AppLinkTheme.PRIMARY,
-};
+PrimaryDark.args = {};
 
 export const Secondary = Template.bind({});
 Secondary.args = {

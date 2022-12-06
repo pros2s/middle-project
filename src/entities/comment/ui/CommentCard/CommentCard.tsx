@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutesPaths } from 'shared/lib/routes/routes';
 import { Comment } from '../../model/types/Comment';
 
@@ -45,7 +45,6 @@ export const CommentCard = memo(
       <section className={classNames(cls.CommentCard, [className])}>
         <div>
           <AppLink
-            theme={AppLinkTheme.PRIMARY}
             to={`${RoutesPaths.profile}${comment?.user.id}`}
             className={cls.header}
           >

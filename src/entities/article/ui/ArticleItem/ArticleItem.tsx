@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
@@ -10,7 +10,7 @@ import { ArticleTextBlock } from 'entities/article/ui/ArticleTextBlock/ArticleTe
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { RoutesPaths } from 'shared/lib/routes/routes';
-import { useNavigate } from 'react-router-dom';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
   Article,
   ArticleBlockType,
@@ -29,11 +29,6 @@ interface ArticleItemProps {
 export const ArticleItem = memo(
   ({ className, article, view }: ArticleItemProps) => {
     const { t } = useTranslation('articlesPage');
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(() => {
-      navigate(RoutesPaths.articleDetails + article.id);
-    }, [article.id, navigate]);
 
     const types = <Text className={cls.types} text={article.type.join(', ')} />;
     const views = (
@@ -73,7 +68,9 @@ export const ArticleItem = memo(
             )}
 
             <footer className={cls.footer}>
-              <Button onClick={onOpenArticle}>{t('readMore')}</Button>
+              <AppLink to={RoutesPaths.articleDetails + article.id}>
+                <Button>{t('readMore')}</Button>
+              </AppLink>
               {views}
             </footer>
           </Card>
@@ -82,8 +79,11 @@ export const ArticleItem = memo(
     }
 
     return (
-      <section className={classNames(cls.ArticleItem, [className, cls[view]])}>
-        <Card onClick={onOpenArticle}>
+      <AppLink
+        to={RoutesPaths.articleDetails + article.id}
+        className={classNames(cls.ArticleItem, [className, cls[view]])}
+      >
+        <Card>
           <div className={cls.imageInner}>
             <img src={article.imgSmall} alt={article.title} />
             <Text className={cls.date} text={article.createdAt} />
@@ -94,7 +94,7 @@ export const ArticleItem = memo(
           </div>
           <Text className={cls.title} text={article.title} />
         </Card>
-      </section>
+      </AppLink>
     );
   },
 );
