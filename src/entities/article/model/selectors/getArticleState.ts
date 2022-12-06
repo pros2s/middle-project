@@ -12,5 +12,5 @@ export const getArticleData = (state: StateSchema) =>
 export const canArticleEdit = createSelector(
   getArticleData,
   getUserAuthData,
-  (data, user) => data?.user.id === user.authData?.id,
+  (data, user) => data?.user?.id === user.authData?.id,
 );

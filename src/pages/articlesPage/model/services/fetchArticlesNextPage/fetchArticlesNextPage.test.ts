@@ -1,31 +1,28 @@
 import { ArticleSortFields, ArticleType, ArticleView } from 'entities/article';
 import { TestAsyncThunk } from 'shared/lib/testHelpers/testAsyncThunk';
-import { ArticleSchema } from '../../types/ArticleSchema';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 import { articleActions } from '../../slice/ArticleSlice';
 import { fetchArticlesNextPage } from './fetchArticlesNextPage';
 
 jest.mock('../fetchArticles/fetchArticles');
 
-const article: ArticleSchema = {
-  hasMore: false,
-  entities: {},
-  ids: [],
-  isLoading: false,
-  page: 1,
-  view: ArticleView.BIG,
-  _inited: false,
-  limit: 6,
-  order: 'asc',
-  search: '',
-  sortType: ArticleSortFields.CREATEDAT,
-  activeType: ArticleType.ALL,
-};
-
 describe('fetchArticlesNextPage.test', () => {
   test('succes fetch function call', async () => {
     const thunk = new TestAsyncThunk(fetchArticlesNextPage, {
-      article,
+      article: {
+        hasMore: true,
+        entities: {},
+        ids: [],
+        isLoading: false,
+        page: 1,
+        view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
+        order: 'asc',
+        search: '',
+        sortType: ArticleSortFields.CREATEDAT,
+        activeType: ArticleType.ALL,
+      },
     });
 
     await thunk.callThunk();
@@ -37,7 +34,20 @@ describe('fetchArticlesNextPage.test', () => {
 
   test('error fetch with !hasMore and isLoading', async () => {
     const thunk = new TestAsyncThunk(fetchArticlesNextPage, {
-      article,
+      article: {
+        hasMore: false,
+        entities: {},
+        ids: [],
+        isLoading: true,
+        page: 1,
+        view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
+        order: 'asc',
+        search: '',
+        sortType: ArticleSortFields.CREATEDAT,
+        activeType: ArticleType.ALL,
+      },
     });
 
     await thunk.callThunk();
@@ -49,7 +59,20 @@ describe('fetchArticlesNextPage.test', () => {
 
   test('error fetch with only !hasMore', async () => {
     const thunk = new TestAsyncThunk(fetchArticlesNextPage, {
-      article,
+      article: {
+        hasMore: false,
+        entities: {},
+        ids: [],
+        isLoading: false,
+        page: 1,
+        view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
+        order: 'asc',
+        search: '',
+        sortType: ArticleSortFields.CREATEDAT,
+        activeType: ArticleType.ALL,
+      },
     });
 
     await thunk.callThunk();
@@ -61,7 +84,20 @@ describe('fetchArticlesNextPage.test', () => {
 
   test('error fetch with only isLoading', async () => {
     const thunk = new TestAsyncThunk(fetchArticlesNextPage, {
-      article,
+      article: {
+        hasMore: true,
+        entities: {},
+        ids: [],
+        isLoading: true,
+        page: 1,
+        view: ArticleView.BIG,
+        _inited: false,
+        limit: 6,
+        order: 'asc',
+        search: '',
+        sortType: ArticleSortFields.CREATEDAT,
+        activeType: ArticleType.ALL,
+      },
     });
 
     await thunk.callThunk();

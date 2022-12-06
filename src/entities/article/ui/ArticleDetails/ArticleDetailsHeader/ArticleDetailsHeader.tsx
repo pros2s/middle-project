@@ -40,7 +40,11 @@ export const ArticleDetailsHeader = memo(
     return (
       <header className={classNames(cls.ArticleDetailsHeader, [className])}>
         <Button onClick={onComeBack}>{t('backToArticleList')}</Button>
-        {canEdit && <Button className={cls.edit} onClick={onEditArticle}>{t('editArticle')}</Button>}
+        {canEdit && (
+          <Button className={cls.edit} onClick={onEditArticle}>
+            {t('editArticle')}
+          </Button>
+        )}
       </header>
     );
   },

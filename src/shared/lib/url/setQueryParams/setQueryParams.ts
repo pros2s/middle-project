@@ -8,6 +8,6 @@ export const enterNewQueryParams = (params: OptionalRecord<string, string>) => {
   return `?${searchParams.toString()}`;
 };
 
-export const  setQueryParams = (params: OptionalRecord<string, string>) => {
+export const setQueryParams = (params: OptionalRecord<string, string>) => {
   window.history.pushState(null, '', enterNewQueryParams(params));
 };

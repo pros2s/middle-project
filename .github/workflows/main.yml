@@ -36,6 +36,6 @@ jobs:
         run: npm run test:unit
 
       - name: Storybook build
-        run: npm run storybook:build
+        run: npm run sb:build
       - name: Screenshot tests
         run: npm run test:loki:ci
