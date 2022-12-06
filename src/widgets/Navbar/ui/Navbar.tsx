@@ -8,6 +8,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { getUserAuthData, userActions } from 'entities/user';
 
+import { getSidebarCollapsed } from 'widgets/Sidebar';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -18,6 +20,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const { authData } = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const collapsed = useSelector(getSidebarCollapsed);
 
   const [isLogInModal, setIsLogInModal] = useState<boolean>(false);
 
@@ -34,25 +37,25 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   };
 
-  if (authData) {
-    return (
-      <header className={classNames(cls.Navbar, [className])}>
-        <nav className={cls.links}>
-          <Button theme={ButtonThemes.INVERTED_CLEAR} onClick={onLogout}>
-            {t('Logout')}
-          </Button>
-        </nav>
-      </header>
-    );
-  }
-
   return (
     <header className={classNames(cls.Navbar, [className])}>
+      <AppLink
+        to='/articles/create'
+        theme={AppLinkTheme.PRIMARY}
+        className={classNames(cls.create, [], { [cls.collapsed]: collapsed })}
+      >
+        {t('createNewArticle')}
+      </AppLink>
       <nav className={cls.links}>
-        <Button theme={ButtonThemes.INVERTED_CLEAR} onClick={onOpenLoginForm}>
-          {t('LogIn')}
+        <Button
+          theme={ButtonThemes.INVERTED_CLEAR}
+          onClick={authData ? onLogout : onOpenLoginForm}
+        >
+          {authData ? t('Logout') : t('LogIn')}
         </Button>
-        <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
+        {!authData && (
+          <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
+        )}
       </nav>
     </header>
   );

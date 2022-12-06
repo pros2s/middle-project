@@ -15,10 +15,12 @@ import { ArticleDetailsPageSchema } from 'pages/articleDetailsPage';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleSchema } from 'pages/articlesPage';
 import { SrollSaveSchema } from 'widgets/Page';
+import { SidebarSchema } from 'widgets/Sidebar';
 
 export interface StateSchema {
   user: UserSchema;
   scroll: SrollSaveSchema;
+  sidebar: SidebarSchema;
 
   // Async reducers
   login?: LoginSchema;

@@ -7,6 +7,7 @@ import {
 import { userReducer } from 'entities/user';
 import { $api } from 'shared/api/api';
 import { scrollPositionReducer } from 'widgets/Page';
+import { SidebarReducer } from 'widgets/Sidebar';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
@@ -18,6 +19,7 @@ export function createReduxStore(
     ...asyncReducers,
     user: userReducer,
     scroll: scrollPositionReducer,
+    sidebar: SidebarReducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);

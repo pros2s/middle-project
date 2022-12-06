@@ -10,6 +10,17 @@
   transition: all 0.1s linear;
 }
 
+.create {
+  margin-left: 30px;
+  padding: 5px;
+
+  text-align: center;
+
+  &.collapsed {
+    width: auto;
+  }
+}
+
 .links {
   margin-left: auto;
 
