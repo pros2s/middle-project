@@ -1,4 +1,4 @@
-import { ArticleSortFields, ArticleView } from 'entities/article';
+import { ArticleSortFields, ArticleType, ArticleView } from 'entities/article';
 import { TestAsyncThunk } from 'shared/lib/testHelpers/testAsyncThunk';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 import { articleActions } from '../../slice/ArticleSlice';
@@ -19,6 +19,7 @@ const article: ArticleSchema = {
   order: 'asc',
   search: '',
   sortType: ArticleSortFields.CREATEDAT,
+  activeType: ArticleType.ALL,
 };
 
 describe('initArticleState.test', () => {

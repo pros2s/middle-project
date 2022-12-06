@@ -3,6 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/article';
 import { setQueryParams } from 'shared/lib/url/setQueryParams/setQueryParams';
 import {
+  getArticleActiveType,
   getArticleLimit,
   getArticleOrder,
   getArticlePage,
@@ -27,9 +28,10 @@ export const fetchArticles = createAsyncThunk<
     const sort = getArticleSort(getState());
     const order = getArticleOrder(getState());
     const search = getArticleSearch(getState());
+    const activeType = getArticleActiveType(getState());
 
     try {
-      setQueryParams({ sort, order, search });
+      setQueryParams({ sort, order, search, type: activeType });
       const response = await extra.api.get<Article[]>('/articles', {
         params: {
           _expand: 'user',

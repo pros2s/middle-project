@@ -7,11 +7,15 @@ import cls from './Card.module.scss';
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: ReactNode;
+  active?: boolean;
 }
 
 export const Card = memo(
-  ({ className, children, ...otherAttrubutes }: CardProps) => (
-    <div className={classNames(cls.Card, [className])} {...otherAttrubutes}>
+  ({ className, active, children, ...otherAttrubutes }: CardProps) => (
+    <div
+      className={classNames(cls.Card, [className], { [cls.active]: active })}
+      {...otherAttrubutes}
+    >
       {children}
     </div>
   ),

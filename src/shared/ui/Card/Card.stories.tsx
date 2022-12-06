@@ -28,3 +28,19 @@ DefaultDark.args = {
   // eslint-disable-next-line i18next/no-literal-string
   children: <Text title='Some title' text='Some text' />,
 };
+
+// Active
+export const Active = Template.bind({});
+Active.args = {
+  // eslint-disable-next-line i18next/no-literal-string
+  children: <Text title='Some title' text='Some text' />,
+  active: true,
+};
+
+export const ActiveDark = Template.bind({});
+ActiveDark.decorators = [ThemeDecorator(Themes.DARK)];
+ActiveDark.args = {
+  // eslint-disable-next-line i18next/no-literal-string
+  children: <Text title='Some title' text='Some text' />,
+  active: true,
+};

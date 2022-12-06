@@ -14,5 +14,9 @@
   "lowest": "убыванию",
   "createdAt": "дате создания",
   "title": "заголовку",
-  "views": "просмотрам"
+  "views": "просмотрам",
+  "allArticles": "Все",
+  "economicsArticles": "Экономические",
+  "itArticles": "ИТ",
+  "scienceArticles": "Научные"
 }

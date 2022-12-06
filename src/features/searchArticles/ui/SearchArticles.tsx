@@ -1,5 +1,9 @@
-import { articleActions, fetchArticles } from 'pages/articlesPage';
-import { getArticleSearch } from 'pages/articlesPage/model/selectors/getArticleState';
+import {
+  articleActions,
+  fetchArticles,
+  getArticleSearch,
+} from 'pages/articlesPage';
+
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

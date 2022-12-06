@@ -5,3 +5,7 @@
   border-radius: var(--border-radius);
   cursor: pointer;
 }
+
+.active {
+  border: 1px solid var(--primary-color);
+}

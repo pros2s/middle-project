@@ -1,4 +1,4 @@
-import { ArticleList, ArticleView } from 'entities/article';
+import { ArticleList, ArticleType, ArticleView } from 'entities/article';
 import { memo, useCallback } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -15,6 +15,7 @@ import { useSearchParams } from 'react-router-dom';
 import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import {
+  getArticleActiveType,
   getArticleIsLoading,
   getArticleView,
 } from '../model/selectors/getArticleState';
@@ -34,7 +35,15 @@ const ArticlesPage = memo(() => {
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
 
+  const activeType = useSelector(getArticleActiveType);
   const articles = useSelector(getArticles.selectAll);
+  const tabArticles =
+    activeType === ArticleType.ALL
+      ? articles
+      : articles.filter((article) =>
+          article.type.find((typ) => typ === activeType),
+        );
+        
   const isLoading = useSelector(getArticleIsLoading);
   const view = useSelector(getArticleView);
 
@@ -60,7 +69,7 @@ const ArticlesPage = memo(() => {
         onScrollEnd={onLoadNextPage}
       >
         <FilterArticles onChangeView={onChangeView} view={view} />
-        <ArticleList isLoading={isLoading} view={view} articles={articles} />
+        <ArticleList isLoading={isLoading} view={view} articles={tabArticles} />
       </Page>
     </DynamicReducerLoader>
   );

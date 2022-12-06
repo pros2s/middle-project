@@ -1,6 +1,10 @@
 import { ArticleSortFields } from 'entities/article';
-import { articleActions, fetchArticles } from 'pages/articlesPage';
-import { getArticleSort } from 'pages/articlesPage/model/selectors/getArticleState';
+import {
+  articleActions,
+  fetchArticles,
+  getArticleSort,
+} from 'pages/articlesPage';
+
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

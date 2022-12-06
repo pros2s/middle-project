@@ -4,7 +4,12 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleSortFields, ArticleView } from 'entities/article';
+import {
+  Article,
+  ArticleSortFields,
+  ArticleType,
+  ArticleView,
+} from 'entities/article';
 import { LOCALE_STORAGE_VIEW_MODE } from 'shared/consts/localeStorage';
 import { OrderType } from 'shared/types/order';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
@@ -33,6 +38,7 @@ const ArticleSlice = createSlice({
     sortType: ArticleSortFields.CREATEDAT,
     order: 'asc',
     search: '',
+    activeType: ArticleType.ALL,
   }),
   reducers: {
     setView(state, { payload }: PayloadAction<ArticleView>) {
@@ -50,6 +56,9 @@ const ArticleSlice = createSlice({
     },
     setSearchArticles(state, { payload }: PayloadAction<string>) {
       state.search = payload;
+    },
+    setActiveActiveType(state, { payload }: PayloadAction<ArticleType>) {
+      state.activeType = payload;
     },
     initState(state) {
       const view = localStorage.getItem(

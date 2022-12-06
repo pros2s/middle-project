@@ -2,6 +2,7 @@ import { memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleView } from 'entities/article';
+import { ArticleTabs } from 'features/articleTabs';
 import { SearchArticles } from '../../searchArticles/ui/SearchArticles';
 import { OrderArticles } from '../../orderArticles/ui/OrderArticles';
 import { SortArticles } from '../../sortArticles/ui/SortArticles';
@@ -26,6 +27,7 @@ export const FilterArticles = memo(
         </div>
         <ArticleViewSelector view={view} onChangeView={onChangeView} />
       </div>
+      <ArticleTabs />
     </div>
   ),
 );

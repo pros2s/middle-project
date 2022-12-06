@@ -1,5 +1,9 @@
-import { articleActions, fetchArticles } from 'pages/articlesPage';
-import { getArticleOrder } from 'pages/articlesPage/model/selectors/getArticleState';
+import {
+  articleActions,
+  fetchArticles,
+  getArticleOrder,
+} from 'pages/articlesPage';
+
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

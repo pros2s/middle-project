@@ -10,9 +10,13 @@
   "orderBy": "order by",
   "searchArticle": "Search",
   "sortBy": "Sort by",
-  "highest": "highest",
-  "lowest": "lowest",
+  "highest": "lowest",
+  "lowest": "highest",
   "createdAt": "creation date",
   "title": "title",
-  "views": "views"
+  "views": "views",
+  "allArticles": "All",
+  "economicsArticles": "Economis",
+  "itArticles": "IT",
+  "scienceArticles": "Scince"
 }
