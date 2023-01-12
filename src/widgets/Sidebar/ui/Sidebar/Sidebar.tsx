@@ -45,7 +45,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
   return (
     <DynamicReducerLoader removeAfterUnmount={false} reducers={reducers}>
-      <menu
+      <aside
         data-testid='sidebar'
         className={classNames(cls.Sidebar, [className], {
           [cls.collapsed]: collapsed,
@@ -72,7 +72,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             })}
           />
         </footer>
-      </menu>
+      </aside>
     </DynamicReducerLoader>
   );
 });

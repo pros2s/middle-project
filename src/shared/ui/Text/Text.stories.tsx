@@ -127,6 +127,22 @@ ErrorDark.args = {
 };
 ErrorDark.decorators = [ThemeDecorator(Themes.DARK)];
 
+// Size_S
+export const S = Template.bind({});
+S.args = {
+  text: 'Some message',
+  title: 'Some title',
+  size: TextSize.S,
+};
+
+export const SDark = Template.bind({});
+SDark.args = {
+  text: 'Some message',
+  title: 'Some title',
+  size: TextSize.S,
+};
+SDark.decorators = [ThemeDecorator(Themes.DARK)];
+
 // Size_M
 export const M = Template.bind({});
 M.args = {
