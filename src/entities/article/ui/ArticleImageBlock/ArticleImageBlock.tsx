@@ -1,8 +1,8 @@
-import { ArticleImgaeBlockType } from 'entities/article/model/types/Article';
 import { memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { ArticleImgaeBlockType } from '../../model/types/Article';
 
 import cls from './ArticleImageBlock.module.scss';
 

@@ -36,7 +36,7 @@ module.exports = {
       },
     },
   ],
-  plugins: ['react', 'react-hooks', 'i18next', 'prettier'],
+  plugins: ['react', 'react-hooks', 'i18next', 'prettier', 'pross-plugin'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -73,6 +73,8 @@ module.exports = {
     'jsx-quotes': [2, 'prefer-single'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    // pross
+    'pross-plugin/path-watcher': 'error',
     // off
     'import/no-unresolved': 'off',
     'import/extensions': 'off',

@@ -5,7 +5,7 @@ import {
   ArticleType,
 } from 'entities/article';
 
-import monkey from 'shared/lib/testHelpers/smartMonkey.jpg';
+import monkey from '../smartMonkey.jpg';
 
 export const initializeArticles = (view: ArticleView): Article[] =>
   new Array(view === ArticleView.BIG ? 3 : 9).fill(0).map(() => ({

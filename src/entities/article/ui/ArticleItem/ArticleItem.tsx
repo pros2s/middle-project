@@ -6,11 +6,11 @@ import { Text } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { ArticleTextBlock } from 'entities/article/ui/ArticleTextBlock/ArticleTextBlock';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { RoutesPaths } from 'shared/lib/routes/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import {
   Article,
   ArticleBlockType,

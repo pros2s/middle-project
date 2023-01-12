@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Themes } from 'app/providers/ThemesProvider';
-import { loginReducer } from 'features/authByUsername/model/slice/LoginSlice';
 import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { loginReducer } from '../../model/slice/LoginSlice';
 import LoginForm from './LoginForm';
 
 export default {
