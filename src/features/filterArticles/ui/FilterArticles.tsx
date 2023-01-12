@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleView } from 'entities/article';
 import { ArticleTabs } from 'features/articleTabs';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { SearchArticles } from '../../searchArticles/ui/SearchArticles';
 import { OrderArticles } from '../../orderArticles/ui/OrderArticles';
 import { SortArticles } from '../../sortArticles/ui/SortArticles';
@@ -18,16 +19,16 @@ interface FilterArticlesProps {
 
 export const FilterArticles = memo(
   ({ className, onChangeView, view }: FilterArticlesProps) => (
-    <div className={classNames(cls.FilterArticles, [className])}>
+    <Flex direction='column' gap='16' className={classNames('', [className])}>
       <SearchArticles />
-      <div className={cls.header}>
-        <div className={cls.left}>
+      <Flex align='center' justify='between' className={cls.header}>
+        <Flex align='center' gap='16' className={cls.left}>
           <SortArticles />
           <OrderArticles />
-        </div>
+        </Flex>
         <ArticleViewSelector view={view} onChangeView={onChangeView} />
-      </div>
+      </Flex>
       <ArticleTabs />
-    </div>
+    </Flex>
   ),
 );

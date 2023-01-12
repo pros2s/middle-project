@@ -10,6 +10,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getInited, userActions } from 'entities/user';
 import { useSelector } from 'react-redux';
+import { Flex } from 'shared/ui/Stack/Flex';
 
 const App = memo(() => {
   const { theme } = useThemes();
@@ -26,10 +27,10 @@ const App = memo(() => {
       <Suspense fallback=''>
         <Navbar />
 
-        <div className='app__content'>
+        <Flex>
           <Sidebar />
           {inited && <RoutesProvieder />}
-        </div>
+        </Flex>
       </Suspense>
     </div>
   );

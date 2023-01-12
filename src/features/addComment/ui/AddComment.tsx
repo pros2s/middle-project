@@ -10,6 +10,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { getAddCommentText } from '../model/selectors/getAddComment';
 import {
   addCommentActions,
@@ -52,15 +53,17 @@ const AddComment = memo(({ className, onSendComment }: AddCommentProps) => {
   return (
     <DynamicReducerLoader reducers={reducers}>
       <form className={classNames(cls.AddComment, [className])}>
-        <Input
-          value={inputValue}
-          onChange={onChangeInput}
-          placeholder={t('addNewComment')}
-          className={cls.input}
-        />
-        <Button type='submit' onClick={sendHandler}>
-          {t('sendComment')}
-        </Button>
+        <Flex align='center' justify='between'>
+          <Input
+            value={inputValue}
+            onChange={onChangeInput}
+            placeholder={t('addNewComment')}
+            className={cls.input}
+          />
+          <Button type='submit' onClick={sendHandler}>
+            {t('sendComment')}
+          </Button>
+        </Flex>
       </form>
     </DynamicReducerLoader>
   );

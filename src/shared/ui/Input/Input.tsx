@@ -9,6 +9,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Flex } from '../Stack/Flex';
 
 import cls from './Input.module.scss';
 
@@ -71,8 +72,8 @@ export const Input = memo(
     };
 
     return (
-      <div
-        className={classNames(cls.InputWrapper, [className], {
+      <Flex
+        className={classNames('', [className], {
           [cls.readOnly]: readOnly,
         })}
       >
@@ -98,7 +99,7 @@ export const Input = memo(
             <span style={{ left: caretPosition * 8.9 }} className={cls.caret} />
           )}
         </section>
-      </div>
+      </Flex>
     );
   },
 );

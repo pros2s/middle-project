@@ -1,6 +1,7 @@
 import { ReactNode, useCallback } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Flex } from '../Stack/Flex';
 import { Card } from '../Card/Card';
 
 import cls from './Tabs.module.scss';
@@ -30,7 +31,7 @@ export const Tabs = <T extends string>({
   );
 
   return (
-    <div className={classNames(cls.Tabs, [className])}>
+    <Flex align='center' gap='16' className={classNames(cls.Tabs, [className])}>
       {tabs.map((tab) => (
         <Card
           className={cls.tab}
@@ -41,6 +42,6 @@ export const Tabs = <T extends string>({
           {tab.content}
         </Card>
       ))}
-    </div>
+    </Flex>
   );
 };

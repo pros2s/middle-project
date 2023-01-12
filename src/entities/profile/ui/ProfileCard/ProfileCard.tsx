@@ -8,6 +8,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextThemes } from 'shared/ui/Text/Text';
 import { Currency, CurrencySelect } from 'entities/currencySelect';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { Profile } from '../../model/types/ProfileSchema';
 
 import cls from './ProfileCard.module.scss';
@@ -55,17 +56,17 @@ export const ProfileCard = memo(
 
     if (errorMessage) {
       return (
-        <div className={cls.error}>
+        <Flex align='center' justify='center' className={cls.error}>
           <Text title={t('ProfileError')} theme={TextThemes.ERROR} />
-        </div>
+        </Flex>
       );
     }
 
     if (isLoading) {
       return (
-        <div className={cls.loading}>
+        <Flex align='center' justify='center' className={cls.loading}>
           <Loader />
-        </div>
+        </Flex>
       );
     }
 

@@ -1,11 +1,6 @@
 .BIG {
   margin: 10px 0;
 
-  .header {
-    display: flex;
-    align-items: center;
-  }
-
   .username {
     margin-left: 10px;
   }
@@ -32,13 +27,7 @@
   }
 
   .footer {
-    display: flex;
-    align-items: center;
     margin-top: 20px;
-
-    &.skeleton {
-      justify-content: space-between;
-    }
   }
 }
 
@@ -77,10 +66,6 @@
   .imageInner {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
     height: 215px;
 
     img {
@@ -88,15 +73,6 @@
       margin: 10px 0;
       object-fit: cover;
     }
-  }
-
-  .infoInner {
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-
-    margin: 10px 0;
   }
 
   .types {

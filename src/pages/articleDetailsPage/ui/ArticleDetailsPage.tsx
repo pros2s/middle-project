@@ -2,7 +2,6 @@ import { FC, memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/article';
 
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextAlign, TextThemes } from 'shared/ui/Text/Text';
 
 import { useTranslation } from 'react-i18next';
@@ -16,8 +15,8 @@ import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AddComment } from 'features/addComment';
 import { Page } from 'widgets/Page';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { getIsLoadingFromComments } from '../model/selectors/getFromComments';
-import cls from './ArticleDetailsPage.module.scss';
 import {
   articleDetailsPageReducer,
   getAllComments,
@@ -50,19 +49,19 @@ const ArticleDetailsPage: FC = () => {
 
   if (!id && __PROJECT__ !== 'storybook') {
     return (
-      <div className={classNames(cls.ArticleDetailsPage)}>
+      <Flex direction='column'>
         <Text
           title={t('IdNotFound')}
           align={TextAlign.CENTER}
           theme={TextThemes.ERROR}
         />
-      </div>
+      </Flex>
     );
   }
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Page className={classNames(cls.ArticleDetailsPage)}>
+      <Page>
         <ArticleDetails id={id} />
         <Text title={t('comments')} />
         <AddComment onSendComment={onSendComment} />

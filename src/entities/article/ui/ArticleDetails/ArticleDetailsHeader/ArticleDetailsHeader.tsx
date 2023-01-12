@@ -8,6 +8,7 @@ import { RoutesPaths } from 'shared/lib/routes/routes';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { useSelector } from 'react-redux';
+import { Flex } from 'shared/ui/Stack/Flex';
 import {
   canArticleEdit,
   getArticleData,
@@ -38,13 +39,15 @@ export const ArticleDetailsHeader = memo(
     }, [navigate]);
 
     return (
-      <header className={classNames(cls.ArticleDetailsHeader, [className])}>
-        <Button onClick={onComeBack}>{t('backToArticleList')}</Button>
-        {canEdit && (
-          <Button className={cls.edit} onClick={onEditArticle}>
-            {t('editArticle')}
-          </Button>
-        )}
+      <header className={classNames('', [className])}>
+        <Flex align='center'>
+          <Button onClick={onComeBack}>{t('backToArticleList')}</Button>
+          {canEdit && (
+            <Button className={cls.edit} onClick={onEditArticle}>
+              {t('editArticle')}
+            </Button>
+          )}
+        </Flex>
       </header>
     );
   },

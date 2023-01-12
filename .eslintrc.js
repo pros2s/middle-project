@@ -48,7 +48,16 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'size', 'name', 'align'],
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'size',
+          'name',
+          'align',
+          'justify',
+          'gap',
+          'direction',
+        ],
       },
     ],
     'no-underscore-dangle': [

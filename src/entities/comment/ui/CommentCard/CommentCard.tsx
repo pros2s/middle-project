@@ -6,6 +6,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutesPaths } from 'shared/lib/routes/routes';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { Comment } from '../../model/types/Comment';
 
 import cls from './CommentCard.module.scss';
@@ -42,23 +43,24 @@ export const CommentCard = memo(
     }
 
     return (
-      <section className={classNames(cls.CommentCard, [className])}>
-        <div>
-          <AppLink
-            to={`${RoutesPaths.profile}${comment?.user.id}`}
-            className={cls.header}
-          >
-            <Avatar
-              className={cls.avatar}
-              size='30px'
-              src={comment?.user.avatar}
-            />
-            <Text title={comment?.user.username} />
-          </AppLink>
-          <Text text={comment?.text} />
-        </div>
-        <div />
-      </section>
+      <Flex
+        direction='column'
+        justify='between'
+        className={classNames(cls.CommentCard, [className])}
+      >
+        <AppLink
+          to={`${RoutesPaths.profile}${comment?.user.id}`}
+          className={cls.header}
+        >
+          <Avatar
+            className={cls.avatar}
+            size='30px'
+            src={comment?.user.avatar}
+          />
+          <Text title={comment?.user.username} />
+        </AppLink>
+        <Text text={comment?.text} />
+      </Flex>
     );
   },
 );

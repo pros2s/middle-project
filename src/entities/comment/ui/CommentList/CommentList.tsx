@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/Comment';
-
-import cls from './CommentList.module.scss';
 
 interface CommentListProps {
   className?: string;
@@ -20,16 +19,16 @@ export const CommentList = memo(
 
     if (isLoading) {
       return (
-        <div className={classNames(cls.CommentList, [className])}>
+        <Flex direction='column' className={classNames('', [className])}>
           <CommentCard isLoading={isLoading} />
           <CommentCard isLoading={isLoading} />
           <CommentCard isLoading={isLoading} />
-        </div>
+        </Flex>
       );
     }
 
     return (
-      <div className={classNames(cls.CommentList, [className])}>
+      <Flex direction='column' className={classNames('', [className])}>
         {comments.length ? (
           comments
             .reverse()
@@ -43,7 +42,7 @@ export const CommentList = memo(
         ) : (
           <Text title={t('commentsNotFound')} />
         )}
-      </div>
+      </Flex>
     );
   },
 );

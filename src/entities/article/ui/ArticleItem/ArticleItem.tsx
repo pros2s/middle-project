@@ -10,6 +10,7 @@ import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { RoutesPaths } from 'shared/lib/routes/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import {
   Article,
@@ -48,7 +49,7 @@ export const ArticleItem = memo(
           className={classNames(cls.ArticleItem, [className, cls[view]])}
         >
           <Card>
-            <header className={cls.header}>
+            <Flex align='center'>
               <Avatar
                 size='30px'
                 src={article.user.avatar}
@@ -56,7 +57,7 @@ export const ArticleItem = memo(
               />
               <Text className={cls.username} text={article.user.username} />
               <Text className={cls.date} text={article.createdAt} />
-            </header>
+            </Flex>
 
             <Text className={cls.title} title={article.title} />
 
@@ -66,12 +67,13 @@ export const ArticleItem = memo(
             {textBlock && (
               <ArticleTextBlock className={cls.text} block={textBlock} />
             )}
-
-            <footer className={cls.footer}>
-              <AppLink to={RoutesPaths.articleDetails + article.id}>
-                <Button>{t('readMore')}</Button>
-              </AppLink>
-              {views}
+            <footer className={classNames(cls.footer)}>
+              <Flex align='center'>
+                <AppLink to={RoutesPaths.articleDetails + article.id}>
+                  <Button>{t('readMore')}</Button>
+                </AppLink>
+                {views}
+              </Flex>
             </footer>
           </Card>
         </section>
@@ -84,14 +86,14 @@ export const ArticleItem = memo(
         className={classNames(cls.ArticleItem, [className, cls[view]])}
       >
         <Card>
-          <div className={cls.imageInner}>
+          <Flex justify='center' direction='column' className={cls.imageInner}>
             <img src={article.imgSmall} alt={article.title} />
             <Text className={cls.date} text={article.createdAt} />
-          </div>
-          <div className={cls.infoInner}>
+          </Flex>
+          <Flex align='center' gap='8'>
             {types}
             {views}
-          </div>
+          </Flex>
           <Text className={cls.title} text={article.title} />
         </Card>
       </AppLink>

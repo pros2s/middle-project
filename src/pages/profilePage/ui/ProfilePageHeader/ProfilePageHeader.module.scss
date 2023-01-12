@@ -9,10 +9,6 @@
   border-bottom: 1px solid var(--primary-color);
 }
 
-.buttons {
-  display: flex;
-
-  & > :first-child {
-    margin-right: 10px;
-  }
+.firstBtn {
+  margin-right: 10px;
 }

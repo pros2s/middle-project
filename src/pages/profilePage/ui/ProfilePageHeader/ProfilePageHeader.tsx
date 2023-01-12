@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { getProfileCanEdit } from '../../model/selectors/getProfileCanEdit/getProfileCanEdit';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/ProfileSlice';
@@ -48,14 +49,18 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
               {t('EditProfile')}
             </Button>
           ) : (
-            <div className={cls.buttons}>
-              <Button onClick={onSaveChanges} theme={ButtonThemes.OUTLINE}>
+            <Flex>
+              <Button
+                className={cls.firstBtn}
+                onClick={onSaveChanges}
+                theme={ButtonThemes.OUTLINE}
+              >
                 {t('SaveProfileChanges')}
               </Button>
               <Button onClick={onCancelEdit} theme={ButtonThemes.CANCEL}>
                 {t('CancelEditProfile')}
               </Button>
-            </div>
+            </Flex>
           )}
         </div>
       )}

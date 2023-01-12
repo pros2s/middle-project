@@ -14,6 +14,7 @@ import DateIcon from 'shared/assets/icons/date.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
+import { Flex } from 'shared/ui/Stack/Flex';
 import { ArticleDetailsHeader } from './ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
@@ -96,18 +97,18 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     content = (
       <>
         <ArticleDetailsHeader />
-        <div className={cls.avatarWrapper}>
+        <Flex justify='center'>
           <Avatar size='200px' src={data?.imgSmall} className={cls.avatar} />
-        </div>
+        </Flex>
         <Text size={TextSize.L} title={data?.title} text={data?.subtitle} />
-        <div className={cls.description}>
+        <Flex align='center'>
           <SVGIcon className={cls.icon} Svg={EyeIcon} />
           <Text text={String(data?.views)} />
-        </div>
-        <div className={cls.description}>
+        </Flex>
+        <Flex align='center'>
           <SVGIcon className={cls.icon} Svg={DateIcon} />
           <Text text={data?.createdAt} />
-        </div>
+        </Flex>
         {data?.blocks.map(blockComponent)}
       </>
     );
