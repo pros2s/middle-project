@@ -5,8 +5,6 @@ import {
   ArticleType,
 } from 'entities/article';
 
-import monkey from '../smartMonkey.jpg';
-
 export const initializeArticles = (view: ArticleView): Article[] =>
   new Array(view === ArticleView.BIG ? 3 : 9).fill(0).map(() => ({
     id: '1',
@@ -16,7 +14,12 @@ export const initializeArticles = (view: ArticleView): Article[] =>
     imgSmall: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    user: { id: '1', username: 'Username', avatar: monkey },
+    user: {
+      id: '1',
+      username: 'Username',
+      avatar:
+        'https://rukminim1.flixcart.com/image/416/416/ksuowi80/laptop-skin-decal/h/z/t/programming-coding-laptop-skin-for-hp-asus-acer-dell-apple-original-imag6c4mepvbqnyg.jpeg?q=70',
+    },
     type: [ArticleType.IT],
     blocks: [
       {
