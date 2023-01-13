@@ -23,7 +23,8 @@
     "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:loki:report": "npm run test:loki:json & npm run test:loki:html",
     "sb": "start-storybook -p 6006 -c ./config/storybook",
-    "sb:build": "build-storybook -c ./config/storybook"
+    "sb:build": "build-storybook -c ./config/storybook",
+    "slice": "node ./scripts/createFSDSlice/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
