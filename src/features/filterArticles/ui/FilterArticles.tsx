@@ -26,7 +26,11 @@ export const FilterArticles = memo(
           <SortArticles />
           <OrderArticles />
         </Flex>
-        <ArticleViewSelector view={view} onChangeView={onChangeView} />
+        <ArticleViewSelector
+          className={cls.right}
+          view={view}
+          onChangeView={onChangeView}
+        />
       </Flex>
       <ArticleTabs />
     </Flex>
