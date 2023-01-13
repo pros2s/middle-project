@@ -10,6 +10,9 @@ import { getUserAuthData, userActions } from 'entities/user';
 
 import { getSidebarCollapsed } from 'widgets/Sidebar';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { RoutesPaths } from 'shared/lib/routes/routes';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -47,12 +50,29 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t('createNewArticle')}
       </AppLink>
       <nav className={cls.links}>
-        <Button
-          theme={ButtonThemes.INVERTED_CLEAR}
-          onClick={authData ? onLogout : onOpenLoginForm}
-        >
-          {authData ? t('Logout') : t('LogIn')}
-        </Button>
+        {authData ? (
+          <Dropdown
+            trigger={
+              <Avatar
+                size='40px'
+                src={authData.avatar}
+                align='center'
+                alt={authData.username}
+              />
+            }
+            items={[
+              {
+                content: t('Profile'),
+                href: RoutesPaths.profile + authData.id,
+              },
+              { content: t('Logout'), onclick: onLogout },
+            ]}
+          />
+        ) : (
+          <Button theme={ButtonThemes.INVERTED_CLEAR} onClick={onOpenLoginForm}>
+            {t('LogIn')}
+          </Button>
+        )}
         {!authData && (
           <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
         )}
