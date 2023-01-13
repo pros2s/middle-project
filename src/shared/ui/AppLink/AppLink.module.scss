@@ -22,7 +22,7 @@
 }
 
 .primary {
-  color: var(--primary-color);
+  color: var(--inverted-primary-color);
 
   &::after {
     background: var(--primary-color);

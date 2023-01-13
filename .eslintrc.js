@@ -57,6 +57,7 @@ module.exports = {
           'justify',
           'gap',
           'direction',
+          'as',
         ],
       },
     ],

@@ -1,7 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CustomSelect } from 'shared/ui/CustomSelect/CustomSelect';
 
-import { Select } from 'shared/ui/Select/Select';
 import { Country } from '../model/types/Country';
 
 interface CountrySelectProps {
@@ -17,7 +17,7 @@ export const CountrySelect = memo(
     const countryOptions = useMemo(
       () =>
         Object.entries(Country).map((val) => ({
-          val: val[0],
+          value: val[0],
           content: val[1],
         })),
       [],
@@ -31,12 +31,13 @@ export const CountrySelect = memo(
     );
 
     return (
-      <Select
+      <CustomSelect
         label={t('ProfileCountry')}
-        readOnly={readOnly}
-        options={countryOptions}
+        readonly={readOnly}
+        items={countryOptions}
         onChange={changeHandler}
         value={country}
+        defaultValue={Country.RUSSIA}
       />
     );
   },

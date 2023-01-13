@@ -71,7 +71,12 @@ export const ProfileCard = memo(
     }
 
     return (
-      <div className={classNames(cls.ProfileCard, [className])}>
+      <Flex
+        gap='16'
+        direction='column'
+        align='center'
+        className={classNames('', [className])}
+      >
         <Avatar
           align='center'
           size='150px'
@@ -124,7 +129,7 @@ export const ProfileCard = memo(
           readOnly={readOnly}
           onChange={onChangeCurrency}
         />
-      </div>
+      </Flex>
     );
   },
 );

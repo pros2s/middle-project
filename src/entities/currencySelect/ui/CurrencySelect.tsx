@@ -1,7 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CustomSelect } from 'shared/ui/CustomSelect/CustomSelect';
 
-import { Select } from 'shared/ui/Select/Select';
 import { Currency } from '../model/types/Currency';
 
 interface CurrencySelectProps {
@@ -17,7 +17,7 @@ export const CurrencySelect = memo(
     const currencyOptions = useMemo(
       () =>
         Object.entries(Currency).map((val) => ({
-          val: val[0],
+          value: val[0],
           content: val[1],
         })),
       [],
@@ -31,12 +31,13 @@ export const CurrencySelect = memo(
     );
 
     return (
-      <Select
+      <CustomSelect
         label={t('ProfileCurrency')}
-        readOnly={readOnly}
-        options={currencyOptions}
+        readonly={readOnly}
+        items={currencyOptions}
         onChange={changeHandler}
         value={currency}
+        defaultValue={Currency.RUB}
       />
     );
   },
