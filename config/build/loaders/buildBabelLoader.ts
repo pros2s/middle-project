@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import removeUselessProps from '../../babel/removeUselessProps';
 
 interface BuildBabelLoader {
   isTsx?: boolean;
@@ -26,6 +27,12 @@ export const buildBabelLoader = ({
           '@babel/plugin-transform-typescript',
           {
             isTsx,
+          },
+        ],
+        isTsx && [
+          removeUselessProps,
+          {
+            props: ['data-testid'],
           },
         ],
         '@babel/plugin-transform-runtime',

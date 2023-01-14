@@ -33,6 +33,6 @@ export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
       <Navigate to={RoutesPaths.forbidden} state={{ from: location }} replace />
     );
   }
-  
+
   return children;
 };
