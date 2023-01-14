@@ -24,7 +24,7 @@ Default.args = {
       text: 'text 1',
       user: {
         id: '1',
-        role: UserRoles.ADMIN,
+        roles: [UserRoles.ADMIN],
         username: 'username',
         avatar:
           'https://cdn.dribbble.com/users/759083/screenshots/16022876/media/8e462db1bac370883bf90c94a77d598c.jpg?compress=1&resize=400x300',

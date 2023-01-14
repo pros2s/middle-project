@@ -12,6 +12,9 @@ import {
   AppRoutes,
   RoutesPaths,
 } from 'shared/lib/routes/routes';
+import { AdminPanelPage } from 'pages/adminPanelPage';
+import { UserRoles } from 'entities/user';
+import { ForbiddenPage } from 'pages/forbiddenPage';
 
 export const routesConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.MAIN]: {
@@ -45,6 +48,17 @@ export const routesConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.CREATE_NEW_ARTICLE]: {
     path: `${RoutesPaths.createNewArticle}`,
     element: <CreateArticlePage />,
+    authOnly: true,
+  },
+  [AppRoutes.ADMIN_PANEL]: {
+    path: `${RoutesPaths.admin_panel}`,
+    element: <AdminPanelPage />,
+    authOnly: true,
+    roles: [UserRoles.ADMIN, UserRoles.MANAGER],
+  },
+  [AppRoutes.FORBIDDEN]: {
+    path: `${RoutesPaths.forbidden}`,
+    element: <ForbiddenPage />,
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {

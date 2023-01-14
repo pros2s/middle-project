@@ -1,5 +1,6 @@
 {
   "": "",
+  "Admin": "",
   "ArticleDetailsPageText": "",
   "Auth": "",
   "AuthError": "",
@@ -50,6 +51,7 @@
   "aboutPageBTN": "",
   "aboutPageText": "",
   "addNewComment": "",
+  "adminPanel": "",
   "allArticles": "",
   "articlesPageBTN": "",
   "articlesPageText": "",
@@ -63,6 +65,7 @@
   "economicsArticles": "",
   "editArticle": "",
   "editArticlePage": "",
+  "forbiddenPage": "",
   "hi": "",
   "highest": "",
   "i18n": {

@@ -6,7 +6,12 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonThemes } from 'shared/ui/Button/Button';
-import { getUserAuthData, userActions } from 'entities/user';
+import {
+  getUserAuthData,
+  hasAdminRole,
+  hasManagerRole,
+  userActions,
+} from 'entities/user';
 
 import { getSidebarCollapsed } from 'widgets/Sidebar';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
@@ -21,9 +26,15 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
-  const { authData } = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+
+  const { authData } = useSelector(getUserAuthData);
   const collapsed = useSelector(getSidebarCollapsed);
+
+  const isUserAdmin = useSelector(hasAdminRole);
+  const isUserManager = useSelector(hasManagerRole);
+
+  const adminAvailable = isUserAdmin || isUserManager;
 
   const [isLogInModal, setIsLogInModal] = useState<boolean>(false);
 
@@ -61,6 +72,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
               />
             }
             items={[
+              ...(adminAvailable
+                ? [
+                    {
+                      content: t('Admin'),
+                      href: RoutesPaths.admin_panel,
+                    },
+                  ]
+                : []),
               {
                 content: t('Profile'),
                 href: RoutesPaths.profile + authData.id,
