@@ -16,10 +16,14 @@ import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
   className?: string;
+  'data-testid'?: string;
 }
 
 export const EditableProfileCardHeader = memo(
-  ({ className }: EditableProfileCardHeaderProps) => {
+  ({
+    className,
+    'data-testid': dataTestId = 'EditableProfileCardHeader',
+  }: EditableProfileCardHeaderProps) => {
     const { t } = useTranslation('profilePage');
     const dispatch = useAppDispatch();
 
@@ -46,7 +50,11 @@ export const EditableProfileCardHeader = memo(
         {canEdit && (
           <div>
             {readOnly ? (
-              <Button onClick={onEdit} theme={ButtonThemes.OUTLINE}>
+              <Button
+                onClick={onEdit}
+                theme={ButtonThemes.OUTLINE}
+                data-testid={`${dataTestId}.Edit`}
+              >
                 {t('EditProfile')}
               </Button>
             ) : (
@@ -55,10 +63,15 @@ export const EditableProfileCardHeader = memo(
                   className={cls.firstBtn}
                   onClick={onSaveChanges}
                   theme={ButtonThemes.OUTLINE}
+                  data-testid={`${dataTestId}.Save`}
                 >
                   {t('SaveProfileChanges')}
                 </Button>
-                <Button onClick={onCancelEdit} theme={ButtonThemes.CANCEL}>
+                <Button
+                  onClick={onCancelEdit}
+                  theme={ButtonThemes.CANCEL}
+                  data-testid={`${dataTestId}.Cancel`}
+                >
                   {t('CancelEditProfile')}
                 </Button>
               </Flex>

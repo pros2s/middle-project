@@ -19,6 +19,7 @@ interface ProfileCardProps {
   isLoading?: boolean;
   readOnly?: boolean;
   data?: Profile;
+  'data-testid'?: string;
   onChangeName?: (value: string) => void;
   onChangeUsername?: (value: string) => void;
   onChangeAge?: (value: string) => void;
@@ -42,6 +43,7 @@ export const ProfileCard = memo(
     onChangeAvatar,
     onChangeCountry,
     onChangeCurrency,
+    'data-testid': dataTestId = 'ProfileCard',
   }: ProfileCardProps) => {
     const { t } = useTranslation('profilePage');
 
@@ -56,7 +58,12 @@ export const ProfileCard = memo(
 
     if (errorMessage) {
       return (
-        <Flex align='center' justify='center' className={cls.error}>
+        <Flex
+          align='center'
+          justify='center'
+          className={cls.error}
+          data-testid={`${dataTestId}.ErrorMessage`}
+        >
           <Text title={t('ProfileError')} theme={TextThemes.ERROR} />
         </Flex>
       );
@@ -64,7 +71,12 @@ export const ProfileCard = memo(
 
     if (isLoading) {
       return (
-        <Flex align='center' justify='center' className={cls.loading}>
+        <Flex
+          align='center'
+          justify='center'
+          className={cls.loading}
+          data-testid={`${dataTestId}.Loading`}
+        >
           <Loader />
         </Flex>
       );
@@ -82,12 +94,14 @@ export const ProfileCard = memo(
           size='150px'
           src={data?.avatar}
           alt={data?.username}
+          data-testid={`${dataTestId}.Avatar`}
         />
         <Input
           value={data?.name}
           placeholder={t('ProfileName')}
           readOnly={readOnly}
           onChange={onChangeName}
+          data-testid={`${dataTestId}.Name`}
         />
 
         <Input
@@ -95,6 +109,7 @@ export const ProfileCard = memo(
           placeholder={t('ProfileUsername')}
           readOnly={readOnly}
           onChange={onChangeUsername}
+          data-testid={`${dataTestId}.Username`}
         />
 
         <Input
@@ -103,6 +118,7 @@ export const ProfileCard = memo(
           readOnly={readOnly}
           onChange={onChangeAge}
           onKeyPress={ageInputChange}
+          data-testid={`${dataTestId}.Age`}
         />
 
         <Input
@@ -110,6 +126,7 @@ export const ProfileCard = memo(
           placeholder={t('ProfileCity')}
           readOnly={readOnly}
           onChange={onChangeCity}
+          data-testid={`${dataTestId}.City`}
         />
 
         <Input
@@ -117,17 +134,20 @@ export const ProfileCard = memo(
           placeholder={t('ProfileAvatar')}
           readOnly={readOnly}
           onChange={onChangeAvatar}
+          data-testid={`${dataTestId}.InputAvatar`}
         />
 
         <CountrySelect
           country={data?.country}
           readOnly={readOnly}
           onChange={onChangeCountry}
+          data-testid={`${dataTestId}.Country`}
         />
         <CurrencySelect
           currency={data?.currency}
           readOnly={readOnly}
           onChange={onChangeCurrency}
+          data-testid={`${dataTestId}.Currency`}
         />
       </Flex>
     );

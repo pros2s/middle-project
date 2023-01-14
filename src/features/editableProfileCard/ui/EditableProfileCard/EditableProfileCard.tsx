@@ -26,7 +26,7 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  id: string;
 }
 
 const reducers: ReducersList = {
@@ -110,13 +110,14 @@ export const EditableProfileCard = memo(
     return (
       <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
         <Flex direction='column' className={classNames('', [className])}>
-          <EditableProfileCardHeader />
+          <EditableProfileCardHeader data-testid='EditableProfileCard.Header' />
           {validateErrors?.length &&
             validateErrors.map((error) => (
               <Text
                 key={error}
                 text={errorsTranslates[error]}
                 theme={TextThemes.ERROR}
+                data-testid='EditableProfileCard.Error'
               />
             ))}
           <ProfileCard
@@ -131,6 +132,7 @@ export const EditableProfileCard = memo(
             onChangeAvatar={onChangeAvatar}
             onChangeCurrency={onChangeCurrency}
             onChangeCountry={onChangeCountry}
+            data-testid='EditableProfileCard.Card'
           />
         </Flex>
       </DynamicReducerLoader>
