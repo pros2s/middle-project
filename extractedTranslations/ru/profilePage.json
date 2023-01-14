@@ -1,0 +1,20 @@
+{
+  "CancelEditProfile": "",
+  "EditProfile": "",
+  "INCORRECT_AGE": "",
+  "INCORRECT_CITY": "",
+  "INCORRECT_DATA": "",
+  "NO_DATA": "",
+  "ProfileAge": "",
+  "ProfileAvatar": "",
+  "ProfileCity": "",
+  "ProfileCountry": "",
+  "ProfileCurrency": "",
+  "ProfileError": "",
+  "ProfileName": "",
+  "ProfileNotFound": "",
+  "ProfileUsername": "",
+  "SERVER_ERROR": "",
+  "SaveProfileChanges": "",
+  "profilePageText": ""
+}

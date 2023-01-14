@@ -1,7 +1,15 @@
 import webpack from 'webpack';
 
-export const buildBabelLoader = (isDev: boolean): webpack.RuleSetRule => ({
-  test: /\.(js|jsx|ts|tsx)$/,
+interface BuildBabelLoader {
+  isTsx?: boolean;
+  isDev?: boolean;
+}
+
+export const buildBabelLoader = ({
+  isDev,
+  isTsx,
+}: BuildBabelLoader): webpack.RuleSetRule => ({
+  test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
   exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
@@ -14,6 +22,13 @@ export const buildBabelLoader = (isDev: boolean): webpack.RuleSetRule => ({
             locales: ['ru', 'en'],
           },
         ],
+        [
+          '@babel/plugin-transform-typescript',
+          {
+            isTsx,
+          },
+        ],
+        '@babel/plugin-transform-runtime',
         isDev && require.resolve('react-refresh/babel'),
       ].filter(Boolean),
     },
