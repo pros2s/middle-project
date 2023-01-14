@@ -12,6 +12,7 @@ i18n
     fallbackLng: 'en',
     // debug: __IS_DEV__,
     debug: false,
+    returnNull: false,
     interpolation: {
       escapeValue: false,
     },

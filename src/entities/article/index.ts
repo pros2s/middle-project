@@ -1,4 +1,4 @@
-export { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
+export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export {
   articleDetailsReducer,
@@ -9,8 +9,9 @@ export { getArticleData } from './model/selectors/getArticleState';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export {
   ArticleView,
-  Article,
   ArticleBlockType,
   ArticleType,
   ArticleSortFields,
 } from './model/types/Article';
+
+export type { Article } from './model/types/Article';
