@@ -8,7 +8,6 @@ import {
 import { LoginSchema } from 'features/authByUsername';
 import { ArticleDetailsSchema } from 'entities/article';
 import { UserSchema } from 'entities/user';
-import { ProfileSchema } from 'entities/profile';
 
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsPageSchema } from 'pages/articleDetailsPage';
@@ -16,6 +15,7 @@ import { AddCommentSchema } from 'features/addComment';
 import { ArticleSchema } from 'pages/articlesPage';
 import { SrollSaveSchema } from 'widgets/Page';
 import { SidebarSchema } from 'widgets/Sidebar';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
   user: UserSchema;

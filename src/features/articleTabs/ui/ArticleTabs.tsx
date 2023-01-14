@@ -13,8 +13,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 
-import cls from './ArticleTabs.module.scss';
-
 interface ArticleTabsProps {
   className?: string;
 }
@@ -46,7 +44,7 @@ export const ArticleTabs = memo(({ className }: ArticleTabsProps) => {
 
   return (
     <Tabs
-      className={classNames(cls.ArticleTabs, [className])}
+      className={classNames('', [className])}
       tabs={tabs}
       activeType={value}
       onChangeTab={onChangeTab}

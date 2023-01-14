@@ -1,5 +1,5 @@
-/* eslint-disable i18next/no-literal-string */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { t } from 'i18next';
 import { Flex } from './Flex';
 
 export default {
@@ -16,10 +16,10 @@ export const Default = Template.bind({});
 Default.args = {
   children: (
     <>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
+      <div>{t('first')}</div>
+      <div>{t('first')}</div>
+      <div>{t('first')}</div>
+      <div>{t('first')}</div>
     </>
   ),
 };

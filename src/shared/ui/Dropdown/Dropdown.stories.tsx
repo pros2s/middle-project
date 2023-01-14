@@ -1,5 +1,5 @@
-/* eslint-disable i18next/no-literal-string */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { t } from 'i18next';
 
 import { Dropdown } from './Dropdown';
 
@@ -27,8 +27,8 @@ export const Default = Template.bind({});
 Default.args = {
   trigger: 'Click',
   items: [
-    { content: <li>first</li> },
-    { content: <li>second</li> },
-    { content: <li>third</li> },
+    { content: <li>{t('first')}</li> },
+    { content: <li>{t('second')}</li> },
+    { content: <li>{t('third')}</li> },
   ],
 };

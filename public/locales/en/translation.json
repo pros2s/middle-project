@@ -19,5 +19,8 @@
   "articlesPageBTN": "ARTICLES",
   "commentsNotFound": "Comments not found",
   "createNewArticle": "Create article",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "first": "first",
+  "second": "second",
+  "third": "third"
 }
