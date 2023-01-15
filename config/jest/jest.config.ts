@@ -1,15 +1,13 @@
 import path from 'path';
-import type { Config } from 'jest';
 
-const config: Config = {
+export default {
   testEnvironment: 'jsdom',
   rootDir: '../../',
-  modulePaths: ['<rootDir>'],
   clearMocks: true,
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
   moduleDirectories: ['node_modules', 'src'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
-  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'identity-obj-proxy',
@@ -26,7 +24,7 @@ const config: Config = {
     [
       'jest-html-reporters',
       {
-        publicPath: '<rootDir>/reports/unit',
+        publicPath: '<rootDir>reports/unit',
         filename: 'report.html',
         openReport: true,
         inlineSource: true,
@@ -35,5 +33,3 @@ const config: Config = {
     ],
   ],
 };
-
-export default config;

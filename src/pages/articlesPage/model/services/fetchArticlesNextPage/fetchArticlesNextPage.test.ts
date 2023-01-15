@@ -1,4 +1,4 @@
-import { ArticleSortFields, ArticleType, ArticleView } from 'entities/awrticle';
+import { ArticleSortFields, ArticleType, ArticleView } from 'entities/article';
 import { TestAsyncThunk } from 'shared/lib/testHelpers/testAsyncThunk';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 import { articleActions } from '../../slice/ArticleSlice';
