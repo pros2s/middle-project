@@ -1,8 +1,10 @@
 import path from 'path';
+import type { Config } from 'jest';
 
-export default {
+const config: Config = {
   testEnvironment: 'jsdom',
   rootDir: '../../',
+  modulePaths: ['<rootDir>'],
   clearMocks: true,
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
   moduleDirectories: ['node_modules', 'src'],
@@ -33,3 +35,5 @@ export default {
     ],
   ],
 };
+
+export default config;

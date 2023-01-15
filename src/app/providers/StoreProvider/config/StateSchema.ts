@@ -16,11 +16,13 @@ import { ArticleSchema } from 'pages/articlesPage';
 import { SrollSaveSchema } from 'widgets/Page';
 import { SidebarSchema } from 'widgets/Sidebar';
 import { ProfileSchema } from 'features/editableProfileCard';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   user: UserSchema;
   scroll: SrollSaveSchema;
   sidebar: SidebarSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Async reducers
   login?: LoginSchema;

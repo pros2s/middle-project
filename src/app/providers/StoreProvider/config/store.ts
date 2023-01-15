@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/user';
 import { $api } from 'shared/api/api';
+import { rtkApi } from 'shared/api/rtkApi';
 import { scrollPositionReducer } from 'widgets/Page';
 import { SidebarReducer } from 'widgets/Sidebar';
 import { createReducerManager } from './reducerManager';
@@ -20,6 +21,7 @@ export function createReduxStore(
     user: userReducer,
     scroll: scrollPositionReducer,
     sidebar: SidebarReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -35,7 +37,7 @@ export function createReduxStore(
             api: $api,
           },
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
