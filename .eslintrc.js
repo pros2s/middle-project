@@ -38,12 +38,7 @@ module.exports = {
   ],
   plugins: ['react', 'react-hooks', 'i18next', 'prettier', 'pross-plugin'],
   rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
+    'import/no-extraneous-dependencies': 'off',
     'i18next/no-literal-string': [
       'error',
       {

@@ -1,6 +1,8 @@
 .AppLink {
   position: relative;
 
+  width: 100%;
+
   &::after {
     position: absolute;
     top: 100%;
