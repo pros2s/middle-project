@@ -10,9 +10,9 @@ export default {
   },
 } as ComponentMeta<typeof NotificationBtn>;
 
-const Template: ComponentStory<typeof NotificationBtn> = (args) => <NotificationBtn {...args} />;
+const Template: ComponentStory<typeof NotificationBtn> = (args) => (
+  <NotificationBtn {...args} />
+);
 
 export const Default = Template.bind({});
-Default.args = {
-
-};
+Default.args = {};
