@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       </AppLink>
       <nav className={cls.links}>
         <Flex gap='16' align='center'>
-          <NotificationBtn />
+          {authData && <NotificationBtn />}
           <AvatarLogInBtn />
         </Flex>
 

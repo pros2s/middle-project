@@ -11,14 +11,9 @@
 }
 
 .create {
+  width: auto;
   margin-left: 30px;
   padding: 5px;
-
-  text-align: center;
-
-  &.collapsed {
-    width: auto;
-  }
 }
 
 .links {

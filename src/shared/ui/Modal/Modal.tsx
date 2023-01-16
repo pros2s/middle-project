@@ -1,7 +1,8 @@
 import { useThemes } from 'app/providers/ThemesProvider';
-import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { useOverlay } from 'shared/lib/hooks/useOverlay';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 
@@ -15,8 +16,6 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const CLOSING_DELAY = 100;
-
 export const Modal: FC<ModalProps> = ({
   className,
   children,
@@ -25,60 +24,23 @@ export const Modal: FC<ModalProps> = ({
   onClose,
 }) => {
   const { theme } = useThemes();
-  const closeTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const { close, isClosing, isMounted } = useOverlay({
+    isOpen,
+    onClose,
+    animationDelay: 100,
+  });
 
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    } else {
-      setIsMounted(false);
-    }
-  }, [isOpen]);
-
-  const closeHandler = useCallback(() => {
-    if (isOpen) {
-      setIsClosing(true);
-      closeTimeout.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, CLOSING_DELAY);
-    }
-  }, [isOpen, onClose]);
-
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeHandler();
-      }
-    },
-    [closeHandler],
-  );
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      clearTimeout(closeTimeout.current);
-    };
-  }, [isOpen, onKeyDown]);
+  if (isLazy && !isMounted) return null;
 
   const mods: Mode = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };
 
-  if (isLazy && !isMounted) return null;
-
   return (
     <Portal>
       <div className={classNames(cls.Modal, [className, theme], mods)}>
-        <Overlay onClick={closeHandler} />
+        <Overlay onClick={close} />
         <div className={cls.content} role='presentation'>
           {children}
         </div>
