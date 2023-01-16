@@ -1,0 +1,30 @@
+.button {
+  padding: 5px;
+
+  background-color: var(--list-bg);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.selected {
+  position: relative;
+
+  &::after {
+    position: absolute;
+
+    top: 4px;
+    right: -15px;
+
+    font-weight: 600;
+
+    content: '<';
+  }
+}
+
+.item {
+  padding: 5px;
+
+  border-radius: var(--border-radius);
+
+  cursor: pointer;
+}

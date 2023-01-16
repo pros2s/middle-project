@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CustomSelect } from 'shared/ui/CustomSelect/CustomSelect';
+import { CustomSelect } from 'shared/ui/Popups';
 
 import { Country } from '../model/types/Country';
 

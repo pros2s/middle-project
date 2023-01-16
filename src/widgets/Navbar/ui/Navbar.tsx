@@ -15,9 +15,12 @@ import {
 
 import { getSidebarCollapsed } from 'widgets/Sidebar';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { RoutesPaths } from 'shared/lib/routes/routes';
+import { Flex } from 'shared/ui/Stack/Flex';
+import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
+import NotificationIcon from 'shared/assets/icons/notification.svg';
+import { Dropdown } from 'shared/ui/Popups';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -61,37 +64,46 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t('createNewArticle')}
       </AppLink>
       <nav className={cls.links}>
-        {authData ? (
-          <Dropdown
-            trigger={
-              <Avatar
-                size='40px'
-                src={authData.avatar}
-                align='center'
-                alt={authData.username}
-              />
-            }
-            items={[
-              ...(adminAvailable
-                ? [
-                    {
-                      content: t('Admin'),
-                      href: RoutesPaths.admin_panel,
-                    },
-                  ]
-                : []),
-              {
-                content: t('Profile'),
-                href: RoutesPaths.profile + authData.id,
-              },
-              { content: t('Logout'), onclick: onLogout },
-            ]}
-          />
-        ) : (
-          <Button theme={ButtonThemes.INVERTED_CLEAR} onClick={onOpenLoginForm}>
-            {t('LogIn')}
+        <Flex gap='16' align='center'>
+          <Button theme={ButtonThemes.CLEAR}>
+            <SVGIcon Svg={NotificationIcon} invertedColor />
           </Button>
-        )}
+          {authData ? (
+            <Dropdown
+              trigger={
+                <Avatar
+                  size='40px'
+                  src={authData.avatar}
+                  align='center'
+                  alt={authData.username}
+                />
+              }
+              items={[
+                ...(adminAvailable
+                  ? [
+                      {
+                        content: t('Admin'),
+                        href: RoutesPaths.admin_panel,
+                      },
+                    ]
+                  : []),
+                {
+                  content: t('Profile'),
+                  href: RoutesPaths.profile + authData.id,
+                },
+                { content: t('Logout'), onclick: onLogout },
+              ]}
+            />
+          ) : (
+            <Button
+              theme={ButtonThemes.INVERTED_CLEAR}
+              onClick={onOpenLoginForm}
+            >
+              {t('LogIn')}
+            </Button>
+          )}
+        </Flex>
+
         {!authData && (
           <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
         )}

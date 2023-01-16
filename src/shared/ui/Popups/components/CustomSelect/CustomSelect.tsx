@@ -2,10 +2,11 @@ import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Flex } from '../Stack/Flex';
-import { Text } from '../Text/Text';
-import { Button, ButtonThemes } from '../Button/Button';
+import { Flex } from '../../../Stack/Flex';
+import { Text } from '../../../Text/Text';
+import { Button, ButtonThemes } from '../../../Button/Button';
 import cls from './CustomSelect.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 interface Item {
   content: ReactNode;
@@ -37,8 +38,8 @@ export const CustomSelect = memo(
       {label && <Text text={`${label}>`} />}
       <Listbox
         as='div'
-        className={classNames(cls.listBox, [className], {
-          [cls.disabled]: readonly,
+        className={classNames(popupCls.popup, [className], {
+          [popupCls.disabled]: readonly,
         })}
         disabled={readonly}
         value={value}
@@ -53,7 +54,7 @@ export const CustomSelect = memo(
             {value ?? defaultValue}
           </Button>
         </Listbox.Button>
-        <Listbox.Options as='ul' className={cls.list}>
+        <Listbox.Options as='ul' className={popupCls.list}>
           {items.map((item) => (
             <Listbox.Option
               as={Fragment}
@@ -64,9 +65,9 @@ export const CustomSelect = memo(
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.item, [], {
-                    [cls.active]: active,
+                    [popupCls.active]: active,
                     [cls.selected]: selected,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
                   {item.content}

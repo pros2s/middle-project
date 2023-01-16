@@ -7,8 +7,15 @@ import cls from './SVGIcon.module.scss';
 interface SVGIconProps {
   className?: string;
   Svg: (props: SVGProps<SVGElement>) => ReactElement;
+  invertedColor?: boolean;
 }
 
-export const SVGIcon = memo(({ className, Svg }: SVGIconProps) => (
-  <Svg className={classNames(cls.SVGIcon, [className])} />
-));
+export const SVGIcon = memo(
+  ({ className, Svg, invertedColor }: SVGIconProps) => (
+    <Svg
+      className={classNames(invertedColor ? cls.invertedColor : cls.SVGIcon, [
+        className,
+      ])}
+    />
+  ),
+);
