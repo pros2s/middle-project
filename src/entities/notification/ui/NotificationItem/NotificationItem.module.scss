@@ -1,0 +1,10 @@
+.NotificationItem {
+  width: 400px;
+  padding: 10px;
+
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background-color: var(--popup-hover-bg);
+  }
+}

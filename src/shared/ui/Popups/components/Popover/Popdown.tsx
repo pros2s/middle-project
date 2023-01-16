@@ -15,7 +15,9 @@ export const Popdown: FC<PopdownProps> = ({ children, className, trigger }) => (
   <Popover className={classNames(popupCls.popup, [className])}>
     <Popover.Button className={popupCls.trigger}>{trigger}</Popover.Button>
 
-    <Popover.Panel className={classNames(cls.panel, [popupCls.list])}>
+    <Popover.Panel
+      className={classNames(cls.panel, [popupCls.list, cls.Popdown])}
+    >
       {children}
     </Popover.Panel>
   </Popover>

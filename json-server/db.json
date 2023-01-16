@@ -4,10 +4,7 @@
       "id": "1",
       "username": "pross",
       "password": "123",
-      "roles": [
-        "ADMIN",
-        "MANAGER"
-      ],
+      "roles": ["ADMIN", "MANAGER"],
       "avatar": "https://wallpaperstock.net/smart-monkey-wallpapers_2084_1280x1024.jpg"
     },
     {
@@ -21,19 +18,76 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://snacknation.com/wp-content/uploads/2021/07/shutterstock_1084761839-scaled.jpg"
     },
     {
       "id": "4",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление",
+      "description": "Что-то очень интересное",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Что-то очень интересное",
+      "userId": "1",
+      "href": "profile/1"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Что-то очень интересное",
+      "userId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Что-то очень интересное",
+      "userId": "3",
+      "href": "profile/3"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 5",
+      "description": "Что-то очень интересное",
+      "userId": "4"
+    },
+    {
+      "id": "6",
+      "title": "Уведомление 6",
+      "description": "Что-то очень интересное",
+      "userId": "1",
+      "href": "admin"
+    },
+    {
+      "id": "7",
+      "title": "Уведомление 7",
+      "description": "Что-то очень интересное",
+      "userId": "2",
+      "href": "admin"
+    },
+    {
+      "id": "8",
+      "title": "Уведомление 8",
+      "description": "Что-то очень интересное",
+      "userId": "3"
+    },
+    {
+      "id": "9",
+      "title": "Уведомление 9",
+      "description": "Что-то очень интересное",
+      "userId": "1",
+      "href": "articles"
     }
   ],
   "profile": [
@@ -88,10 +142,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -162,10 +213,7 @@
       "views": 923,
       "createdAt": "26.10.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -236,10 +284,7 @@
       "views": 463,
       "createdAt": "13.05.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -310,10 +355,7 @@
       "views": 656,
       "createdAt": "16.07.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -384,9 +426,7 @@
       "views": 2344,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -457,11 +497,7 @@
       "views": 247,
       "createdAt": "26.10.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "SCIENCE", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -532,9 +568,7 @@
       "views": 569,
       "createdAt": "13.05.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -605,9 +639,7 @@
       "views": 13,
       "createdAt": "16.07.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -678,11 +710,7 @@
       "views": 4574,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "SCIENCE", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -753,9 +781,7 @@
       "views": 3415,
       "createdAt": "26.10.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -826,9 +852,7 @@
       "views": 47,
       "createdAt": "13.05.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -899,10 +923,7 @@
       "views": 734,
       "createdAt": "16.07.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -973,9 +994,7 @@
       "views": 342,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -1046,10 +1065,7 @@
       "views": 245,
       "createdAt": "26.10.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -1120,10 +1136,7 @@
       "views": 65,
       "createdAt": "13.05.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -1194,10 +1207,7 @@
       "views": 897,
       "createdAt": "16.07.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",

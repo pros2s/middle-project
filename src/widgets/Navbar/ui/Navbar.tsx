@@ -21,6 +21,7 @@ import { Flex } from 'shared/ui/Stack/Flex';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 import NotificationIcon from 'shared/assets/icons/notification.svg';
 import { Dropdown, Popdown } from 'shared/ui/Popups';
+import { NotificationList } from 'entities/notification';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -65,7 +66,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       </AppLink>
       <nav className={cls.links}>
         <Flex gap='16' align='center'>
-          <Popdown trigger={<SVGIcon Svg={NotificationIcon} invertedColor />} />
+          <Popdown trigger={<SVGIcon Svg={NotificationIcon} invertedColor />}>
+            <NotificationList />
+          </Popdown>
           {authData ? (
             <Dropdown
               trigger={

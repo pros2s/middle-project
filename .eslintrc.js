@@ -49,6 +49,9 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: [
+          'target',
+          'rel',
+          'borderRadius',
           'data-testid',
           'to',
           'size',
