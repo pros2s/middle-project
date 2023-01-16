@@ -22,7 +22,7 @@ interface DropdownProps {
 
 export const Dropdown = memo(({ items, trigger, className }: DropdownProps) => (
   <Menu as='div' className={classNames(popupCls.popup, [className])}>
-    <Menu.Button className={cls.trigger}>{trigger}</Menu.Button>
+    <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
     <Menu.Items as='div' className={classNames(popupCls.list, [cls.list])}>
       {items.map((item) => {
         const content = ({ active }: { active: boolean }) => (

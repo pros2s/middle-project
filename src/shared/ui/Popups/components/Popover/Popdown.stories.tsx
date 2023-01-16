@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { t } from 'i18next';
 
-import { Dropdown } from './Dropdown';
+import { Popdown } from './Popdown';
 
 export default {
-  title: 'Shared/Popups/Dropdown',
-  component: Dropdown,
+  title: 'Shared/Popups/Popdown',
+  component: Popdown,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -16,19 +16,21 @@ export default {
   //     </div>
   //   ),
   // ],
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof Popdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
+const Template: ComponentStory<typeof Popdown> = (args) => (
+  <Popdown {...args} />
 );
 
 // Default
 export const Default = Template.bind({});
 Default.args = {
   trigger: 'Click',
-  items: [
-    { content: <li>{t('first')}</li> },
-    { content: <li>{t('second')}</li> },
-    { content: <li>{t('third')}</li> },
-  ],
+  children: (
+    <>
+      <li>{t('first')}</li>
+      <li>{t('second')}</li>
+      <li>{t('third')}</li>
+    </>
+  ),
 };

@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
 import { CustomSelect } from './CustomSelect';
 
 export default {
-  title: 'Shared/CustomSelect',
+  title: 'Shared/Popups/CustomSelect',
   component: CustomSelect,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -20,7 +20,7 @@ import { RoutesPaths } from 'shared/lib/routes/routes';
 import { Flex } from 'shared/ui/Stack/Flex';
 import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
 import NotificationIcon from 'shared/assets/icons/notification.svg';
-import { Dropdown } from 'shared/ui/Popups';
+import { Dropdown, Popdown } from 'shared/ui/Popups';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -65,9 +65,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       </AppLink>
       <nav className={cls.links}>
         <Flex gap='16' align='center'>
-          <Button theme={ButtonThemes.CLEAR}>
-            <SVGIcon Svg={NotificationIcon} invertedColor />
-          </Button>
+          <Popdown trigger={<SVGIcon Svg={NotificationIcon} invertedColor />} />
           {authData ? (
             <Dropdown
               trigger={
