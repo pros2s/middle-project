@@ -17,11 +17,13 @@ import { SrollSaveSchema } from 'widgets/Page';
 import { SidebarSchema } from 'widgets/Sidebar';
 import { ProfileSchema } from 'features/editableProfileCard';
 import { rtkApi } from 'shared/api/rtkApi';
+import { AvatarLoginBtnSchema } from 'features/avatarLogInBtn';
 
 export interface StateSchema {
   user: UserSchema;
   scroll: SrollSaveSchema;
   sidebar: SidebarSchema;
+  avatarLogInBtn: AvatarLoginBtnSchema;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Async reducers

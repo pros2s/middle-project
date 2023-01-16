@@ -5,6 +5,7 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/user';
+import { AvatarLoginBtnReducer } from 'features/avatarLogInBtn';
 import { $api } from 'shared/api/api';
 import { rtkApi } from 'shared/api/rtkApi';
 import { scrollPositionReducer } from 'widgets/Page';
@@ -21,6 +22,7 @@ export function createReduxStore(
     user: userReducer,
     scroll: scrollPositionReducer,
     sidebar: SidebarReducer,
+    avatarLogInBtn: AvatarLoginBtnReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
