@@ -1,4 +1,4 @@
-import { Profile } from 'entities/profile';
+import { Profile } from '@/entities/profile';
 
 export enum ValidateProfileError {
   INCORRECT_AGE = 'INCORRECT_AGE',

@@ -2,16 +2,16 @@ import {
   articleActions,
   fetchArticles,
   getArticleSearch,
-} from 'pages/articlesPage';
+} from '@/pages/articlesPage';
 
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
 
 export const SearchArticles = memo(() => {
   const { t } = useTranslation('articlesPage');

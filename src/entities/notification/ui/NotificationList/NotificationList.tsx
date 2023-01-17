@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Flex } from 'shared/ui/Stack/Flex';
-import { Text, TextSize, TextThemes } from 'shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Flex } from '@/shared/ui/Stack/Flex';
+import { Text, TextSize, TextThemes } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { useNotifications } from '../../api/notificationApi';

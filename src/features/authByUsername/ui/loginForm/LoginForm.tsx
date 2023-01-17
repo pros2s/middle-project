@@ -2,15 +2,15 @@ import { memo, MouseEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonThemes } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { Text, TextThemes } from 'shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
+import { Text, TextThemes } from '@/shared/ui/Text/Text';
 import {
   DynamicReducerLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';

@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from 'app/providers/ThemesProvider';
-import { profileReducer } from 'features/editableProfileCard/model/slice/ProfileSlice';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import avatar from 'shared/lib/testHelpers/smartMonkey.jpg';
+import { Themes } from '@/app/providers/ThemesProvider';
+import { profileReducer } from '@/features/editableProfileCard/model/slice/ProfileSlice';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import avatar from '@/shared/lib/testHelpers/smartMonkey.jpg';
 import ProfilePage from './ProfilePage';
 
 export default {

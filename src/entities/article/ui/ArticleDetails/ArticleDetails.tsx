@@ -1,20 +1,20 @@
 import { memo, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicReducerLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextSize, TextThemes } from 'shared/ui/Text/Text';
-import DateIcon from 'shared/assets/icons/date.svg';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import { SVGIcon } from 'shared/ui/SVGIcon/SVGIcon';
-import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
-import { Flex } from 'shared/ui/Stack/Flex';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Text, TextSize, TextThemes } from '@/shared/ui/Text/Text';
+import DateIcon from '@/shared/assets/icons/date.svg';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
+import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
+import { Flex } from '@/shared/ui/Stack/Flex';
 import { ArticleDetailsHeader } from './ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';

@@ -1,16 +1,16 @@
-import { ArticleList, ArticleType, ArticleView } from 'entities/article';
+import { ArticleList, ArticleType, ArticleView } from '@/entities/article';
 import { memo, useCallback, useMemo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
 import { useSelector } from 'react-redux';
 import {
   DynamicReducerLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { Page } from 'widgets/Page';
-import { FilterArticles } from 'features/filterArticles';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { Page } from '@/widgets/Page';
+import { FilterArticles } from '@/features/filterArticles';
 import { useSearchParams } from 'react-router-dom';
 import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';

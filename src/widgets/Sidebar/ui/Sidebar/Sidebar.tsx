@@ -1,15 +1,15 @@
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Button, ButtonSizes, ButtonThemes } from 'shared/ui/Button/Button';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Button, ButtonSizes, ButtonThemes } from '@/shared/ui/Button/Button';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import {
   DynamicReducerLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { getSidebarCollapsed } from '../../model/selectors/getSidebarState/getSidebarState';
 import { SidebarPagesLinks } from '../../model/selectors/getSidebarItems/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

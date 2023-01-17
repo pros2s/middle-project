@@ -13,7 +13,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"],

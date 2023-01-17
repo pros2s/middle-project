@@ -1,19 +1,19 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ProfileCard } from 'entities/profile';
-import { Country } from 'entities/countrySelect';
-import { Currency } from 'entities/currencySelect';
-import { Text, TextThemes } from 'shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ProfileCard } from '@/entities/profile';
+import { Country } from '@/entities/countrySelect';
+import { Currency } from '@/entities/currencySelect';
+import { Text, TextThemes } from '@/shared/ui/Text/Text';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
   DynamicReducerLoader,
   ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
-import { Flex } from 'shared/ui/Stack/Flex';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
+import { Flex } from '@/shared/ui/Stack/Flex';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';

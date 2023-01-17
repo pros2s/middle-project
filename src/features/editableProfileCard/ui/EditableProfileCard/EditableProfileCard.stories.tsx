@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from 'app/providers/ThemesProvider';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
-import avatar from 'shared/lib/testHelpers/smartMonkey.jpg';
+import { Themes } from '@/app/providers/ThemesProvider';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
+import avatar from '@/shared/lib/testHelpers/smartMonkey.jpg';
 import { profileReducer } from '../../model/slice/ProfileSlice';
 
 import { EditableProfileCard } from './EditableProfileCard';

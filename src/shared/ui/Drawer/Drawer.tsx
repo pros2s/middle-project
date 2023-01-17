@@ -1,8 +1,8 @@
-import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from '@/shared/lib/classNames/classNames';
 import { memo, ReactNode, useCallback, useEffect } from 'react';
-import { useThemes } from 'app/providers/ThemesProvider';
-import { useOverlay } from 'shared/lib/hooks/useOverlay';
-import { useGestureSpring } from 'shared/lib/components/GestureSpringProvider';
+import { useThemes } from '@/app/providers/ThemesProvider';
+import { useOverlay } from '@/shared/lib/hooks/useOverlay';
+import { useGestureSpring } from '@/shared/lib/components/GestureSpringProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';

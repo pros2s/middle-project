@@ -2,15 +2,15 @@ import {
   articleActions,
   fetchArticles,
   getArticleOrder,
-} from 'pages/articlesPage';
+} from '@/pages/articlesPage';
 
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { OrderType } from 'shared/types/order';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { OrderType } from '@/shared/types/order';
 
-import { Select, SelectOptions } from 'shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select/Select';
 
 export const OrderArticles = memo(() => {
   const { t } = useTranslation('articlesPage');

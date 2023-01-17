@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { LOCALE_STORAGE_USER_KEY } from 'shared/consts/localeStorage';
+import { LOCALE_STORAGE_USER_KEY } from '@/shared/consts/localeStorage';
 
 export const rtkApi = createApi({
   reducerPath: 'api',

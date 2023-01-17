@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from 'app/providers/ThemesProvider';
+import { Themes } from '@/app/providers/ThemesProvider';
 // import { Article, ArticleBlockType, ArticleType } from 'entities/article';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 // import monkey from 'shared/lib/testHelpers/smartMonkey.jpg';
 import { articleReducer } from '../model/slice/ArticleSlice';
 import ArticlesPage from './ArticlesPage';

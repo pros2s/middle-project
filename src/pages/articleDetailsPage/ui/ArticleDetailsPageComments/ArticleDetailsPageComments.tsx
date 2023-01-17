@@ -1,13 +1,13 @@
 import { memo, useCallback } from 'react';
-import { CommentList } from 'entities/comment';
+import { CommentList } from '@/entities/comment';
 import { useSelector } from 'react-redux';
 import {
   ReducersList,
   DynamicReducerLoader,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
-import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { AddComment } from 'features/addComment';
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
+import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { AddComment } from '@/features/addComment';
 import { getIsLoadingFromComments } from '../../model/selectors/getFromComments';
 import {
   articleDetailsPageReducer,

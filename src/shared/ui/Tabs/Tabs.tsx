@@ -1,6 +1,6 @@
 import { ReactNode, useCallback } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Flex } from '../Stack/Flex';
 import { Card } from '../Card/Card';
 

@@ -1,17 +1,17 @@
-import { ArticleType } from 'entities/article';
+import { ArticleType } from '@/entities/article';
 import {
   articleActions,
   fetchArticles,
   getArticleActiveType,
-} from 'pages/articlesPage';
+} from '@/pages/articlesPage';
 
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
 
 interface ArticleTabsProps {
   className?: string;

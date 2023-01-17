@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, MutableRefObject, ReactNode, useRef } from 'react';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useFetchEffect } from 'shared/lib/hooks/useFetchEffect';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { useTrottle } from 'shared/lib/hooks/useTrottle';
+import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useTrottle } from '@/shared/lib/hooks/useTrottle';
 import { getScrollPositionByPath } from '../model/selectors/getScrollPosition';
 import cls from './Page.module.scss';
 import { scrollPositionActions } from '../model/slice/scrollPositionSlice';

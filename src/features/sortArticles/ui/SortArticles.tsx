@@ -1,16 +1,16 @@
-import { ArticleSortFields } from 'entities/article';
+import { ArticleSortFields } from '@/entities/article';
 import {
   articleActions,
   fetchArticles,
   getArticleSort,
-} from 'pages/articlesPage';
+} from '@/pages/articlesPage';
 
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
-import { Select, SelectOptions } from 'shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select/Select';
 
 export const SortArticles = memo(() => {
   const { t } = useTranslation('articlesPage');

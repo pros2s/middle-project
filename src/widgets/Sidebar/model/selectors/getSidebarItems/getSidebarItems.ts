@@ -1,11 +1,11 @@
-import i18n from 'shared/config/i18n/i18n';
-import MainPageSVG from 'shared/assets/icons/main-page.svg';
-import AboutPageSVG from 'shared/assets/icons/about-page.svg';
-import ProfilePageSVG from 'shared/assets/icons/profile-page.svg';
-import ArticlesPageSVG from 'shared/assets/icons/articles-page.svg';
-import { RoutesPaths } from 'shared/lib/routes/routes';
+import i18n from '@/shared/config/i18n/i18n';
+import MainPageSVG from '@/shared/assets/icons/main-page.svg';
+import AboutPageSVG from '@/shared/assets/icons/about-page.svg';
+import ProfilePageSVG from '@/shared/assets/icons/profile-page.svg';
+import ArticlesPageSVG from '@/shared/assets/icons/articles-page.svg';
+import { RoutesPaths } from '@/shared/lib/routes/routes';
 import { createSelector } from '@reduxjs/toolkit';
-import { getUserAuthData } from 'entities/user';
+import { getUserAuthData } from '@/entities/user';
 import { SidebarItemType } from '../../types/SidebarItem';
 
 export const SidebarPagesLinks = createSelector(getUserAuthData, (user) => {

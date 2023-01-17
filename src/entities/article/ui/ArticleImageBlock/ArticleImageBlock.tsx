@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Flex } from 'shared/ui/Stack/Flex';
-import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Flex } from '@/shared/ui/Stack/Flex';
+import { Text, TextAlign } from '@/shared/ui/Text/Text';
 import { ArticleImgaeBlockType } from '../../model/types/Article';
 
 interface ArticleImageBlockProps {

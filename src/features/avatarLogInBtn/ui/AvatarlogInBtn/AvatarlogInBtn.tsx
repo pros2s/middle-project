@@ -1,18 +1,18 @@
 import { memo } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
   getUserAuthData,
   hasAdminRole,
   hasManagerRole,
   userActions,
-} from 'entities/user';
+} from '@/entities/user';
 
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { RoutesPaths } from 'shared/lib/routes/routes';
-import { Dropdown } from 'shared/ui/Popups';
-import { Button, ButtonThemes } from 'shared/ui/Button/Button';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { RoutesPaths } from '@/shared/lib/routes/routes';
+import { Dropdown } from '@/shared/ui/Popups';
+import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { AvatarLoginBtnActions } from '../../model/slice/AvatarLoginBtnSlice';

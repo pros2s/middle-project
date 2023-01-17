@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from 'app/providers/ThemesProvider';
-import { UserRoles } from 'entities/user';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { Themes } from '@/app/providers/ThemesProvider';
+import { UserRoles } from '@/entities/user';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { CommentList } from './CommentList';
 
 export default {

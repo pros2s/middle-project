@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from 'app/providers/ThemesProvider';
-import { userReducer } from 'entities/user';
-import { StoreDecorator } from 'shared/config/storyBook/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator';
+import { Themes } from '@/app/providers/ThemesProvider';
+import { userReducer } from '@/entities/user';
+import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 
 import { Sidebar } from './Sidebar';
 

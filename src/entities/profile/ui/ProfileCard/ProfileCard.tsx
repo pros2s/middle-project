@@ -1,14 +1,14 @@
 import { KeyboardEvent, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Country, CountrySelect } from 'entities/countrySelect';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Input } from 'shared/ui/Input/Input';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Text, TextThemes } from 'shared/ui/Text/Text';
-import { Currency, CurrencySelect } from 'entities/currencySelect';
-import { Flex } from 'shared/ui/Stack/Flex';
+import { Country, CountrySelect } from '@/entities/countrySelect';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Input } from '@/shared/ui/Input/Input';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Text, TextThemes } from '@/shared/ui/Text/Text';
+import { Currency, CurrencySelect } from '@/entities/currencySelect';
+import { Flex } from '@/shared/ui/Stack/Flex';
 import { Profile } from '../../model/types/ProfileSchema';
 
 import cls from './ProfileCard.module.scss';

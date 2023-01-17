@@ -3,7 +3,7 @@ import {
   ArticleView,
   ArticleBlockType,
   ArticleType,
-} from 'entities/article';
+} from '@/entities/article';
 
 export const initializeArticles = (view: ArticleView): Article[] =>
   new Array(view === ArticleView.BIG ? 3 : 9).fill(0).map(() => ({

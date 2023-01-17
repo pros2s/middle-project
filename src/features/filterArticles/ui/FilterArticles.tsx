@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleView } from 'entities/article';
-import { ArticleTabs } from 'features/articleTabs';
-import { Flex } from 'shared/ui/Stack/Flex';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleView } from '@/entities/article';
+import { ArticleTabs } from '@/features/articleTabs';
+import { Flex } from '@/shared/ui/Stack/Flex';
 import { SearchArticles } from '../../searchArticles/ui/SearchArticles';
 import { OrderArticles } from '../../orderArticles/ui/OrderArticles';
 import { SortArticles } from '../../sortArticles/ui/SortArticles';

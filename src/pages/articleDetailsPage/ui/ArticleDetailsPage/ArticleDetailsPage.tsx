@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails } from 'entities/article';
+import { ArticleDetails } from '@/entities/article';
 
-import { Text, TextAlign, TextThemes } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextThemes } from '@/shared/ui/Text/Text';
 
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page';
-import { Flex } from 'shared/ui/Stack/Flex';
+import { Page } from '@/widgets/Page';
+import { Flex } from '@/shared/ui/Stack/Flex';
 import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
 
 const ArticleDetailsPage: FC = () => {

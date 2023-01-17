@@ -1,7 +1,7 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Flex } from '../../../Stack/Flex';
 import { Text } from '../../../Text/Text';
 import { Button, ButtonThemes } from '../../../Button/Button';

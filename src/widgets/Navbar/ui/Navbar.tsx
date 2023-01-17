@@ -1,21 +1,21 @@
-import { LoginModal } from 'features/authByUsername';
+import { LoginModal } from '@/features/authByUsername';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { getUserAuthData } from 'entities/user';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getUserAuthData } from '@/entities/user';
 
-import { getSidebarCollapsed } from 'widgets/Sidebar';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Flex } from 'shared/ui/Stack/Flex';
-import { NotificationBtn } from 'features/notificationBtn';
+import { getSidebarCollapsed } from '@/widgets/Sidebar';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { Flex } from '@/shared/ui/Stack/Flex';
+import { NotificationBtn } from '@/features/notificationBtn';
 import {
   AvatarLogInBtn,
   AvatarLoginBtnActions,
   getAvatarLoginBtn,
-} from 'features/avatarLogInBtn';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+} from '@/features/avatarLogInBtn';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

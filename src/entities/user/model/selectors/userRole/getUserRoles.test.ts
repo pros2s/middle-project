@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { UserRoles } from '../../types/UserSchema';
 import { getUserRoles, hasAdminRole, hasManagerRole } from './getUserRoles';
 

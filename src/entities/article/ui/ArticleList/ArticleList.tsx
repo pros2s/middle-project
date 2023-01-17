@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleItemSceleton } from '../ArticleItem/ArticleItemSceleton';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { Article, ArticleView } from '../../model/types/Article';

@@ -1,8 +1,8 @@
-import { useThemes } from 'app/providers/ThemesProvider';
+import { useThemes } from '@/app/providers/ThemesProvider';
 import { FC, ReactNode } from 'react';
 
-import { classNames, Mode } from 'shared/lib/classNames/classNames';
-import { useOverlay } from 'shared/lib/hooks/useOverlay';
+import { classNames, Mode } from '@/shared/lib/classNames/classNames';
+import { useOverlay } from '@/shared/lib/hooks/useOverlay';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 

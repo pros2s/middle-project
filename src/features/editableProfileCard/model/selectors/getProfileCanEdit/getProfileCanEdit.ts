@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { getUserAuthData } from 'entities/user';
+import { getUserAuthData } from '@/entities/user';
 import { getProfileData } from '../getProfileData/getProfileData';
 
 export const getProfileCanEdit = createSelector(

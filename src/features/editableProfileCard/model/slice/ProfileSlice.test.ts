@@ -1,6 +1,6 @@
-import { Country } from 'entities/countrySelect';
-import { Currency } from 'entities/currencySelect';
-import { Profile } from 'entities/profile';
+import { Country } from '@/entities/countrySelect';
+import { Currency } from '@/entities/currencySelect';
+import { Profile } from '@/entities/profile';
 
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';

@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { getUserAuthData } from 'entities/user';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getUserAuthData } from '@/entities/user';
 
 export const getArticleLoading = (state: StateSchema) =>
   state.articleDetails?.isLoading;
