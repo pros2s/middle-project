@@ -1,12 +1,11 @@
+import { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import {
   articleActions,
   fetchArticles,
   getArticleOrder,
 } from '@/pages/articlesPage';
-
-import { memo, useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { OrderType } from '@/shared/types/order';
 

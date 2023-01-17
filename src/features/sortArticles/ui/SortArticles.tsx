@@ -1,13 +1,12 @@
-import { ArticleSortFields } from '@/entities/article';
+import { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import {
   articleActions,
   fetchArticles,
   getArticleSort,
 } from '@/pages/articlesPage';
-
-import { memo, useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { ArticleSortFields } from '@/entities/article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 import { Select, SelectOptions } from '@/shared/ui/Select/Select';

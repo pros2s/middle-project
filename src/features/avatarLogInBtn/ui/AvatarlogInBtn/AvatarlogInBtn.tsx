@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
   getUserAuthData,
@@ -13,8 +15,6 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { AvatarLoginBtnActions } from '../../model/slice/AvatarLoginBtnSlice';
 
 interface AvatarLogInBtnProps {

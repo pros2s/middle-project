@@ -1,7 +1,7 @@
-import { LoginModal } from '@/features/authByUsername';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { LoginModal } from '@/features/authByUsername';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/user';

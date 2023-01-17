@@ -1,5 +1,5 @@
-import { useThemes } from '@/app/providers/ThemesProvider';
 import { FC, ReactNode } from 'react';
+import { useThemes } from '@/app/providers/ThemesProvider';
 
 import { classNames, Mode } from '@/shared/lib/classNames/classNames';
 import { useOverlay } from '@/shared/lib/hooks/useOverlay';

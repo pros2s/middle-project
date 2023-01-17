@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
-import { CommentList } from '@/entities/comment';
 import { useSelector } from 'react-redux';
+import { CommentList } from '@/entities/comment';
 import {
   ReducersList,
   DynamicReducerLoader,

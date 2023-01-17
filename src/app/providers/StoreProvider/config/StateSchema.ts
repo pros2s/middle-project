@@ -5,11 +5,11 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
+import { AxiosInstance } from 'axios';
 import { LoginSchema } from '@/features/authByUsername';
 import { ArticleDetailsSchema } from '@/entities/article';
 import { UserSchema } from '@/entities/user';
 
-import { AxiosInstance } from 'axios';
 import { ArticleDetailsPageSchema } from '@/pages/articleDetailsPage';
 import { AddCommentSchema } from '@/features/addComment';
 import { ArticleSchema } from '@/pages/articlesPage';
