@@ -1,7 +1,8 @@
 import { classNames, Mode } from 'shared/lib/classNames/classNames';
-import { memo, ReactNode } from 'react';
+import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { useThemes } from 'app/providers/ThemesProvider';
 import { useOverlay } from 'shared/lib/hooks/useOverlay';
+import { useGestureSpring } from 'shared/lib/components/GestureSpringProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -14,14 +15,68 @@ interface DrawerProps {
   onClose: () => void;
 }
 
-export const Drawer = memo(
+const height = window.innerHeight - 100;
+
+const DrawerContent = memo(
   ({ className, children, onClose, isOpen, isLazy }: DrawerProps) => {
     const { theme } = useThemes();
+    const { Gesture, Spring } = useGestureSpring();
     const { close, isClosing, isMounted } = useOverlay({
       isOpen,
       onClose,
       animationDelay: 100,
     });
+    const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
+
+    const onGestureOpen = useCallback(() => {
+      api.start({
+        y: 0,
+        immediate: false,
+      });
+    }, [api]);
+
+    useEffect(() => {
+      if (isOpen) {
+        onGestureOpen();
+      }
+    }, [isOpen, onGestureOpen]);
+
+    const onGestureClose = (velocity = 0) => {
+      api.start({
+        y: height,
+        immediate: false,
+        config: { ...Spring.config.stiff, velocity },
+        onResolve: onClose,
+      });
+    };
+
+    const bind = Gesture.useDrag(
+      ({
+        last,
+        velocity: [, vy],
+        direction: [, dy],
+        movement: [, my],
+        cancel,
+      }) => {
+        if (my < -70) cancel();
+
+        if (last) {
+          if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
+            onGestureClose(vy);
+          } else {
+            onGestureOpen();
+          }
+        } else api.start({ y: my, immediate: true });
+      },
+      {
+        from: () => [0, y.get()],
+        filterTaps: true,
+        bounds: { top: 0 },
+        rubberband: true,
+      },
+    );
+
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     if (isLazy && !isMounted) return null;
 
@@ -34,9 +89,25 @@ export const Drawer = memo(
       <Portal>
         <div className={classNames(cls.Drawer, [className, theme], mods)}>
           <Overlay onClick={close} />
-          <div className={cls.content}>{children}</div>
+          <Spring.a.div
+            className={cls.content}
+            style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+            {...bind()}
+          >
+            {children}
+          </Spring.a.div>
         </div>
       </Portal>
     );
   },
 );
+
+export const Drawer = memo((props: DrawerProps) => {
+  const { isLoaded } = useGestureSpring();
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  return <DrawerContent {...props} />;
+});
