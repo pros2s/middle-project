@@ -24,5 +24,8 @@
   "second": "second",
   "third": "third",
   "Admin": "Admin",
-  "notificationError": "Notification loading error"
+  "notificationError": "Notification loading error",
+  "leaveFeedback": "Leave your feedback",
+  "cancelFeedback": "Cancel",
+  "sendFeedback": "\nSend"
 }

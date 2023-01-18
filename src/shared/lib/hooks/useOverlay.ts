@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface useOverlayProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   animationDelay?: number;
 }
 
@@ -28,7 +28,7 @@ export const useOverlay = ({
     if (isOpen) {
       setIsClosing(true);
       closeTimeout.current = setTimeout(() => {
-        onClose();
+        onClose?.();
         setIsClosing(false);
       }, animationDelay);
     }
@@ -37,7 +37,7 @@ export const useOverlay = ({
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        onClose?.();
       }
     },
     [onClose],

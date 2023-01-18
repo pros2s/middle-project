@@ -24,5 +24,8 @@
   "second": "второй",
   "third": "первый",
   "Admin": "Админ",
-  "notificationError": "Ошибка закгрузки уведомлений"
+  "notificationError": "Ошибка закгрузки уведомлений",
+  "leaveFeedback": "Оставьте свой отзыв",
+  "cancelFeedback": "Отменить",
+  "sendFeedback": "Отправить"
 }

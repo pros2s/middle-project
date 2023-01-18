@@ -21,17 +21,17 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
     switch (theme) {
       case Themes.DARK:
-        Comp = <SVGIcon Svg={DarkIcon} />;
+        Comp = <SVGIcon Svg={DarkIcon} size={45} color='#16c316' />;
         break;
       case Themes.LIGHT:
-        Comp = <SVGIcon Svg={LightIcon} />;
+        Comp = <SVGIcon Svg={LightIcon} size={45} color='#16c316' />;
         break;
       case Themes.ORANGE:
-        Comp = <SVGIcon Svg={OrangeIcon} />;
+        Comp = <SVGIcon Svg={OrangeIcon} size={45} color='#cd9637' />;
         break;
 
       default:
-        Comp = <SVGIcon Svg={LightIcon} />;
+        Comp = <SVGIcon Svg={LightIcon} size={45} color='#16c316' />;
     }
     return Comp;
   }, [theme]);

@@ -57,6 +57,7 @@
   "articlesPageText": "",
   "backT": "",
   "backToArticleList": "",
+  "cancelFeedback": "",
   "comments": "",
   "commentsNotFound": "",
   "createArticlePage": "",
@@ -72,6 +73,7 @@
     "t(": ""
   },
   "itArticles": "",
+  "leaveFeedback": "",
   "log": "",
   "log in": "",
   "login": "",
@@ -88,6 +90,7 @@
   "scienceArticles": "",
   "searchArticle": "",
   "sendComment": "",
+  "sendFeedback": "",
   "sortBy": "",
   "title": "",
   "views": "",

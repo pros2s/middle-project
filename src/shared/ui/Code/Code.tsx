@@ -5,6 +5,7 @@ import CopyIcon from '@/shared/assets/icons/copy.svg';
 import { Button } from '../Button/Button';
 
 import cls from './Code.module.scss';
+import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
 
 interface CodeProps {
   className?: string;
@@ -19,7 +20,7 @@ export const Code = memo(({ className, text }: CodeProps) => {
   return (
     <pre className={classNames(cls.Code, [className])}>
       <Button className={cls.copyBtn} onClick={onCopy}>
-        <CopyIcon />
+        <SVGIcon Svg={CopyIcon} size={20} />
       </Button>
       {text}
     </pre>

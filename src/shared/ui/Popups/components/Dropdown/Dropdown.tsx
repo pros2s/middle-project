@@ -23,11 +23,10 @@ interface DropdownProps {
 export const Dropdown = memo(({ items, trigger, className }: DropdownProps) => (
   <Menu as='div' className={classNames(popupCls.popup, [className])}>
     <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
-    <Menu.Items as='div' className={classNames(popupCls.list, [cls.list])}>
-      {items.map((item) => {
+    <Menu.Items className={classNames(popupCls.list, [cls.list])}>
+      {items.map((item, i) => {
         const content = ({ active }: { active: boolean }) => (
           <Button
-            type='button'
             className={classNames(cls.item, [], { [popupCls.active]: active })}
             disabled={item.disabled}
             onClick={item.onclick}
@@ -39,7 +38,7 @@ export const Dropdown = memo(({ items, trigger, className }: DropdownProps) => (
         if (item.href) {
           return (
             <Menu.Item
-              key={Math.random()}
+              key={`dropdown-key-${i}`}
               as={AppLink}
               className={cls.link}
               to={item.href}
@@ -51,7 +50,11 @@ export const Dropdown = memo(({ items, trigger, className }: DropdownProps) => (
         }
 
         return (
-          <Menu.Item key={Math.random()} as={Fragment} disabled={item.disabled}>
+          <Menu.Item
+            key={`dropdown-key-${i}`}
+            as={Fragment}
+            disabled={item.disabled}
+          >
             {content}
           </Menu.Item>
         );

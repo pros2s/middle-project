@@ -13,7 +13,7 @@ interface ModalProps {
   isLazy?: boolean;
   children?: ReactNode;
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export const Modal: FC<ModalProps> = ({

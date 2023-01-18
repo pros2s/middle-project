@@ -102,11 +102,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         </Flex>
         <Text size={TextSize.L} title={data?.title} text={data?.subtitle} />
         <Flex align='center'>
-          <SVGIcon className={cls.icon} Svg={EyeIcon} />
+          <SVGIcon className={cls.icon} Svg={EyeIcon} size={20} />
           <Text text={String(data?.views)} />
         </Flex>
         <Flex align='center'>
-          <SVGIcon className={cls.icon} Svg={DateIcon} />
+          <SVGIcon className={cls.icon} Svg={DateIcon} size={20} />
           <Text text={data?.createdAt} />
         </Flex>
         {data?.blocks.map(blockComponent)}

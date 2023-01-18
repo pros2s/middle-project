@@ -44,6 +44,7 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: [
+          'color',
           'target',
           'rel',
           'borderRadius',
@@ -83,7 +84,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     // pross
     'pross-plugin/path-watcher': 'error',
-    // off
+    // off\
+    'react/no-array-index-key': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',

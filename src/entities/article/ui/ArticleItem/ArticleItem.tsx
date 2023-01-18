@@ -35,7 +35,7 @@ export const ArticleItem = memo(
     const views = (
       <>
         <Text className={cls.views} text={String(article.views)} />
-        <SVGIcon Svg={EyeIcon} />
+        <SVGIcon Svg={EyeIcon} size={20} />
       </>
     );
 

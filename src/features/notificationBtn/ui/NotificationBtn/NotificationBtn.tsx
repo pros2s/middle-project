@@ -24,7 +24,7 @@ export const NotificationBtn = memo(({ className }: NotificationBtnProps) => {
     setIsOpen(false);
   };
 
-  const trigger = <SVGIcon Svg={NotificationIcon} invertedColor />;
+  const trigger = <SVGIcon Svg={NotificationIcon} invertedColor size={20} />;
   return (
     <>
       <BrowserView>

@@ -21,6 +21,7 @@ export const FilterArticles = memo(
   ({ className, onChangeView, view }: FilterArticlesProps) => (
     <Flex direction='column' gap='16' className={classNames('', [className])}>
       <SearchArticles />
+      <ArticleTabs />
       <Flex align='center' justify='between' className={cls.header}>
         <Flex align='center' gap='16' className={cls.left}>
           <SortArticles />
@@ -32,7 +33,6 @@ export const FilterArticles = memo(
           onChangeView={onChangeView}
         />
       </Flex>
-      <ArticleTabs />
     </Flex>
   ),
 );
