@@ -8,7 +8,7 @@ import { profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
-  title: 'features/EditableProfileCard',
+  title: 'features/editableProfileCard/EditableProfileCard',
   component: EditableProfileCard,
   argTypes: {
     backgroundColor: { control: 'color' },
