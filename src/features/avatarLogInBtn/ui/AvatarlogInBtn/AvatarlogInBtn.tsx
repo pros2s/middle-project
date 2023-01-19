@@ -10,7 +10,7 @@ import {
 } from '@/entities/user';
 
 import { Avatar } from '@/shared/ui/Avatar';
-import { RoutesPaths } from '@/shared/lib/routes/routes';
+import { getAdminRoute, getProfileRoute } from '@/shared/lib/routes/routes';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Button, ButtonThemes } from '@/shared/ui/Button';
 
@@ -57,13 +57,13 @@ export const AvatarLogInBtn = memo(({ className }: AvatarLogInBtnProps) => {
               ? [
                   {
                     content: t('Admin'),
-                    href: RoutesPaths.admin_panel,
+                    href: getAdminRoute(),
                   },
                 ]
               : []),
             {
               content: t('Profile'),
-              href: RoutesPaths.profile + authData.id,
+              href: getProfileRoute(authData.id),
             },
             { content: t('Logout'), onclick: onLogout },
           ]}

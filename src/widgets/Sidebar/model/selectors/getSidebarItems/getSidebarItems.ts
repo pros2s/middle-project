@@ -4,35 +4,40 @@ import MainPageSVG from '@/shared/assets/icons/main-page.svg';
 import AboutPageSVG from '@/shared/assets/icons/about-page.svg';
 import ProfilePageSVG from '@/shared/assets/icons/profile-page.svg';
 import ArticlesPageSVG from '@/shared/assets/icons/articles-page.svg';
-import { RoutesPaths } from '@/shared/lib/routes/routes';
 import { getUserAuthData } from '@/entities/user';
 import { SidebarItemType } from '../../types/SidebarItem';
+import {
+  getAboutRoute,
+  getArticlesRoute,
+  getMainRoute,
+  getProfileRoute,
+} from '@/shared/lib/routes/routes';
 
 export const SidebarPagesLinks = createSelector(getUserAuthData, (user) => {
   const SidebarItemsList: SidebarItemType[] = [
     {
       Icon: MainPageSVG,
-      path: RoutesPaths.main,
+      path: getMainRoute(),
       text: i18n.t('mainPageBTN'),
     },
     {
       Icon: AboutPageSVG,
-      path: RoutesPaths.about,
+      path: getAboutRoute(),
       text: i18n.t('aboutPageBTN'),
     },
   ];
 
-  if (user) {
+  if (user.authData) {
     SidebarItemsList.push(
       {
         Icon: ProfilePageSVG,
-        path: `${RoutesPaths.profile}${user.authData?.id}`,
+        path: getProfileRoute(user.authData.id),
         text: i18n.t('profilePageBTN'),
         isAuthOnly: true,
       },
       {
         Icon: ArticlesPageSVG,
-        path: RoutesPaths.articles,
+        path: getArticlesRoute(),
         text: i18n.t('articlesPageBTN'),
         isAuthOnly: true,
       },

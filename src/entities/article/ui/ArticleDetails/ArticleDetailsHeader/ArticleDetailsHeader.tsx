@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Button } from '@/shared/ui/Button';
-import { RoutesPaths } from '@/shared/lib/routes/routes';
+import { getArticlesRoute } from '@/shared/lib/routes/routes';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -35,7 +35,7 @@ export const ArticleDetailsHeader = memo(
     }, [article?.id, navigate]);
 
     const onComeBack = useCallback(() => {
-      navigate(RoutesPaths.articles);
+      navigate(getArticlesRoute());
     }, [navigate]);
 
     return (

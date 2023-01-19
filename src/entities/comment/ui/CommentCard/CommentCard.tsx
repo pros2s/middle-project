@@ -5,7 +5,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutesPaths } from '@/shared/lib/routes/routes';
+import { getProfileRoute } from '@/shared/lib/routes/routes';
 import { Flex } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/Comment';
 
@@ -48,10 +48,7 @@ export const CommentCard = memo(
         justify='between'
         className={classNames(cls.CommentCard, [className])}
       >
-        <AppLink
-          to={`${RoutesPaths.profile}${comment?.user.id}`}
-          className={cls.header}
-        >
+        <AppLink to={getProfileRoute(comment?.user.id)} className={cls.header}>
           <Avatar
             className={cls.avatar}
             size='30px'

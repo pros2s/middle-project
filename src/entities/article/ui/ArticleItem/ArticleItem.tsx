@@ -8,7 +8,7 @@ import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { RoutesPaths } from '@/shared/lib/routes/routes';
+import { getArticleByIdRoute } from '@/shared/lib/routes/routes';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Flex } from '@/shared/ui/Stack';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
@@ -69,7 +69,7 @@ export const ArticleItem = memo(
             )}
             <footer className={classNames(cls.footer)}>
               <Flex align='center'>
-                <AppLink to={RoutesPaths.articleDetails + article.id}>
+                <AppLink to={getArticleByIdRoute(article.id)}>
                   <Button>{t('readMore')}</Button>
                 </AppLink>
                 {views}
@@ -82,7 +82,7 @@ export const ArticleItem = memo(
 
     return (
       <AppLink
-        to={RoutesPaths.articleDetails + article.id}
+        to={getArticleByIdRoute(article.id)}
         className={classNames(cls.ArticleItem, [className, cls[view]])}
       >
         <Card>
