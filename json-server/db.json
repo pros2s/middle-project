@@ -36,6 +36,57 @@
       "avatar": "https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg"
     }
   ],
+  "article-raiting": [
+    {
+      "id": "1",
+      "feedback": "Хорошая статья",
+      "rate": 4,
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "feedback": "Хорошая статья",
+      "rate": 5,
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "rate": 5,
+      "userId": "1",
+      "id": "M7qFFZX"
+    },
+    {
+      "articleId": "4",
+      "rate": 3,
+      "userId": "1",
+      "id": "vcD2WjO"
+    },
+    {
+      "articleId": "5",
+      "rate": 2,
+      "userId": "1",
+      "feedback": "Bad article",
+      "id": "0SyVm2r"
+    }
+  ],
+  "profile-raiting": [
+    {
+      "id": "1",
+      "feedback": "Хороший профиль",
+      "rate": 4,
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "feedback": "Хороший профиль",
+      "rate": 5,
+      "userId": "2",
+      "profileId": "2"
+    }
+  ],
   "notifications": [
     {
       "id": "1",

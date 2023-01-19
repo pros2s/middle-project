@@ -27,5 +27,6 @@
   "notificationError": "Notification loading error",
   "leaveFeedback": "Leave your feedback",
   "cancelFeedback": "Cancel",
-  "sendFeedback": "\nSend"
+  "sendFeedback": "\nSend",
+  "thanksForRate": "Thank you for you feedback"
 }

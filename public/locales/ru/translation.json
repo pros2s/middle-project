@@ -27,5 +27,6 @@
   "notificationError": "Ошибка закгрузки уведомлений",
   "leaveFeedback": "Оставьте свой отзыв",
   "cancelFeedback": "Отменить",
-  "sendFeedback": "Отправить"
+  "sendFeedback": "Отправить",
+  "thanksForRate": "Спасибо за ваш отзыв"
 }

@@ -19,5 +19,7 @@
   "economicsArticles": "Economis",
   "itArticles": "IT",
   "scienceArticles": "Scince",
-  "editArticle": "Edit"
+  "editArticle": "Edit",
+  "rateArticle": "Rate article",
+  "feedbackTitle": "Leave feedback about this article to increase quality of articles"
 }

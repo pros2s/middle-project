@@ -21,7 +21,7 @@ export const StarRaiting = memo(
     const [isSelected, setIsSelected] = useState<boolean>(
       Boolean(selectedStars),
     );
-    const [currentStar, setCurrentStar] = useState<number>(0);
+    const [currentStar, setCurrentStar] = useState<number>(selectedStars);
 
     const onHover = (starNumber: number) => () => {
       if (!isSelected) {
@@ -44,7 +44,12 @@ export const StarRaiting = memo(
     };
 
     return (
-      <Flex gap='8' className={classNames(cls.StarRaiting, [className])}>
+      <Flex
+        gap='8'
+        className={classNames(cls.StarRaiting, [className], {
+          [cls.selected]: isSelected,
+        })}
+      >
         {starNums.map((star) => (
           <SVGIcon
             className={classNames(cls.starIcon, [], {

@@ -52,6 +52,7 @@ export const ArticleViewSelector = memo(
                 [cls.notSelected]: item.view !== view,
               })}
               Svg={item.icon}
+              size={20}
             />
           </Button>
         ))}

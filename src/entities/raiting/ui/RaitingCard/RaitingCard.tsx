@@ -22,6 +22,7 @@ interface RaitingCardProps {
   hasFeedback?: boolean;
   onAccept?: (starsCount: number, feedback?: string) => void;
   onCancel?: (starsCount: number) => void;
+  rate?: number;
 }
 
 export const RaitingCard = memo(
@@ -32,11 +33,12 @@ export const RaitingCard = memo(
     title,
     onAccept,
     onCancel,
+    rate = 0,
   }: RaitingCardProps) => {
     const { t } = useTranslation('');
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [selectedStarsCount, setSelectedStarsCount] = useState<number>(0);
+    const [selectedStarsCount, setSelectedStarsCount] = useState<number>(rate);
     const [feedback, setFeedback] = useState<string>('');
 
     const onSelectStars = useCallback(
@@ -75,11 +77,14 @@ export const RaitingCard = memo(
     return (
       <Card className={classNames('', [className])}>
         <Flex direction='column' align='center' gap='8'>
-          <Text title={title} />
-          <StarRaiting onSelect={onSelectStars} />
+          <Text title={selectedStarsCount ? t('thanksForRate') : title} />
+          <StarRaiting
+            onSelect={onSelectStars}
+            selectedStars={selectedStarsCount}
+          />
         </Flex>
-        <Modal isLazy isOpen={isModalOpen}>
-          <BrowserView>
+        <BrowserView>
+          <Modal isLazy isOpen={isModalOpen} onClose={cancelHandler}>
             <Flex direction='column' gap='16'>
               {modalContent}
               <Flex justify='end' gap='8'>
@@ -89,18 +94,18 @@ export const RaitingCard = memo(
                 <Button onClick={acceptHandler}>{t('sendFeedback')}</Button>
               </Flex>
             </Flex>
-          </BrowserView>
-          <MobileView>
-            <Drawer isOpen={isModalOpen} onClose={cancelHandler} isLazy>
-              <Flex direction='column' gap='16' className={cls.mobileModal}>
-                {modalContent}
-                <Button onClick={acceptHandler} fullWidth>
-                  {t('sendFeedback')}
-                </Button>
-              </Flex>
-            </Drawer>
-          </MobileView>
-        </Modal>
+          </Modal>
+        </BrowserView>
+        <MobileView>
+          <Drawer isOpen={isModalOpen} onClose={cancelHandler} isLazy>
+            <Flex direction='column' gap='16' className={cls.mobileModal}>
+              {modalContent}
+              <Button onClick={acceptHandler} fullWidth>
+                {t('sendFeedback')}
+              </Button>
+            </Flex>
+          </Drawer>
+        </MobileView>
       </Card>
     );
   },

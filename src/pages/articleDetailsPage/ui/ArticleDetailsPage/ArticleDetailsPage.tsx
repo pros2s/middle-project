@@ -8,13 +8,14 @@ import { Text, TextAlign, TextThemes } from '@/shared/ui/Text/Text';
 import { Page } from '@/widgets/Page';
 import { Flex } from '@/shared/ui/Stack/Flex';
 import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
+import { ArticleRaiting } from '@/features/articleRaiting';
 
 const ArticleDetailsPage: FC = () => {
   const { t } = useTranslation('articlesPage');
 
   const { id } = useParams<{ id: string }>();
 
-  if (!id && __PROJECT__ !== 'storybook') {
+  if ((!id && __PROJECT__ !== 'storybook') || !id) {
     return (
       <Flex direction='column'>
         <Text
@@ -29,6 +30,7 @@ const ArticleDetailsPage: FC = () => {
   return (
     <Page>
       <ArticleDetails id={id} />
+      <ArticleRaiting articleId={id} />
       <Text title={t('comments')} />
       <ArticleDetailsPageComments id={id} />
     </Page>
