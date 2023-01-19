@@ -85,7 +85,7 @@ export const RaitingCard = memo(
         </Flex>
         <BrowserView>
           <Modal isLazy isOpen={isModalOpen} onClose={cancelHandler}>
-            <Flex direction='column' gap='16'>
+            <Flex className={cls.modal} direction='column' gap='16'>
               {modalContent}
               <Flex justify='end' gap='8'>
                 <Button theme={ButtonThemes.CANCEL} onClick={cancelHandler}>
