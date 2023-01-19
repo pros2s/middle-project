@@ -12,6 +12,7 @@ export default {
     '\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'JestEmptyComponent'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   globals: {
