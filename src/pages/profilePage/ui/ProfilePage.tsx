@@ -6,6 +6,7 @@ import { EditableProfileCard } from '@/features/editableProfileCard';
 import { Text, TextThemes } from '@/shared/ui/Text/Text';
 
 import cls from './ProfilePage.module.scss';
+import { ProfileRaiting } from '@/features/profileRating';
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation('profilePage');
@@ -18,6 +19,7 @@ const ProfilePage = memo(() => {
   return (
     <Page className={cls.profile}>
       <EditableProfileCard id={id} />
+      <ProfileRaiting profileId={id} />
     </Page>
   );
 });

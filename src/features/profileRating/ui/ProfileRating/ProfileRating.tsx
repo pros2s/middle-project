@@ -5,33 +5,33 @@ import { useSelector } from 'react-redux';
 
 import { Card } from '@/shared/ui/Card/Card';
 import { RaitingCard } from '@/entities/raiting';
-import { useArticleRaiting, useRateArticle } from '../../api/articleRaitingApi';
+import { useProfileRaiting, useRateProfile } from '../../api/profileRatingApi';
 import { getUserAuthData } from '@/entities/user';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+
+import cls from './ProfileRaiting.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import cls from './ArticleRating.module.scss';
-
-export interface ArticleRaitingProps {
+export interface ProfileRaitingProps {
   className?: string;
-  articleId: string;
+  profileId: string;
 }
 
-const ArticleRaiting = memo(({ className, articleId }: ArticleRaitingProps) => {
-  const { t } = useTranslation('articlesPage');
+const ProfileRaiting = memo(({ className, profileId }: ProfileRaitingProps) => {
+  const { t } = useTranslation('profilePage');
   const { authData } = useSelector(getUserAuthData);
 
-  const { isLoading, data } = useArticleRaiting({
-    articleId,
+  const { isLoading, data } = useProfileRaiting({
+    profileId,
     userId: authData?.id ?? '',
   });
-  const [rateArticleMutation] = useRateArticle();
+  const [rateProfileMutation] = useRateProfile();
 
-  const rateArticleHandler = useCallback(
+  const rateProfileHandler = useCallback(
     (star: number, feedback?: string) => {
       try {
-        rateArticleMutation({
-          articleId,
+        rateProfileMutation({
+          profileId,
           rate: star,
           userId: authData?.id ?? '',
           feedback,
@@ -40,29 +40,29 @@ const ArticleRaiting = memo(({ className, articleId }: ArticleRaitingProps) => {
         throw new Error(e as string);
       }
     },
-    [articleId, authData?.id, rateArticleMutation],
+    [rateProfileMutation, profileId, authData?.id],
   );
 
   const onAccept = useCallback(
     (star: number, feedback?: string) => {
-      rateArticleHandler(star, feedback);
+      rateProfileHandler(star, feedback);
     },
-    [rateArticleHandler],
+    [rateProfileHandler],
   );
 
   const onCancel = useCallback(
     (star: number) => {
-      rateArticleHandler(star);
+      rateProfileHandler(star);
     },
-    [rateArticleHandler],
+    [rateProfileHandler],
   );
 
   if (isLoading) return <Skeleton width='100%' height='140px' />;
 
   return (
-    <Card className={classNames(cls.ArticleRating, [className])}>
+    <Card className={classNames(cls.ProfileRating, [className])}>
       <RaitingCard
-        title={t('rateArticle')}
+        title={t('rateProfile')}
         feedbackTitle={t('feedbackTitle')}
         hasFeedback
         rate={data?.[0]?.rate}
@@ -73,4 +73,4 @@ const ArticleRaiting = memo(({ className, articleId }: ArticleRaitingProps) => {
   );
 });
 
-export default ArticleRaiting;
+export default ProfileRaiting;
