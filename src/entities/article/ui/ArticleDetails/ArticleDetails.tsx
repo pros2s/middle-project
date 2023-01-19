@@ -7,14 +7,14 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Text, TextSize, TextThemes } from '@/shared/ui/Text/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text, TextSize, TextThemes } from '@/shared/ui/Text';
 import DateIcon from '@/shared/assets/icons/date.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
+import { SVGIcon } from '@/shared/ui/SVGIcon';
 import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Flex } from '@/shared/ui/Stack';
 import { ArticleDetailsHeader } from './ArticleDetailsHeader/ArticleDetailsHeader';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import {

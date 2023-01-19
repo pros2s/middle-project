@@ -2,7 +2,7 @@ import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSizes, ButtonThemes } from '@/shared/ui/Button/Button';
+import { Button, ButtonSizes, ButtonThemes } from '@/shared/ui/Button';
 import { SidebarPagesLinks } from '../../model/selectors/getSidebarItems/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 

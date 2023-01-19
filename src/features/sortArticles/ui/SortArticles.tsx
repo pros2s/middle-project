@@ -9,7 +9,7 @@ import {
 import { ArticleSortFields } from '@/entities/article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
-import { Select, SelectOptions } from '@/shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 
 export const SortArticles = memo(() => {
   const { t } = useTranslation('articlesPage');

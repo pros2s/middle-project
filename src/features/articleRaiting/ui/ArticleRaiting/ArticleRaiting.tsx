@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 
 import { useSelector } from 'react-redux';
 
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { RaitingCard } from '@/entities/raiting';
 import { useArticleRaiting, useRateArticle } from '../../api/articleRaitingApi';
 import { getUserAuthData } from '@/entities/user';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './ArticleRating.module.scss';

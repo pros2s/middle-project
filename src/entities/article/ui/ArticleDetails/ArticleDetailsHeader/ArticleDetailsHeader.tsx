@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { generatePath, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import { RoutesPaths } from '@/shared/lib/routes/routes';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Flex } from '@/shared/ui/Stack';
 import {
   canArticleEdit,
   getArticleData,

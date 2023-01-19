@@ -1,12 +1,12 @@
 import { memo, useMemo } from 'react';
 
-import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
+import { Button, ButtonThemes } from '@/shared/ui/Button';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import DarkIcon from '@/shared/assets/icons/theme-dark.svg';
 import LightIcon from '@/shared/assets/icons/theme-light.svg';
 import OrangeIcon from '@/shared/assets/icons/theme-orange.svg';
-import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
+import { SVGIcon } from '@/shared/ui/SVGIcon';
 import { useThemes } from '@/shared/lib/hooks/useThemes';
 import { Themes } from '@/shared/consts/themes';
 

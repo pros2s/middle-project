@@ -4,9 +4,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import ListIcon from '@/shared/assets/icons/list-mode.svg';
 import TiledIcon from '@/shared/assets/icons/tiled-mode.svg';
-import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
-import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Button, ButtonThemes } from '@/shared/ui/Button';
+import { SVGIcon } from '@/shared/ui/SVGIcon';
+import { Flex } from '@/shared/ui/Stack';
 
 import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/article';

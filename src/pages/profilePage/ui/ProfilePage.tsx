@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { Text, TextThemes } from '@/shared/ui/Text/Text';
+import { Text, TextThemes } from '@/shared/ui/Text';
 
 import cls from './ProfilePage.module.scss';
 import { ProfileRaiting } from '@/features/profileRating';

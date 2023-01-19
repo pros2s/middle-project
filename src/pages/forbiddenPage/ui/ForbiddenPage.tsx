@@ -4,7 +4,7 @@ import { Page } from '@/widgets/Page';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Text, TextThemes } from '@/shared/ui/Text/Text';
+import { Text, TextThemes } from '@/shared/ui/Text';
 
 interface ForbiddenPageProps {
   className?: string;

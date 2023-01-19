@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { Country, CountrySelect } from '@/entities/countrySelect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Input } from '@/shared/ui/Input/Input';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Text, TextThemes } from '@/shared/ui/Text/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Text, TextThemes } from '@/shared/ui/Text';
 import { Currency, CurrencySelect } from '@/entities/currencySelect';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Flex } from '@/shared/ui/Stack';
 import { Profile } from '../../model/types/ProfileSchema';
 
 import cls from './ProfileCard.module.scss';

@@ -8,9 +8,9 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Button } from '@/shared/ui/Button/Button';
-import { Input } from '@/shared/ui/Input/Input';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Flex } from '@/shared/ui/Stack';
 import { getAddCommentText } from '../model/selectors/getAddComment';
 import {
   addCommentActions,

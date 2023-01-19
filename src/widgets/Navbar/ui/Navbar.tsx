@@ -6,8 +6,8 @@ import { LoginModal } from '@/features/authByUsername';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/user';
 
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { Flex } from '@/shared/ui/Stack';
 import { NotificationBtn } from '@/features/notificationBtn';
 import {
   AvatarLogInBtn,

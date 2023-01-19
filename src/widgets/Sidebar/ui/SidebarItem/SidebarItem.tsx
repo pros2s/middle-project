@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/user';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { SidebarItemType } from '../../model/types/SidebarItem';
 
 import cls from './SidebarItem.module.scss';
-import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
+import { SVGIcon } from '@/shared/ui/SVGIcon';
 
 interface SidebarItemProps {
   item: SidebarItemType;

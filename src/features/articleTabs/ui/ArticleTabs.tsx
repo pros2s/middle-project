@@ -10,7 +10,7 @@ import { ArticleType } from '@/entities/article';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 
 interface ArticleTabsProps {
   className?: string;

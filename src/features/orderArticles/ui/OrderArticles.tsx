@@ -9,7 +9,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { OrderType } from '@/shared/types/order';
 
-import { Select, SelectOptions } from '@/shared/ui/Select/Select';
+import { Select, SelectOptions } from '@/shared/ui/Select';
 
 export const OrderArticles = memo(() => {
   const { t } = useTranslation('articlesPage');

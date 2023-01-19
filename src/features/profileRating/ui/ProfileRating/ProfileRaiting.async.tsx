@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { ProfileRaitingProps } from './ProfileRating';
 
 const ProfileRaitingLazy = lazy(() => import('./ProfileRating'));

@@ -9,10 +9,10 @@ import {
   userActions,
 } from '@/entities/user';
 
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { RoutesPaths } from '@/shared/lib/routes/routes';
 import { Dropdown } from '@/shared/ui/Popups';
-import { Button, ButtonThemes } from '@/shared/ui/Button/Button';
+import { Button, ButtonThemes } from '@/shared/ui/Button';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AvatarLoginBtnActions } from '../../model/slice/AvatarLoginBtnSlice';
