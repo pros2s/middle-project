@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Themes } from '@/app/providers/ThemesProvider';
+import { Themes } from '@/shared/consts/themes';
+// eslint-disable-next-line pross-plugin/fsd-layer-imports
 import { ArticleType } from '@/entities/article';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { Tabs } from './Tabs';

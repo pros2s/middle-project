@@ -1,8 +1,6 @@
 import { memo, Suspense, useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
-import { useThemes } from '@/app/providers/ThemesProvider';
-import { RoutesProvieder } from '@/app/providers/RoutesProvider';
 
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
@@ -11,6 +9,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { getInited, userActions } from '@/entities/user';
 import { Flex } from '@/shared/ui/Stack/Flex';
+import { useThemes } from '@/shared/lib/hooks/useThemes';
+import { RoutesProvieder } from './providers/RoutesProvider';
 
 const App = memo(() => {
   const { theme } = useThemes();

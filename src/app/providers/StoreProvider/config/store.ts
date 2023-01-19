@@ -9,7 +9,6 @@ import { AvatarLoginBtnReducer } from '@/features/avatarLogInBtn';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { scrollPositionReducer } from '@/widgets/Page';
-import { SidebarReducer } from '@/widgets/Sidebar';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
@@ -21,7 +20,6 @@ export function createReduxStore(
     ...asyncReducers,
     user: userReducer,
     scroll: scrollPositionReducer,
-    sidebar: SidebarReducer,
     avatarLogInBtn: AvatarLoginBtnReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   };

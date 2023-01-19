@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from '@/app/providers/ThemesProvider';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import { addCommentReducer } from '../model/slice/AddCommentSlice';
 import AddComment from './AddComment';
+import { Themes } from '@/shared/consts/themes';
 
 export default {
   title: 'Features/AddComment',

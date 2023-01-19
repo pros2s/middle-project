@@ -83,8 +83,27 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     // pross
-    'pross-plugin/path-watcher': 'error',
-    // off\
+    'pross-plugin/path-watcher': ['error', { alias: '@' }],
+    'pross-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
+    'pross-plugin/fsd-layer-imports': [
+      'error',
+      {
+        alias: '@',
+        // My rude mistake about articlesPage :(
+        ignoreFilesPatterns: ['**/StoreProvider/**', '**/pages/articlesPage'],
+      },
+    ],
+    // off
     'react/no-array-index-key': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',

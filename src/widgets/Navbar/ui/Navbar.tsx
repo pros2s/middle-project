@@ -6,7 +6,6 @@ import { LoginModal } from '@/features/authByUsername';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/user';
 
-import { getSidebarCollapsed } from '@/widgets/Sidebar';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { Flex } from '@/shared/ui/Stack/Flex';
 import { NotificationBtn } from '@/features/notificationBtn';
@@ -27,7 +26,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const dispatch = useAppDispatch();
 
   const { authData } = useSelector(getUserAuthData);
-  const collapsed = useSelector(getSidebarCollapsed);
 
   const isLogInModal = useSelector(getAvatarLoginBtn);
 
@@ -40,7 +38,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <AppLink
         to='/articles/create'
         theme={AppLinkTheme.PRIMARY}
-        className={classNames(cls.create, [], { [cls.collapsed]: collapsed })}
+        className={cls.create}
       >
         {t('createNewArticle')}
       </AppLink>

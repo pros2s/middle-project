@@ -3,8 +3,8 @@ import { I18nextDecorator } from '../../src/shared/config/storyBook/I18nextDecor
 import { ThemeDecorator } from '../../src/shared/config/storyBook/ThemeDecorator';
 import { StyleDecorator } from '../../src/shared/config/storyBook/StyleDecorator';
 import { RouterDecorator } from '../../src/shared/config/storyBook/RouterDecorator';
-import { Themes } from '../../src/app/providers/ThemesProvider';
 import { SuspenseDecorator } from '../../src/shared/config/storyBook/SuspenseDecorator';
+import { Themes } from '../../src/shared/consts/themes';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

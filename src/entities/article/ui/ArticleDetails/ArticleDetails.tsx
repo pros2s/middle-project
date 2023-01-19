@@ -16,7 +16,6 @@ import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
 import { useFetchEffect } from '@/shared/lib/hooks/useFetchEffect';
 import { Flex } from '@/shared/ui/Stack/Flex';
 import { ArticleDetailsHeader } from './ArticleDetailsHeader/ArticleDetailsHeader';
-import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import {
   getArticleLoading,
@@ -29,6 +28,7 @@ import { articleDetailsReducer } from '../../model/slice/ArticleSlice';
 import cls from './ArticleDetails.module.scss';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/Article';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
+import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 
 interface ArticleDetailsProps {
   className?: string;

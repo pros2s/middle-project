@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from '@/app/providers/ThemesProvider';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/ProfileSlice';
+import { Themes } from '@/shared/consts/themes';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 import avatar from '@/shared/lib/testHelpers/smartMonkey.jpg';
 import ProfilePage from './ProfilePage';
+import { profileReducer } from '@/features/editableProfileCard';
 
 export default {
   title: 'Pages/ProfilePage',

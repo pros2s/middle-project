@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from '@/app/providers/ThemesProvider';
+import { Themes } from '@/shared/consts/themes';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-  title: 'Widgets/ThemeSwitcher',
+  title: 'features/ThemeSwitcher',
   component: ThemeSwitcher,
   argTypes: {
     backgroundColor: { control: 'color' },

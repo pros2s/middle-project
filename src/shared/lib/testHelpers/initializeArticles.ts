@@ -1,3 +1,4 @@
+// eslint-disable-next-line pross-plugin/fsd-layer-imports
 import {
   Article,
   ArticleView,

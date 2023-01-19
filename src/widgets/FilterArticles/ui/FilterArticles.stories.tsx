@@ -1,12 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Themes } from '@/app/providers/ThemesProvider';
+import { Themes } from '@/shared/consts/themes';
 import { ThemeDecorator } from '@/shared/config/storyBook/ThemeDecorator';
 
 import { FilterArticles } from './FilterArticles';
 import { StoreDecorator } from '@/shared/config/storyBook/StoreDecorator';
 
 export default {
-  title: 'features/FilterArticles',
+  title: 'widgets/FilterArticles',
   component: FilterArticles,
   argTypes: {
     backgroundColor: { control: 'color' },

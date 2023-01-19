@@ -1,11 +1,11 @@
 import { memo, useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { SVGIcon } from '@/shared/ui/SVGIcon/SVGIcon';
+import { SVGIcon } from '../SVGIcon/SVGIcon';
 import StarIcon from '@/shared/assets/icons/star.svg';
 
 import cls from './StarRaiting.module.scss';
-import { Flex } from '@/shared/ui/Stack/Flex';
+import { Flex } from '../Stack/Flex';
 
 interface StarRaitingProps {
   className?: string;

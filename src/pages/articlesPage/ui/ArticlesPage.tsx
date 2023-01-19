@@ -11,7 +11,6 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader';
 import { Page } from '@/widgets/Page';
-import { FilterArticles } from '@/features/filterArticles';
 import { initArticleState } from '../model/services/initArticleState/initArticleState';
 import { fetchArticlesNextPage } from '../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import {
@@ -26,6 +25,7 @@ import {
 } from '../model/slice/ArticleSlice';
 
 import cls from './ArticlesPage.module.scss';
+import { FilterArticles } from '@/widgets/FilterArticles';
 
 const reducers: ReducersList = {
   article: articleReducer,

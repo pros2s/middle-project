@@ -1,6 +1,5 @@
 import { ReactNode, useCallback, useEffect } from 'react';
 import { classNames, Mode } from '@/shared/lib/classNames/classNames';
-import { useThemes } from '@/app/providers/ThemesProvider';
 import { useOverlay } from '@/shared/lib/hooks/useOverlay';
 import {
   GestureSpringProvider,
@@ -9,6 +8,7 @@ import {
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
+import { useThemes } from '@/shared/lib/hooks/useThemes';
 
 interface DrawerProps {
   className?: string;
