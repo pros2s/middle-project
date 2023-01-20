@@ -3,6 +3,7 @@ import webpack from 'webpack';
 
 export const buildScssLoader = (isDev: boolean): webpack.RuleSetRule => ({
   test: /\.s[ac]ss$/i,
+  exclude: /node_modules/,
   use: [
     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
     {
