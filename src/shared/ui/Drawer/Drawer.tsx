@@ -18,7 +18,7 @@ interface DrawerProps {
   onClose: () => void;
 }
 
-const height = window.innerHeight - 100;
+const height = window.innerHeight - 727;
 
 const DrawerContent = ({
   className,
@@ -99,7 +99,7 @@ const DrawerContent = ({
         <Overlay onClick={close} />
         <Spring.a.div
           className={cls.content}
-          style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+          style={{ display, bottom: `calc(-100vh + ${height + 234}px)`, y }}
           {...bind()}
         >
           {children}

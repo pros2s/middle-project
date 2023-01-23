@@ -1,5 +1,9 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { buildSelector } from '@/shared/lib/store';
 
-export const getAddCommentError = (state: StateSchema) =>
-  state.addComment?.errorMessage;
-export const getAddCommentText = (state: StateSchema) => state.addComment?.text;
+export const [useGetAddCommentError, getAddCommentError] = buildSelector(
+  (state) => state.addComment?.errorMessage,
+);
+
+export const [useGetAddCommentText, getAddCommentText] = buildSelector(
+  (state) => state.addComment?.text,
+);

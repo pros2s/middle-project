@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { buildSlice } from '@/shared/lib/store';
 import { AddCommentSchema } from '../types/AddCommentSchema';
 
 const initialState: AddCommentSchema = {
@@ -6,7 +7,7 @@ const initialState: AddCommentSchema = {
   text: '',
 };
 
-const AddCommentSlice = createSlice({
+const AddCommentSlice = buildSlice({
   name: 'addComment',
   initialState,
   reducers: {
@@ -16,5 +17,8 @@ const AddCommentSlice = createSlice({
   },
 });
 
-export const { actions: addCommentActions } = AddCommentSlice;
-export const { reducer: addCommentReducer } = AddCommentSlice;
+export const {
+  actions: addCommentActions,
+  reducer: addCommentReducer,
+  useActions: useCommentActions,
+} = AddCommentSlice;
