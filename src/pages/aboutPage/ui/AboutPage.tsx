@@ -7,7 +7,11 @@ import cls from './AboutPage.module.scss';
 const AboutPage = memo(() => {
   const { t } = useTranslation('aboutPage');
 
-  return <Page className={cls.about}>{t('aboutPageText')}</Page>;
+  return (
+    <Page className={cls.about} data-testid='AboutPage'>
+      {t('aboutPageText')}
+    </Page>
+  );
 });
 
 export default AboutPage;

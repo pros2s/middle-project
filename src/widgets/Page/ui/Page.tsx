@@ -10,14 +10,16 @@ import { useTrottle } from '@/shared/lib/hooks/useTrottle';
 import { getScrollPositionByPath } from '../model/selectors/getScrollPosition';
 import cls from './Page.module.scss';
 import { scrollPositionActions } from '../model/slice/scrollPositionSlice';
+import { Test } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends Test {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
 }
 
-export const Page: FC<PageProps> = ({ className, children, onScrollEnd }) => {
+export const Page: FC<PageProps> = (props: PageProps) => {
+  const { className, children, onScrollEnd } = props;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
@@ -49,6 +51,8 @@ export const Page: FC<PageProps> = ({ className, children, onScrollEnd }) => {
 
   return (
     <main
+      // eslint-disable-next-line react/destructuring-assignment
+      data-testid={props['data-testid'] ?? 'Page'}
       ref={wrapper}
       className={classNames(cls.Page, [className], {})}
       onScroll={onScroll}

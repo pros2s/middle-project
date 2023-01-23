@@ -70,6 +70,7 @@ const ArticlesPage = memo(() => {
       <Page
         className={classNames(cls.ArticlesPage)}
         onScrollEnd={onLoadNextPage}
+        data-testid='articlesPage'
       >
         <FilterArticles onChangeView={onChangeView} view={view} />
         <ArticleList isLoading={isLoading} view={view} articles={tabArticles} />

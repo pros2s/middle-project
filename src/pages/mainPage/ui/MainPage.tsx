@@ -7,7 +7,7 @@ import cls from './MainPage.module.scss';
 const MainPage = memo(() => {
   const { t } = useTranslation('mainPage');
 
-  return <Page className={cls.main}>{t('mainPageText')}</Page>;
+  return <Page className={cls.main} data-testid='mainPage'>{t('mainPageText')}</Page>;
 });
 
 export default MainPage;
