@@ -20,6 +20,8 @@ import {
 } from '../../model/types/Article';
 
 import cls from './ArticleItem.module.scss';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleItemProps {
   className?: string;
@@ -62,7 +64,12 @@ export const ArticleItem = memo(
             <Text className={cls.title} title={article.title} />
 
             {types}
-            <img className={cls.img} src={article.imgBig} alt={article.title} />
+            <AppImage
+              className={cls.img}
+              src={article.imgBig}
+              fallback={<Skeleton height={190} width='100%' />}
+              alt={article.title}
+            />
 
             {textBlock && (
               <ArticleTextBlock className={cls.text} block={textBlock} />
@@ -87,7 +94,11 @@ export const ArticleItem = memo(
       >
         <Card>
           <Flex justify='center' direction='column' className={cls.imageInner}>
-            <img src={article.imgSmall} alt={article.title} />
+            <AppImage
+              src={article.imgSmall}
+              alt={article.title}
+              fallback={<Skeleton height={190} width={190} />}
+            />
             <Text className={cls.date} text={article.createdAt} />
           </Flex>
           <Flex align='center' gap='8'>

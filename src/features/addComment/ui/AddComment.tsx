@@ -58,7 +58,7 @@ const AddComment = memo(({ className, onSendComment }: AddCommentProps) => {
             placeholder={t('addNewComment')}
             className={cls.input}
           />
-          <Button type='submit' onClick={sendHandler}>
+          <Button type='submit' disabled={!inputValue} onClick={sendHandler}>
             {t('sendComment')}
           </Button>
         </Flex>

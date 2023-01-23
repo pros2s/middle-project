@@ -19,26 +19,28 @@ export const ArticleItemSceleton = memo(
       return (
         <div className={classNames(cls.ArticleItem, [className, cls[view]])}>
           <Card>
-            <header>
-              <Flex align='center'>
-                <Skeleton borderRadius='50%' height='25px' width='25px' />
-                <Skeleton
-                  className={cls.username}
-                  height='25px'
-                  width='130px'
-                />
-              </Flex>
-            </header>
+            <Flex direction='column' gap='8'>
+              <header>
+                <Flex align='center'>
+                  <Skeleton borderRadius='50%' height='35px' width='35px' />
+                  <Skeleton
+                    className={cls.username}
+                    height='25px'
+                    width='130px'
+                  />
+                </Flex>
+              </header>
 
-            <Skeleton className={cls.title} height='30px' width='100%' />
-            <Skeleton height='250px' width='100%' />
+              <Skeleton className={cls.title} height='30px' width='100%' />
+              <Skeleton height='250px' width='100%' />
 
-            <div className={classNames('', [cls.skeleton])}>
-              <Flex align='center'>
-                <Skeleton height='20px' width='100px' />
-                <Skeleton height='20px' width='80px' />
-              </Flex>
-            </div>
+              <div className={classNames('', [cls.skeleton])}>
+                <Flex gap='8' align='center'>
+                  <Skeleton height='20px' width='100px' />
+                  <Skeleton height='20px' width='80px' />
+                </Flex>
+              </div>
+            </Flex>
           </Card>
         </div>
       );
@@ -47,13 +49,14 @@ export const ArticleItemSceleton = memo(
     return (
       <section className={classNames(cls.ArticleItem, [className, cls[view]])}>
         <Card>
-          <Flex justify='center' direction='column' className={cls.imageInner}>
-            <Skeleton height='200px' width='100%' />
+          <Flex direction='column' gap='16'>
+            <Skeleton className={cls.imageInner} height='200px' width='100%' />
+            <Flex justify='between'>
+              <Skeleton height='20px' width='60%' />
+              <Skeleton height='20px' width='30%' />
+            </Flex>
+            <Skeleton height='20px' width='60%' />
           </Flex>
-          <Flex align='center' gap='8'>
-            <Skeleton height='30px' width='100%' />
-          </Flex>
-          <Skeleton height='20px' width='100%' />
         </Card>
       </section>
     );
