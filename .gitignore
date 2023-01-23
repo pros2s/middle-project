@@ -5,7 +5,7 @@
 
 # testing
 /coverage
-/reports
+/reports/unit
 
 # production
 /build

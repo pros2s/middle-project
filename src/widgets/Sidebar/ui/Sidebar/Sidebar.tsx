@@ -7,8 +7,8 @@ import { SidebarPagesLinks } from '../../model/selectors/getSidebarItems/getSide
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import cls from './Sidebar.module.scss';
-import { ThemeSwitcher } from '@/features/themeSwitcher';
-import { LangSwitcher } from '@/features/langSwitcher';
+import { ThemeSwitcher } from '@/features/switcherThemes';
+import { LangSwitcher } from '@/features/switcherLanguage';
 
 interface SidebarProps {
   className?: string;
