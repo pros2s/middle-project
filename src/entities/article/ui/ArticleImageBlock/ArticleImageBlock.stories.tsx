@@ -22,7 +22,7 @@ Default.args = {
     id: '1',
     type: ArticleBlockType.IMAGE,
     title: 'Title of picture',
-    src: 'https://miro.medium.com/max/300/1*A_Hg7NPIoARg0RmdsVapqg.png',
+    src: 'https://i.ytimg.com/vi/sQmgeYoO2rE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyRFI4iK7B5YhYlhBEWLhKUrQNZQ',
   },
 };
 
@@ -32,7 +32,7 @@ Dark.args = {
     id: '1',
     type: ArticleBlockType.IMAGE,
     title: 'Title of picture',
-    src: 'https://miro.medium.com/max/300/1*A_Hg7NPIoARg0RmdsVapqg.png',
+    src: 'https://i.ytimg.com/vi/sQmgeYoO2rE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyRFI4iK7B5YhYlhBEWLhKUrQNZQ',
   },
 };
 Dark.decorators = [ThemeDecorator(Themes.DARK)];
