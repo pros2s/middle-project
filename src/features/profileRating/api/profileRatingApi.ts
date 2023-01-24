@@ -6,7 +6,7 @@ interface ProfileRaitingArg {
   userId: string;
 }
 
-interface RateArtilceArg {
+interface RateProfileArg {
   profileId: string;
   userId: string;
   rate: number;
@@ -24,7 +24,7 @@ const ProfileRaitingApi = rtkApi.injectEndpoints({
         },
       }),
     }),
-    rateProfile: build.mutation<void, RateArtilceArg>({
+    rateProfile: build.mutation<void, RateProfileArg>({
       query: (args) => ({
         url: '/profile-raiting',
         method: 'post',

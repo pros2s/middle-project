@@ -17,29 +17,88 @@ const Template: ComponentStory<typeof NotificationList> = () => (
 );
 
 export const Default = Template.bind({});
+Default.decorators = [StoreDecorator({})];
 Default.parameters = {
   mockData: [
     {
       url: `${__API__}/notifications`,
       method: 'GET',
       status: 200,
-      response: {
-        data: [
-          {
-            description: 'Some description',
-            id: '1',
-            title: 'Title',
-            userId: '1',
-          },
-          {
-            description: 'Some description 2',
-            id: '2',
-            title: 'Title 2',
-            userId: '1',
-          },
-        ],
-      },
+      response: [
+        {
+          id: '1',
+          title: 'Уведомление',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '2',
+          title: 'Уведомление 2',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '3',
+          title: 'Уведомление 3',
+          description: 'Что-то очень интересное',
+        },
+      ],
     },
   ],
 };
-Default.decorators = [StoreDecorator({}), ThemeDecorator(Themes.DARK)];
+
+export const DefaultDark = Template.bind({});
+DefaultDark.decorators = [StoreDecorator({}), ThemeDecorator(Themes.DARK)];
+DefaultDark.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          id: '1',
+          title: 'Уведомление',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '2',
+          title: 'Уведомление 2',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '3',
+          title: 'Уведомление 3',
+          description: 'Что-то очень интересное',
+        },
+      ],
+    },
+  ],
+};
+
+export const DefaultOrange = Template.bind({});
+DefaultOrange.decorators = [StoreDecorator({}), ThemeDecorator(Themes.ORANGE)];
+DefaultOrange.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          id: '1',
+          title: 'Уведомление',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '2',
+          title: 'Уведомление 2',
+          description: 'Что-то очень интересное',
+        },
+        {
+          id: '3',
+          title: 'Уведомление 3',
+          description: 'Что-то очень интересное',
+        },
+      ],
+    },
+  ],
+};

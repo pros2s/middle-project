@@ -17,9 +17,51 @@ const Template: ComponentStory<typeof ArticleRaiting> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [StoreDecorator({})];
+Default.args = {
+  articleId: '1',
+};
+Default.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: '1' },
+    },
+  }),
+  ThemeDecorator(Themes.DARK),
+];
+Default.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/article-raiting?userId=1&articleId=1`,
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          rate: 4,
+        },
+      ],
+    },
+  ],
+};
 
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
-DefaultDark.decorators = [StoreDecorator({}), ThemeDecorator(Themes.DARK)];
+export const WithoutRate = Template.bind({});
+WithoutRate.args = {
+  articleId: '1',
+};
+WithoutRate.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: '1' },
+    },
+  }),
+  ThemeDecorator(Themes.DARK),
+];
+WithoutRate.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/article-raiting?userId=1&articleId=1`,
+      method: 'GET',
+      status: 200,
+      response: [],
+    },
+  ],
+};
