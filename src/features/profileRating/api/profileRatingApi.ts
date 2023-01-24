@@ -20,7 +20,7 @@ const ProfileRaitingApi = rtkApi.injectEndpoints({
         url: '/profile-raiting',
         params: {
           profileId,
-          userId,
+        userId,
         },
       }),
     }),

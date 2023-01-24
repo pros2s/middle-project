@@ -1,4 +1,4 @@
-import { getByTestid } from '../../helpers/getByTestid';
+import { getByTestid } from '../../helpers/selectByTestid';
 
 describe('Routing', () => {
   describe('For not auth users', () => {
