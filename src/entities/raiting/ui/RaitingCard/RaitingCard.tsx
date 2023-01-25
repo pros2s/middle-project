@@ -68,6 +68,7 @@ export const RaitingCard = memo(
       <>
         <Text title={feedbackTitle} />
         <Input
+          data-testid='RaitingCard.Modal.Input'
           placeholder={t('leaveFeedback')}
           value={feedback}
           onChange={setFeedback}
@@ -88,10 +89,19 @@ export const RaitingCard = memo(
             <Flex className={cls.modal} direction='column' gap='16'>
               {modalContent}
               <Flex justify='end' gap='8'>
-                <Button theme={ButtonThemes.CANCEL} onClick={cancelHandler}>
+                <Button
+                  data-testid='RaitingCard.Button.Cancel'
+                  theme={ButtonThemes.CANCEL}
+                  onClick={cancelHandler}
+                >
                   {t('cancelFeedback')}
                 </Button>
-                <Button onClick={acceptHandler}>{t('sendFeedback')}</Button>
+                <Button
+                  data-testid='RaitingCard.Button.Accept'
+                  onClick={acceptHandler}
+                >
+                  {t('sendFeedback')}
+                </Button>
               </Flex>
             </Flex>
           </Modal>
@@ -100,7 +110,11 @@ export const RaitingCard = memo(
           <Drawer isOpen={isModalOpen} onClose={cancelHandler} isLazy>
             <Flex direction='column' gap='16' className={cls.mobileModal}>
               {modalContent}
-              <Button onClick={acceptHandler} fullWidth>
+              <Button
+                data-testid='RaitingCard.Button.Accept'
+                onClick={acceptHandler}
+                fullWidth
+              >
                 {t('sendFeedback')}
               </Button>
             </Flex>

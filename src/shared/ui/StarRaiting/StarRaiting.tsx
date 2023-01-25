@@ -63,6 +63,8 @@ export const StarRaiting = memo(
             onMouseLeave={onLeave}
             onMouseEnter={onHover(star)}
             onClick={onClick(star)}
+            data-testid={`StarRaiting.${star}`}
+            data-starselected={currentStar >= star}
           />
         ))}
       </Flex>

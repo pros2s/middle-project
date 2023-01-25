@@ -38,6 +38,7 @@ export const SearchArticles = memo(() => {
         value={value}
         onChange={onChange}
         placeholder={t('searchArticle')}
+        data-testid='SearchArticles'
       />
     </Card>
   );

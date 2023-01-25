@@ -17,6 +17,7 @@ interface TabsProps<T extends string> {
 
   activeType: T;
   onChangeTab: (type: T) => void;
+  'data-testid'?: string;
 }
 
 export const Tabs = <T extends string>({
@@ -24,6 +25,7 @@ export const Tabs = <T extends string>({
   onChangeTab,
   tabs,
   activeType,
+  'data-testid': dataTestId = 'Tabs',
 }: TabsProps<T>) => {
   const changeTabHandler = useCallback(
     (type: T) => () => onChangeTab?.(type as T),
@@ -38,6 +40,7 @@ export const Tabs = <T extends string>({
           active={tab.value === activeType}
           onClick={changeTabHandler(tab.value)}
           key={tab.value}
+          data-testid={`${dataTestId}.${tab.value}`}
         >
           {tab.content}
         </Card>

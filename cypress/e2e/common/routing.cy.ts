@@ -1,18 +1,16 @@
-import { getByTestid } from '../../helpers/selectByTestid';
-
 describe('Routing', () => {
   describe('For not auth users', () => {
     it('Just a main page', () => {
       cy.visit('/');
-      cy.get(getByTestid('mainPage')).should('exist');
+      cy.getByTestid('mainPage').should('exist');
     });
     it('Redirect from profile to main page', () => {
       cy.visit('/profile/1');
-      cy.get(getByTestid('mainPage')).should('exist');
+      cy.getByTestid('mainPage').should('exist');
     });
     it('Not found page', () => {
       cy.visit('/prodsf');
-      cy.get(getByTestid('notFoundPage')).should('exist');
+      cy.getByTestid('notFoundPage').should('exist');
     });
   });
 
@@ -23,11 +21,11 @@ describe('Routing', () => {
 
     it('Profile page', () => {
       cy.visit('/profile/5');
-      cy.get(getByTestid('profilePage')).should('exist');
+      cy.getByTestid('profilePage').should('exist');
     });
     it('Articles page', () => {
       cy.visit('/articles');
-      cy.get(getByTestid('articlesPage')).should('exist');
+      cy.getByTestid('articlesPage').should('exist');
     });
   });
 });

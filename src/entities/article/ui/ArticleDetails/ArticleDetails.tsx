@@ -97,10 +97,16 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     content = (
       <>
         <ArticleDetailsHeader />
-        <Flex justify='center'>
+        <Flex justify='center'
+        data-testid='ArticleDetails.Avatar'>
           <Avatar size='200px' src={data?.imgSmall} className={cls.avatar} />
         </Flex>
-        <Text size={TextSize.L} title={data?.title} text={data?.subtitle} />
+        <Text
+          size={TextSize.L}
+          title={data?.title}
+          text={data?.subtitle}
+          data-testid='ArticleDetails'
+        />
         <Flex align='center'>
           <SVGIcon className={cls.icon} Svg={EyeIcon} size={20} />
           <Text text={String(data?.views)} />
@@ -116,7 +122,10 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   return (
     <DynamicReducerLoader reducers={initialReducers}>
-      <div className={classNames(cls.ArticleDetails, [className])}>
+      <div
+        className={classNames(cls.ArticleDetails, [className])}
+        data-testid='ArticleDetails'
+      >
         {content}
       </div>
     </DynamicReducerLoader>

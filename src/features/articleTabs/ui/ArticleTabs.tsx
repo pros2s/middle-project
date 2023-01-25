@@ -47,6 +47,7 @@ export const ArticleTabs = memo(({ className }: ArticleTabsProps) => {
       tabs={tabs}
       activeType={value}
       onChangeTab={onChangeTab}
+      data-testid='ArticleTabs'
     />
   );
 });

@@ -46,6 +46,11 @@ export const ArticleViewSelector = memo(
             theme={ButtonThemes.CLEAR}
             onClick={onClick(item.view)}
             className={cls.button}
+            data-testid={
+              item.view === ArticleView.SMALL
+                ? 'ArticleViewSelector.small'
+                : 'ArticleViewSelector.big'
+            }
           >
             <SVGIcon
               className={classNames('', [], {

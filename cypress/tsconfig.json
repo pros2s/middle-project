@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext", "dom"],
+    "target": "ES5",
+    "lib": ["ES5", "dom"],
     "types": ["cypress", "node"],
     "allowJs": true,
     "isolatedModules": false
   },
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": []
 }

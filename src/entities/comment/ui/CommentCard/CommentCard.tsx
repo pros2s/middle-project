@@ -21,7 +21,10 @@ export const CommentCard = memo(
   ({ className, comment, isLoading }: CommentCardProps) => {
     if (isLoading) {
       return (
-        <section className={classNames(cls.CommentCard, [className])}>
+        <section
+          data-testid='CommentCard.loading'
+          className={classNames(cls.CommentCard, [className])}
+        >
           <div className={cls.header}>
             <Skeleton
               className={cls.avatar}
@@ -47,16 +50,17 @@ export const CommentCard = memo(
         direction='column'
         justify='between'
         className={classNames(cls.CommentCard, [className])}
+        data-testid='CommentCard.content'
       >
-        <AppLink to={getProfileRoute(comment?.user.id)} className={cls.header}>
+        <AppLink to={getProfileRoute(comment.user.id)} className={cls.header}>
           <Avatar
             className={cls.avatar}
             size='30px'
-            src={comment?.user.avatar}
+            src={comment.user.avatar}
           />
-          <Text title={comment?.user.username} />
+          <Text title={comment.user.username} />
         </AppLink>
-        <Text text={comment?.text} />
+        <Text text={comment.text} data-testid='CommentCard.text' />
       </Flex>
     );
   },

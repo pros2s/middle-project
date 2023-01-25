@@ -33,7 +33,7 @@ export const ArticleItem = memo(
   ({ className, article, view }: ArticleItemProps) => {
     const { t } = useTranslation('articlesPage');
 
-    const types = <Text className={cls.types} text={article.type.join(', ')} />;
+    const types = <Text className={cls.types} text={article.type.join(', ')} data-testid='ArticleItem.Types'/>;
     const views = (
       <>
         <Text className={cls.views} text={String(article.views)} />
@@ -49,6 +49,7 @@ export const ArticleItem = memo(
       return (
         <section
           className={classNames(cls.ArticleItem, [className, cls[view]])}
+          data-testid='ArticleItem'
         >
           <Card>
             <Flex align='center'>
@@ -61,7 +62,11 @@ export const ArticleItem = memo(
               <Text className={cls.date} text={article.createdAt} />
             </Flex>
 
-            <Text className={cls.title} title={article.title} />
+            <Text
+              className={cls.title}
+              title={article.title}
+              data-testid='ArticleItem.Text'
+            />
 
             {types}
             <AppImage
@@ -91,6 +96,7 @@ export const ArticleItem = memo(
       <AppLink
         to={getArticleByIdRoute(article.id)}
         className={classNames(cls.ArticleItem, [className, cls[view]])}
+        data-testid='ArticleItem'
       >
         <Card>
           <Flex justify='center' direction='column' className={cls.imageInner}>
@@ -105,7 +111,11 @@ export const ArticleItem = memo(
             {types}
             {views}
           </Flex>
-          <Text className={cls.title} text={article.title} />
+          <Text
+            className={cls.title}
+            text={article.title}
+            data-testid='ArticleItem.Text'
+          />
         </Card>
       </AppLink>
     );

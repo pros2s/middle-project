@@ -54,6 +54,7 @@ export const Flex = ({
   direction = 'row',
   justify = 'start',
   gap = '4',
+  ...otherProps
 }: FlexProps) => {
   const classes = [
     className,
@@ -63,5 +64,9 @@ export const Flex = ({
     gapClasses[gap],
   ];
 
-  return <div className={classNames(cls.Flex, classes)}>{children}</div>;
+  return (
+    <div className={classNames(cls.Flex, classes)} {...otherProps}>
+      {children}
+    </div>
+  );
 };

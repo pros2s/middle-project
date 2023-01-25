@@ -60,7 +60,10 @@ const ArticleRaiting = memo(({ className, articleId }: ArticleRaitingProps) => {
   if (isLoading) return <Skeleton width='100%' height='140px' />;
 
   return (
-    <Card className={classNames(cls.ArticleRating, [className])}>
+    <Card
+      className={classNames(cls.ArticleRating, [className])}
+      data-testid='ArticleRaiting'
+    >
       <RaitingCard
         title={t('rateArticle')}
         feedbackTitle={t('feedbackTitle')}

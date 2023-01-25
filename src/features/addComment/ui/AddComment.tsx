@@ -50,15 +50,24 @@ const AddComment = memo(({ className, onSendComment }: AddCommentProps) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <form className={classNames(cls.AddComment, [className])}>
+      <form
+        className={classNames(cls.AddComment, [className])}
+        data-testid='AddComment'
+      >
         <Flex align='center' justify='between'>
           <Input
             value={inputValue}
             onChange={onChangeInput}
             placeholder={t('addNewComment')}
             className={cls.input}
+            data-testid='AddComment.input'
           />
-          <Button type='submit' disabled={!inputValue} onClick={sendHandler}>
+          <Button
+            type='submit'
+            disabled={!inputValue}
+            onClick={sendHandler}
+            data-testid='AddComment.button'
+          >
             {t('sendComment')}
           </Button>
         </Flex>
