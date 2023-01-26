@@ -10,9 +10,9 @@ export type AppRouteProps = RouteProps & {
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
-  PROFILE = 'profile', // + id
+  PROFILE = 'profile',
   ARTICLES = 'articles',
-  ARTICLE_DETAILS = 'articleDetails', // + id
+  ARTICLE_DETAILS = 'articleDetails',
   EDIT_ARTICLE = 'editArticle',
   CREATE_NEW_ARTICLE = 'createNewArticle',
   ADMIN_PANEL = 'admin_panel',
