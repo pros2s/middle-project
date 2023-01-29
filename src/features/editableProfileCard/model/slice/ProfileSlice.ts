@@ -1,18 +1,23 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
 import { Profile } from '@/entities/profile';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
-import { ProfileSchema } from '../types/editableProfileCardSchema';
+import {
+  ProfileSchema,
+  ValidateProfileError,
+} from '../types/editableProfileCardSchema';
+import { buildSlice } from '@/shared/lib/store';
 
 const initialState: ProfileSchema = {
   data: undefined,
   profileData: undefined,
   errorMessage: undefined,
   isLoading: false,
+  validation: [],
   readonly: true,
 };
 
-const ProfileSlice = createSlice({
+const ProfileSlice = buildSlice({
   name: 'profile',
   initialState,
   reducers: {
@@ -26,6 +31,12 @@ const ProfileSlice = createSlice({
       state.validation = undefined;
       state.readonly = true;
       state.profileData = state.data;
+    },
+    setValidateErrors(
+      state,
+      { payload }: PayloadAction<ValidateProfileError[]>,
+    ) {
+      state.validation = [...(state.validation || []), ...payload];
     },
   },
   extraReducers: (builder) => {
@@ -71,5 +82,8 @@ const ProfileSlice = createSlice({
   },
 });
 
-export const { actions: profileActions } = ProfileSlice;
-export const { reducer: profileReducer } = ProfileSlice;
+export const {
+  actions: profileActions,
+  reducer: profileReducer,
+  useActions: useProfileActions,
+} = ProfileSlice;

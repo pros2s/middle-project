@@ -21,5 +21,6 @@
   "scienceArticles": "Scince",
   "editArticle": "Edit",
   "rateArticle": "Rate article",
-  "feedbackTitle": "Leave feedback about this article to increase quality of articles"
+  "feedbackTitle": "Leave feedback about this article to increase quality of articles",
+  "createNewArticle": "Create article"
 }

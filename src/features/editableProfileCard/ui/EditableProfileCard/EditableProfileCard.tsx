@@ -1,6 +1,5 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ProfileCard } from '@/entities/profile';
 import { Country } from '@/entities/countrySelect';
@@ -17,12 +16,13 @@ import { Flex } from '@/shared/ui/Stack';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import { getProfileValidateErrros } from '../../model/selectors/getProfileValidateErrros/getProfileValidateErrros';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import { useGetProfileValidateErrros } from '../../model/selectors/getProfileValidateErrros/getProfileValidateErrros';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { profileValidateTranslates } from '../../model/types/editableProfileCardSchema';
+import { useUserActions } from '@/entities/user';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -35,28 +35,20 @@ const reducers: ReducersList = {
 
 export const EditableProfileCard = memo(
   ({ className, id }: EditableProfileCardProps) => {
-    const { t } = useTranslation('profilePage');
     const dispatch = useAppDispatch();
+    const { setUserAvatar } = useUserActions();
 
     const profileData = useSelector(getProfileData);
     const isLoading = useSelector(getProfileLoading);
     const errorMessage = useSelector(getProfileError);
     const readOnly = useSelector(getProfileReadonly);
-    const validateErrors = useSelector(getProfileValidateErrros);
+    const validateErrors = useGetProfileValidateErrros();
 
     useFetchEffect(() => {
       if (id) {
         dispatch(fetchProfileData(id));
       }
     });
-
-    const errorsTranslates = {
-      [ValidateProfileError.INCORRECT_AGE]: t('INCORRECT_AGE'),
-      [ValidateProfileError.INCORRECT_CITY]: t('INCORRECT_CITY'),
-      [ValidateProfileError.INCORRECT_DATA]: t('INCORRECT_DATA'),
-      [ValidateProfileError.NO_DATA]: t('NO_DATA'),
-      [ValidateProfileError.SERVER_ERROR]: t('SERVER_ERROR'),
-    };
 
     const onChangeName = useCallback(
       (value: string) => {
@@ -89,8 +81,9 @@ export const EditableProfileCard = memo(
     const onChangeAvatar = useCallback(
       (value: string) => {
         dispatch(profileActions.changeProfileData({ avatar: value }));
+        setUserAvatar(value);
       },
-      [dispatch],
+      [dispatch, setUserAvatar],
     );
 
     const onChangeCountry = useCallback(
@@ -115,7 +108,7 @@ export const EditableProfileCard = memo(
             validateErrors.map((error) => (
               <Text
                 key={error}
-                text={errorsTranslates[error]}
+                text={profileValidateTranslates[error]}
                 theme={TextThemes.ERROR}
                 data-testid='EditableProfileCard.Error'
               />

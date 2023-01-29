@@ -33,7 +33,13 @@ export const ArticleItem = memo(
   ({ className, article, view }: ArticleItemProps) => {
     const { t } = useTranslation('articlesPage');
 
-    const types = <Text className={cls.types} text={article.type.join(', ')} data-testid='ArticleItem.Types'/>;
+    const types = (
+      <Text
+        className={cls.types}
+        text={article.type.join(', ')}
+        data-testid='ArticleItem.Types'
+      />
+    );
     const views = (
       <>
         <Text className={cls.views} text={String(article.views)} />
@@ -81,7 +87,10 @@ export const ArticleItem = memo(
             )}
             <footer className={classNames(cls.footer)}>
               <Flex align='center'>
-                <AppLink to={getArticleByIdRoute(article.id)}>
+                <AppLink
+                  className={cls.link}
+                  to={getArticleByIdRoute(article.id)}
+                >
                   <Button>{t('readMore')}</Button>
                 </AppLink>
                 {views}
@@ -95,7 +104,7 @@ export const ArticleItem = memo(
     return (
       <AppLink
         to={getArticleByIdRoute(article.id)}
-        className={classNames(cls.ArticleItem, [className, cls[view]])}
+        className={classNames(cls.link, [className, cls[view]])}
         data-testid='ArticleItem'
       >
         <Card>

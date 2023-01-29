@@ -41,6 +41,27 @@ server.post('/login', (req, res) => {
   }
 });
 
+// server.post('/users', (req, res) => {
+//   try {
+//     const { username } = req.body;
+//     const db = JSON.parse(
+//       fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'),
+//     );
+//     const { users = [] } = db;
+
+//     const userExists = users.find((user) => user.username === username);
+
+//     if (!userExists) {
+//       fetch('http://localhost:8000/users', req.body);
+//       return res.json(userExists);
+//     }
+
+//     return res.status(403).json({ message: 'User already exists' });
+//   } catch (e) {
+//     return res.status(500).json({ message: e.message });
+//   }
+// });
+
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {

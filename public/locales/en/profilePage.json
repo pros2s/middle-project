@@ -12,11 +12,6 @@
   "ProfileCurrency": "Currency",
   "SaveProfileChanges": "Save",
   "ProfileAvatar": "Avatar",
-  "INCORRECT_AGE": "Incorrect age",
-  "INCORRECT_CITY": "Incorrect city",
-  "INCORRECT_DATA": "Incorrect name or username",
-  "NO_DATA": "Incorrect Data",
-  "SERVER_ERROR": "Server error",
   "ProfileNotFound": "Profile not found",
   "rateProfile": "Rate this profile",
   "feedbackTitle": "Leave feedback about this profile to increase quality of profiles"

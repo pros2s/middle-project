@@ -3,3 +3,14 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.create {
+  width: 160px;
+  padding: 15px;
+}
+
+.link {
+  &::after {
+    display: none;
+  }
+}

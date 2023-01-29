@@ -11,6 +11,7 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { scrollPositionReducer } from '@/widgets/Page';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
+import { signInReducer } from '@/features/signInByUsername';
 
 export function createReduxStore(
   preloadedState?: StateSchema,
@@ -18,6 +19,7 @@ export function createReduxStore(
 ) {
   const rootReducer: Reducer<StateSchema> | ReducersMapObject<StateSchema> = {
     ...asyncReducers,
+    signin: signInReducer,
     user: userReducer,
     scroll: scrollPositionReducer,
     avatarLogInBtn: AvatarLoginBtnReducer,

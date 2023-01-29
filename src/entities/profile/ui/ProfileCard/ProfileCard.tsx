@@ -33,7 +33,7 @@ export const ProfileCard = memo(
   ({
     className,
     data,
-    readOnly,
+    readOnly = false,
     errorMessage,
     isLoading,
     onChangeName,

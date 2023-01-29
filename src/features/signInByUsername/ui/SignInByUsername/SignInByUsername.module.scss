@@ -1,0 +1,46 @@
+.SignInByUsername {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 450px;
+
+  color: var(--primary-color);
+}
+
+.button {
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error {
+  width: 60%;
+}
+
+.role {
+  padding: 5px 10px;
+
+  border-radius: var(--border-radius);
+}
+
+.active {
+  color: white;
+
+  background-color: var(--primary-color);
+}
+
+.roleBtn,
+.nothingBtn {
+  padding: 7px 15px;
+
+  &:hover {
+    color: white;
+
+    background-color: var(--primary-color);
+  }
+}

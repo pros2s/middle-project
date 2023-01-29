@@ -16,7 +16,7 @@ interface Item {
 
 interface CustomSelectProps {
   items: Item[];
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   value?: string;
   defaultValue?: string;
   className?: string;

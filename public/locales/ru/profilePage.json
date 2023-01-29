@@ -12,12 +12,12 @@
   "ProfileCurrency": "Валюта",
   "SaveProfileChanges": "Сохранить",
   "ProfileAvatar": "Фотография",
+  "ProfileNotFound": "Профиль не найден",
+  "rateProfile": "Оцените этот профиль",
+  "feedbackTitle": "Оставьте отзыв об этом профиле, чтобы повысить качество профилей",
   "INCORRECT_AGE": "Некорректный возраст",
   "INCORRECT_CITY": "Некорректный город",
   "INCORRECT_DATA": "Некорректное имя или имя пользователя",
   "NO_DATA": "Некорректные данные",
-  "SERVER_ERROR": "Ошибка сервера",
-  "ProfileNotFound": "Профиль не найден",
-  "rateProfile": "Оцените этот профиль",
-  "feedbackTitle": "Оставьте отзыв об этом профиле, чтобы повысить качество профилей"
+  "SERVER_ERROR": "Ошибка сервера"
 }

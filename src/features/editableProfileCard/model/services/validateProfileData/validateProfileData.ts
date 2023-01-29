@@ -10,7 +10,7 @@ export const validateProfileData = (profile?: Profile) => {
 
   const { age, name, username, city } = profile;
 
-  if (!age || !Number.isInteger(age)) {
+  if (!age || !Number.isInteger(age) || age > 120 || age < 5) {
     errors.push(ValidateProfileError.INCORRECT_AGE);
   }
 

@@ -12,5 +12,6 @@ export interface User {
 
 export interface UserSchema {
   authData?: User;
+  avatar?: string;
   _inited: boolean;
 }

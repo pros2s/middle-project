@@ -4,18 +4,19 @@ const firstCharUpperCase = require('../firstCharUpperCase');
 module.exports = (sliceName) => {
   const typeName = `${firstCharUpperCase(sliceName)}Schema`;
 
-  return `import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+  return `import { PayloadAction } from '@reduxjs/toolkit';
+import { buildSlice } from '@/shared/lib/store';
 import { ${typeName} } from '../types/${sliceName}Schema';
 
 const initialState: ${typeName} = {
 
 };
 
-export const ${sliceName}Slice = createSlice({
+export const ${sliceName}Slice = buildSlice({
   name: '${sliceName}',
   initialState,
   reducers: {
-    template: (state, action: PayloadAction<payloadType>) => {
+    template: (state, { payload }: PayloadAction<payloadType>) => {
 
     },
   },
@@ -35,6 +36,5 @@ export const ${sliceName}Slice = createSlice({
   // },
 });
 
-export const { actions: ${sliceName}Actions } = ${sliceName}Slice;
-export const { reducer: ${sliceName}Reducer } = ${sliceName}Slice;`;
+export const { actions: ${sliceName}Actions, reducer: ${sliceName}Reducer } = ${sliceName}Slice;`;
 };

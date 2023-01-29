@@ -6,7 +6,6 @@ import { LoginModal } from '@/features/authByUsername';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/user';
 
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Flex } from '@/shared/ui/Stack';
 import { NotificationBtn } from '@/features/notificationBtn';
 import {
@@ -16,6 +15,12 @@ import {
 } from '@/features/avatarLogInBtn';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import cls from './Navbar.module.scss';
+import { Button, ButtonThemes } from '@/shared/ui/Button';
+import {
+  useSignInActions,
+  SignInModal,
+  useGetIsOpenSignInModal,
+} from '@/features/signInByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -24,10 +29,21 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const { isSignInModal } = useSignInActions();
+
+  const isOpenSignIn = useGetIsOpenSignInModal();
 
   const { authData } = useSelector(getUserAuthData);
 
   const isLogInModal = useSelector(getAvatarLoginBtn);
+
+  const onOpenSignInForm = () => {
+    isSignInModal(true);
+  };
+
+  const onCloseSignInForm = () => {
+    isSignInModal(false);
+  };
 
   const onCloseLoginForm = () => {
     dispatch(AvatarLoginBtnActions.setIsLogInModal(false));
@@ -35,21 +51,28 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(cls.Navbar, [className])}>
-      <AppLink
-        to='/articles/create'
-        theme={AppLinkTheme.PRIMARY}
-        className={cls.create}
-      >
-        {t('createNewArticle')}
-      </AppLink>
       <nav className={cls.links}>
         <Flex gap='16' align='center'>
           {authData && <NotificationBtn />}
           <AvatarLogInBtn />
+          {!authData && (
+            <Button
+              theme={ButtonThemes.INVERTED_CLEAR}
+              onClick={onOpenSignInForm}
+            >
+              {t('SignIn')}
+            </Button>
+          )}
         </Flex>
 
         {!authData && (
-          <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
+          <>
+            <LoginModal isOpen={isLogInModal} onClose={onCloseLoginForm} />
+            <SignInModal
+              isOpen={Boolean(isOpenSignIn)}
+              onClose={onCloseSignInForm}
+            />
+          </>
         )}
       </nav>
     </header>

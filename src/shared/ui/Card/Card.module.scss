@@ -5,6 +5,12 @@
   background-color: var(--article-bg);
   border-radius: var(--border-radius);
   cursor: pointer;
+
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: var(--article-hover-bg);
+  }
 }
 
 .active {
