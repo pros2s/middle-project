@@ -3,7 +3,7 @@ import { userActions } from '@/entities/user';
 import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername.test', () => {
-  test('succes login function call', async () => {
+  test('success login function call', async () => {
     const userTestData = { id: '2', username: 'username' };
 
     const thunk = new TestAsyncThunk(loginByUsername);

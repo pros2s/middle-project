@@ -2370,6 +2370,34 @@
         "SCIENCE"
       ],
       "id": "K9DJXHE"
+    },
+    {
+      "blocks": [],
+      "userId": "5",
+      "title": "Test article",
+      "subtitle": "Cypress is very heavy to test everything",
+      "imgBig": "https://cdn.geekboots.com/geek/javascript-meta-1652702081069.jpg",
+      "imgSmall": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "SCIENCE"
+      ],
+      "id": "mDeg0I8"
+    },
+    {
+      "blocks": [],
+      "userId": "5",
+      "title": "Test article",
+      "subtitle": "Cypress is very heavy to test everything",
+      "imgBig": "https://cdn.geekboots.com/geek/javascript-meta-1652702081069.jpg",
+      "imgSmall": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "SCIENCE"
+      ],
+      "id": "sTq7yBa"
     }
   ],
   "comments": [
@@ -2462,6 +2490,18 @@
       "articleId": "4",
       "userId": "1",
       "id": "rYOKlR5"
+    },
+    {
+      "text": "New comment",
+      "articleId": "mDeg0I8",
+      "userId": "5",
+      "id": "X2vNfwe"
+    },
+    {
+      "text": "New comment",
+      "articleId": "sTq7yBa",
+      "userId": "5",
+      "id": "_zRzGTU"
     }
   ]
 }
