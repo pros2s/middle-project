@@ -76,7 +76,7 @@ const ArticlesPage = memo(() => {
         onScrollEnd={onLoadNextPage}
         data-testid='articlesPage'
       >
-        <Card className={cls.create}>
+        {/* <Card className={cls.create}>
           <AppLink
             className={cls.link}
             to='/articles/create'
@@ -84,7 +84,7 @@ const ArticlesPage = memo(() => {
           >
             {t('createNewArticle')}
           </AppLink>
-        </Card>
+        </Card> */}
         <FilterArticles onChangeView={onChangeView} view={view} />
         <ArticleList isLoading={isLoading} view={view} articles={tabArticles} />
       </Page>
